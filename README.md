@@ -10,12 +10,24 @@
 
 Lightweight Vue 2 Currency Filter
 
+## Download
+
+NPM :
+```bash
+npm install vue-currency-filter
+```
+
+Yarn :
+```bash
+yarn add vue-currency-filter
+```
+
 ## Sample Usage
 
 Import in `main.js` :
 
 ```javascript
-import VueCurrencyFilter from 'VueCurrencyFilter'
+import VueCurrencyFilter from 'vue-currency-filter'
 ```
 
 Use Plugins : 
