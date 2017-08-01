@@ -1,12 +1,13 @@
 const VueCurrencyFilter = {
   install (Vue, options) {
     Vue.filter('currency', function (value) {
-      let symbol = 'Rp'
-      let thousandsSeparator = '.'
-      let fractionCount = 0
-      let fractionSeparator = ','
-      let symbolPosition = 'front'
-      let symbolSpacing = true
+      let symbol = options.symbol || 'Rp'
+      let thousandsSeparator = options.thousandsSeparator || '.'
+      let fractionCount = options.fractionCount || 0
+      let fractionSeparator = options.fractionSeparator || ','
+      let symbolPosition = options.symbolPosition || 'front'
+      let symbolSpacing = options.symbolSpacing || true
+
       let result = 0.0
       let afterDot, beforeDot, pattern, _ref
 

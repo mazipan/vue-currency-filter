@@ -36,14 +36,30 @@ Use Plugins :
 Vue.use(VueCurrencyFilter)
 ```
 
+Add Options : 
+```javascript
+Vue.use(VueCurrencyFilter, {symbol : '$'})
+```
+
 Use in View :
 
 ```html
 <span>{{ 20000 | currency}}</span>
 ```
 
-## TODO
-+ Add options to configure
+## Available Options
+
+```javascript
+{
+  symbol: 'string (default : Rp)',
+  thousandsSeparator: 'string (default : .)',
+  fractionCount: 'number (default : 0)',
+  fractionSeparator: 'string (default: ",")',
+  symbolPosition: 'string (default: front)',
+  symbolSpacing: 'boolean'
+}
+```
+
 
 **Hope will usefull for you all.**
 

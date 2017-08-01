@@ -6,15 +6,12 @@ require('es6-promise').polyfill();
 
 module.exports = {
   entry: {
-    app: './VueCurrencyFilter.js'
+    app: './main.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist',
-    filename: 'VueCurrencyFilter.bundle.js',
-    library: 'VueCurrencyFilter',
-    libraryTarget: 'umd',
-    umdNamedDefine: true,
+    filename: 'dev.bundle.js',
     jsonpFunction: 'WebpackJsonp'
   },
   resolve: {
@@ -34,7 +31,6 @@ module.exports = {
     ]
   },
   externals: {
-    "vue": "Vue"
   },
   plugins: [
     new webpack.DefinePlugin({
