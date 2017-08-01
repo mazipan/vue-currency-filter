@@ -8,7 +8,7 @@
 [![downloads monthly](https://img.shields.io/npm/dm/vue-currency-filter.svg)](https://www.npmjs.com/package/vue-currency-filter) 
 [![downloads](https://img.shields.io/npm/dt/vue-currency-filter.svg)](https://www.npmjs.com/package/vue-currency-filter) 
 
-Lightweight Vue 2 Currency Filter
+:heavy_dollar_sign: Lightweight and Customizeable Vue 2 Currency Filter
 
 ## Demo
 [https://mazipan.github.io/vue-currency-filter/](https://mazipan.github.io/vue-currency-filter/)
