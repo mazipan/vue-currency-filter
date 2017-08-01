@@ -10,6 +10,10 @@
 
 Lightweight Vue 2 Currency Filter
 
+## Demo
+[https://mazipan.github.io/vue-currency-filter/](https://mazipan.github.io/vue-currency-filter/)
+
+
 ## Download
 
 NPM :
