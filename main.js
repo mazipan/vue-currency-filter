@@ -9,16 +9,18 @@ new Vue({
   el: '#app',
   template: `    
     <div class="VueCurrencyFilter">
-      <h1>Lightweight and Customizable Vue Currency Filter Plugins By Irfan Maulana</h1>
+    	<div class="grid__row content centered">
+	      <h1>Lightweight and Customizable Vue Currency Filter Plugins By Irfan Maulana</h1>
 
-      <h2>Example : </h2>
-      <div>Before filter : 20000</div>
-      <div>After filter : {{ 20000 | currency}}</div>
+	      <h2>Example : </h2>
+	      <div><b>Before filter</b> : 20000</div>
+	      <div><b>After filter</b> : {{ 20000 | currency}}</div>
 
-      Using setup :
-      <pre>
-      	Vue.use(VueCurrencyFilter, {symbol: '$'})
-      </pre>
+	      <h2>Using setup : </h2>
+	      <pre><code>
+	      	Vue.use(VueCurrencyFilter, {symbol: '$'})
+	      </code></pre>
+      </div>
 
       <div class="grid__row content centered">
 	      <h2>Contribute</h2>
