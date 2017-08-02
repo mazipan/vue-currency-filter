@@ -24,8 +24,8 @@
     "npm": ">= 3.0.0"
   },
   "scripts": {
-    "dist": "webpack --config webpack.config.js",
-    "dev": "webpack --config webpack.dev.config.js"
+    "dev": "webpack --config webpack.dev.config.js",
+    "dist": "npm run dev && webpack --config webpack.config.js"    
   },
   "files": [
     "dist/VueCurrencyFilter.bundle.js",
