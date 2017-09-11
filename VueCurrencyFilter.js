@@ -1,6 +1,7 @@
 const VueCurrencyFilter = {
   install (Vue, options) {
     Vue.filter('currency', function (value) {
+      if(typeof options === "undefined") options = {}
       let symbol = options.symbol || 'Rp'
       let thousandsSeparator = options.thousandsSeparator || '.'
       let fractionCount = options.fractionCount || 0
