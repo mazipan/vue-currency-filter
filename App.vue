@@ -5,7 +5,7 @@
 	      <h1>Lightweight and Customizable Vue Currency Filter Plugins By Irfan Maulana</h1>
 
 				<h2>Example : </h2>
-				<input type="text" v-model="textInput" class="textfield textfield--shadow"/>
+				<input type="tel" pattern="[0-9]*" v-model="textInput" class="textfield textfield--shadow"/>
 	      <div><b>Before filter</b> : {{ textInput }}</div>
 	      <div><b>After filter</b> : {{ textInput | currency}}</div>
 

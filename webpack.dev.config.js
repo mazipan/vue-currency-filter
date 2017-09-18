@@ -11,7 +11,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist',
-    filename: 'dev.bundle.js',
+    filename: 'bundle.js',
     jsonpFunction: 'WebpackJsonp'
   },
   resolve: {
