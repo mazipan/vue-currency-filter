@@ -42,6 +42,11 @@
     enable_page_level_ads: true
   });
   </script>
+
+  <style>
+    .header{-webkit-box-shadow:0 1px 2px rgba(0,0,0,.075);-moz-box-shadow:0 1px 2px rgba(0,0,0,.075);box-shadow:0 1px 2px rgba(0,0,0,.075);position:fixed;top:0;z-index:100;width:100%;height:60px;background:rgba(255,255,255,.95294)}.header__wrapper{display:flex;justify-content:space-between;align-items:center}.header__brand{display:flex;justify-content:space-between;align-items:center;margin:.2em}.header__brand img{width:50px;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}.header__title{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;font-style:normal;font-size:1.8rem;font-weight:500;margin-left:.5em}.app{margin-top:70px}
+  </style>
+  
 </head>
 
 <body>
@@ -51,6 +56,21 @@
 	    Please use the latest browser and enable javascript.
 	  </p>
 	  </noscript>
+
+    <header role="header" class="site__header header">
+        <div class="header__wrapper">
+          <div class="header__brand">
+          
+            <a href="https://mazipan.github.io/demo/">
+              <img src="https://mazipan.github.io/images/irfan-maulana.jpg" alt="Irfan Maulana" title="Irfan Maulana">
+            </a>
+
+            <div class="header__title">
+              Irfan Maulana | Demo
+            </div>
+          </div>
+        </div>
+    </header>
 
     <div id="app"></div>
 

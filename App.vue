@@ -1,5 +1,5 @@
 <template>
-  <div id="app">    
+  <div id="app" class="app">    
     <div class="VueCurrencyFilter">
     	<div class="grid__row content centered">
 	      <h1>Lightweight and Customizable Vue Currency Filter Plugins By Irfan Maulana</h1>
