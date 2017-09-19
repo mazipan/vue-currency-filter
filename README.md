@@ -41,14 +41,33 @@ Vue.use(VueCurrencyFilter)
 ```
 
 Add Options : 
+
 ```javascript
-Vue.use(VueCurrencyFilter, {symbol : '$'})
+Vue.use(VueCurrencyFilter, 
+{
+  symbol : '$', 
+  thousandsSeparator: '.',
+  fractionCount: 2,
+  fractionSeparator: ',',
+  symbolPosition: 'front',
+  symbolSpacing: true
+})
 ```
 
 Use in View :
 
 ```html
 <span>{{ 20000 | currency}}</span>
+```
+
+Add Config On The Fly :
+
+```html
+<span>
+{{ textInput | currency(configSymbol, configSeparator, configFractionCount, 
+configFractionSeparator, configSymbolPosition, configSymbolSpacing)}}
+</span>
+					
 ```
 
 ## Available Options
@@ -60,7 +79,7 @@ Use in View :
   fractionCount: 'number (default : 0)',
   fractionSeparator: 'string (default: ",")',
   symbolPosition: 'string (default: front)',
-  symbolSpacing: 'boolean'
+  symbolSpacing: 'boolean (default: true)'
 }
 ```
 
