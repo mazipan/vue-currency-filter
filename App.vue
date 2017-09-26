@@ -49,9 +49,9 @@
 						Symbol Position
 					</div>
 					<div class="form__wrapper">
-						<input class="radio radio--blue" type="radio" id="radio-form-1" name="radio-form" v-model="configSymbolPosition" v-bind:value="'front'">
+						<input class="radio radio--blue" type="radio" id="radio-form-1" name="radio-symbol" v-model="configSymbolPosition" v-bind:value="'front'">
 						<label for="radio-form-1">Front</label>
-						<input class="radio radio--blue" type="radio" id="radio-form-2" name="radio-form" v-model="configSymbolPosition" v-bind:value="'back'">
+						<input class="radio radio--blue" type="radio" id="radio-form-2" name="radio-symbol" v-model="configSymbolPosition" v-bind:value="'back'">
 						<label for="radio-form-2">End of text</label>                   
 					</div>                
 				</div>
@@ -61,9 +61,9 @@
 						Symbol Spacing
 					</div>
 					<div class="form__wrapper">
-						<input class="radio radio--blue" type="radio" id="radio-form-3" name="radio-form" v-model="configSymbolSpacing" v-bind:value="true">
+						<input class="radio radio--blue" type="radio" id="radio-form-3" name="radio-spacing" v-model="configSymbolSpacing" v-bind:value="true">
 						<label for="radio-form-3">Yes</label>
-						<input class="radio radio--blue" type="radio" id="radio-form-4" name="radio-form" v-model="configSymbolSpacing" v-bind:value="false">
+						<input class="radio radio--blue" type="radio" id="radio-form-4" name="radio-spacing" v-model="configSymbolSpacing" v-bind:value="false">
 						<label for="radio-form-4">No</label>                   
 					</div>                
 				</div>

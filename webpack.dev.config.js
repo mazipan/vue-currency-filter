@@ -1,6 +1,5 @@
 var path = require('path');
 var webpack = require('webpack');
-var npm = require("./package.json");
 
 require('es6-promise').polyfill();
 
