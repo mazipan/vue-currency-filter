@@ -28,19 +28,19 @@ yarn add vue-currency-filter
 
 ## Sample Usage
 
-Import in `main.js` :
+#### Import in `main.js` :
 
 ```javascript
 import VueCurrencyFilter from 'vue-currency-filter'
 ```
 
-Use Plugins : 
+#### Use Plugins : 
 
 ```javascript
 Vue.use(VueCurrencyFilter)
 ```
 
-Add Options : 
+#### Add Global Configuration : 
 
 ```javascript
 Vue.use(VueCurrencyFilter, 
@@ -54,13 +54,13 @@ Vue.use(VueCurrencyFilter,
 })
 ```
 
-Use in View :
+#### Use in View :
 
 ```html
 <span>{{ 20000 | currency}}</span>
 ```
 
-Add Config On The Fly :
+#### Add Configuration In Specific Place :
 
 ```html
 <span>
