@@ -8,6 +8,9 @@
 [![downloads monthly](https://img.shields.io/npm/dm/vue-currency-filter.svg)](https://www.npmjs.com/package/vue-currency-filter) 
 [![downloads](https://img.shields.io/npm/dt/vue-currency-filter.svg)](https://www.npmjs.com/package/vue-currency-filter) 
 
+[![Travis](https://img.shields.io/travis/mazipan/vue-currency-filter.svg)](https://travis-ci.org/mazipan/vue-currency-filter)
+[![codecov](https://codecov.io/gh/mazipan/vue-currency-filter/branch/master/graph/badge.svg)](https://codecov.io/gh/mazipan/vue-currency-filter)
+
 :heavy_dollar_sign: Lightweight and Customizeable Vue 2 Currency Filter
 
 ## Demo
