@@ -13,9 +13,7 @@
 				<div><b>Before filter</b> : {{ textInput }}</div>
 	      <div>
 					<b>After filter</b> : 
-					<b>
-					{{ textInput | currency(configSymbol, configSeparator, configFractionCount, configFractionSeparator, configSymbolPosition, configSymbolSpacing) }}
-					</b>
+					<b class="result__filter">{{ textInput | currency(configSymbol, configSeparator, configFractionCount, configFractionSeparator, configSymbolPosition, configSymbolSpacing) }}</b>
 				</div>
 
 				<h2>Customize Config :</h2>

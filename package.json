@@ -27,7 +27,8 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --hot --color --open --config webpack.dev.config.js",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules --config webpack.dev.config.js",
     "pack": "cross-env NODE_ENV=production webpack --config webpack.config.js",
-    "dist": "npm run build && npm run pack"        
+    "dist": "npm run build && npm run pack",
+    "test": "./node_modules/.bin/jest --coverage"
   },
   "files": [
     "dist/VueCurrencyFilter.bundle.js",
@@ -38,26 +39,55 @@
     "autoprefixer": "^7.1.5",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
-    "babel-register": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
     "compression": "^1.7.1",
     "compression-webpack-plugin": "^1.0.1",
     "cross-env": "^5.1.0",
     "css-loader": "^0.28.7",
     "es6-promise": "^4.1.1",
+    "eslint": "^4.9.0",
+    "eslint-plugin-vue": "3.13.0",
     "extract-text-webpack-plugin": "^3.0.1",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^2.30.1",
-    "vue": "^2.4.4",
+    "jest": "^21.2.1",
+    "jest-vue-preprocessor": "^1.3.0",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
+    "vue": "^2.4.4",
     "vue-loader": "^13.0.4",
     "vue-template-compiler": "^2.4.4",
+    "vue-test-utils": "^1.0.0-beta.2",
     "webpack": "^3.7.1",
     "webpack-dev-server": "^2.9.2",
     "webpack-merge": "^4.1.0",
     "webpack-shell-plugin": "^0.5.0"
+  },
+  "dependencies": {},
+  "eslintIgnore": [
+    "test/*.js",
+    "dist/*.js",
+    "node_modules"
+  ],
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "plugin:vue/recommended"
+    ]
+  },
+  "jest": {
+    "coverageDirectory": "test/coverage",
+    "moduleNameMapper": {
+      "^vue$": "vue/dist/vue.common.js",
+      "src/([^\\.]*)$": "<rootDir>/$1.vue"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/jest-vue-preprocessor"
+    }
   }
 }

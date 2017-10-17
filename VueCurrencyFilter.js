@@ -57,7 +57,7 @@ const VueCurrencyFilter = {
       result = string.join(symbolSpacing ? ' ' : '')
 
       if(isNegative) {
-        result = '- ' + result
+        result = '-' + result
       }
       return result
     })
