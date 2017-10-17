@@ -14,7 +14,7 @@
 	      <div>
 					<b>After filter</b> : 
 					<b>
-					{{ textInput | currency(configSymbol, configSeparator, configFractionCount, configFractionSeparator, configSymbolPosition, configSymbolSpacing)}}
+					{{ textInput | currency(configSymbol, configSeparator, configFractionCount, configFractionSeparator, configSymbolPosition, configSymbolSpacing) }}
 					</b>
 				</div>
 
@@ -23,28 +23,28 @@
 					<div class="form__icon form__icon--radius-left">
 						Symbol
 					</div>
-					<input class="textfield" v-model="configSymbol">                
+					<input class="textfield" type="text" v-model="configSymbol">                
 				</div>
 				
 				<div class="form__group">
 					<div class="form__icon form__icon--radius-left">
 						Separator
 					</div>
-					<input class="textfield" v-model="configSeparator">                
+					<input class="textfield" type="text" v-model="configSeparator">                
 				</div>
 
 				<div class="form__group">
 					<div class="form__icon form__icon--radius-left">
 						Fraction Count
 					</div>
-					<input class="textfield" v-model="configFractionCount">                
+					<input class="textfield" type="tel" pattern="[0-9]*" v-model="configFractionCount">                
 				</div>
 
 				<div class="form__group">
 					<div class="form__icon form__icon--radius-left">
 						Fraction Separator
 					</div>
-					<input class="textfield" v-model="configFractionSeparator">                
+					<input class="textfield" type="text" v-model="configFractionSeparator">                
 				</div>
 
 				<div class="form__group m-b-5">

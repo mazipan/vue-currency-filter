@@ -20,9 +20,17 @@ const VueCurrencyFilter = {
       if(typeof _fractionSeparator !== 'undefined') fractionSeparator = _fractionSeparator
       if(typeof _symbolPosition !== 'undefined') symbolPosition = _symbolPosition
       if(typeof _symbolSpacing !== 'undefined') symbolSpacing = _symbolSpacing
+      
+      // Back to default --prevent unresponding browser
+      if(!thousandsSeparator || !isNaN(thousandsSeparator)) thousandsSeparator = '.'
 
       let result = 0.0
       let afterDot, beforeDot, pattern, _ref
+      let isNegative = String(value).charAt(0) === '-'
+      
+      if(isNegative) {
+        value = String(value).slice(1)
+      }
 
       let amount = parseFloat(value)
       if (!isNaN(amount)) {
@@ -48,6 +56,9 @@ const VueCurrencyFilter = {
       string.splice((symbolPosition === 'front' ? 0 : 1), 0, symbol)
       result = string.join(symbolSpacing ? ' ' : '')
 
+      if(isNegative) {
+        result = '- ' + result
+      }
       return result
     })
   }
