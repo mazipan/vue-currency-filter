@@ -1,6 +1,7 @@
-var path = require('path');
-var webpack = require('webpack');
-var npm = require("./package.json");
+var webpack = require('webpack')
+var path = require('path')
+var npm = require("./package.json")
+const CompressionPlugin = require("compression-webpack-plugin")
 
 require('es6-promise').polyfill();
 
@@ -49,7 +50,10 @@ module.exports = {
       sourceMap: false
     }),
     new webpack.BannerPlugin({
-      banner: `VueCurrencyFilter v.${npm.version}\nIrfan Maulana (https://github.com/mazipan)`
+      banner: `VueCurrencyFilter v.${npm.version}`
+    }),
+    new CompressionPlugin({
+      algorithm: 'gzip'
     })
   ]
 }

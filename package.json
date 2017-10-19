@@ -32,6 +32,7 @@
   },
   "files": [
     "dist/VueCurrencyFilter.bundle.js",
+    "dist/VueCurrencyFilter.bundle.js.gz",
     "dist/VueCurrencyFilter.bundle.js.map",
     "VueCurrencyFilter.js"
   ],
