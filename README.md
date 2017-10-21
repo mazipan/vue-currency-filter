@@ -86,8 +86,11 @@ configFractionSeparator, configSymbolPosition, configSymbolSpacing)}}
 }
 ```
 
+## Contributing
 
-**Hope will usefull for you all.**
+If you'd like to contribute, head to the [contributing guidelines](/CONTRIBUTING.md). Inside you'll find directions for opening issues, coding standards, and notes on development.
+
+### Hope this will be useful for you all.
 
 Contact Me :
 
