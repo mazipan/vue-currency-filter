@@ -1,25 +1,36 @@
 const VueCurrencyFilter = {
   install (Vue, options) {
 
-    if(typeof options === "undefined") options = {}
+    // helper function
+    function _isUndefined (obj) {
+      return typeof obj === "undefined"
+    }
+
+    if(_isUndefined(options)) options = {}
+    // init default config
+    let symbolSpacing = true
+
     let symbol = options.symbol || 'Rp'
     let thousandsSeparator = options.thousandsSeparator || '.'
     let fractionCount = options.fractionCount || 0
     let fractionSeparator = options.fractionSeparator || ','
     let symbolPosition = options.symbolPosition || 'front'
-    let symbolSpacing = options.symbolSpacing || true
+    
+    if(!_isUndefined(options.symbolSpacing)) {
+      symbolSpacing = options.symbolSpacing
+    }
 
     Vue.filter('currency', 
       function (value, 
         _symbol, _thousandsSeparator, _fractionCount, 
         _fractionSeparator, _symbolPosition, _symbolSpacing) {
 
-      if(typeof _symbol !== 'undefined') symbol = _symbol
-      if(typeof _thousandsSeparator !== 'undefined') thousandsSeparator = _thousandsSeparator
-      if(typeof _fractionCount !== 'undefined') fractionCount = _fractionCount
-      if(typeof _fractionSeparator !== 'undefined') fractionSeparator = _fractionSeparator
-      if(typeof _symbolPosition !== 'undefined') symbolPosition = _symbolPosition
-      if(typeof _symbolSpacing !== 'undefined') symbolSpacing = _symbolSpacing
+      if(!_isUndefined(_symbol)) symbol = _symbol
+      if(!_isUndefined(_thousandsSeparator)) thousandsSeparator = _thousandsSeparator
+      if(!_isUndefined(_fractionCount)) fractionCount = _fractionCount
+      if(!_isUndefined(_fractionSeparator)) fractionSeparator = _fractionSeparator
+      if(!_isUndefined(_symbolPosition)) symbolPosition = _symbolPosition
+      if(!_isUndefined(_symbolSpacing)) symbolSpacing = _symbolSpacing
       
       // Back to default --prevent unresponding browser
       if(!thousandsSeparator || !isNaN(thousandsSeparator)) thousandsSeparator = '.'
