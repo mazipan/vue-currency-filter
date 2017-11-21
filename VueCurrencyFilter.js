@@ -33,7 +33,7 @@ const VueCurrencyFilter = {
       if(!_isUndefined(_symbolSpacing)) symbolSpacing = _symbolSpacing
       
       // Back to default --prevent unresponding browser
-      if(!thousandsSeparator || !isNaN(thousandsSeparator)) thousandsSeparator = '.'
+      if(!_isUndefined(thousandsSeparator) || !isNaN(thousandsSeparator)) thousandsSeparator = '.'
 
       let result = 0.0
       let afterDot, beforeDot, pattern, _ref
