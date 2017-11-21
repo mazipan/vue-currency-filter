@@ -1,21 +1,37 @@
 const VueCurrencyFilter = {
   install (Vue, options) {
 
-    // helper function
+    // helper to check undefined variable
     function _isUndefined (obj) {
-      return typeof obj === "undefined"
+      return typeof obj === "undefined" || obj === null
     }
 
     if(_isUndefined(options)) options = {}
+
     // init default config
+    let symbol = ''
+    let thousandsSeparator = '.'
+    let fractionCount = 0
+    let fractionSeparator = ','
+    let symbolPosition = 'front'
     let symbolSpacing = true
 
-    let symbol = options.symbol || ''
-    let thousandsSeparator = options.thousandsSeparator || '.'
-    let fractionCount = options.fractionCount || 0
-    let fractionSeparator = options.fractionSeparator || ','
-    let symbolPosition = options.symbolPosition || 'front'
-    
+    // overide with custom config if exist
+    if(!_isUndefined(options.symbol)) {
+      symbol = options.symbol
+    }
+    if(!_isUndefined(options.thousandsSeparator)) {
+      thousandsSeparator = options.thousandsSeparator
+    }
+    if(!_isUndefined(options.fractionCount)) {
+      fractionCount = options.fractionCount
+    }
+    if(!_isUndefined(options.fractionSeparator)) {
+      fractionSeparator = options.fractionSeparator
+    }
+    if(!_isUndefined(options.symbolPosition)) {
+      symbolPosition = options.symbolPosition
+    }
     if(!_isUndefined(options.symbolSpacing)) {
       symbolSpacing = options.symbolSpacing
     }
@@ -25,6 +41,7 @@ const VueCurrencyFilter = {
         _symbol, _thousandsSeparator, _fractionCount, 
         _fractionSeparator, _symbolPosition, _symbolSpacing) {
 
+      // overide again with on the fly config    
       if(!_isUndefined(_symbol)) symbol = _symbol
       if(!_isUndefined(_thousandsSeparator)) thousandsSeparator = _thousandsSeparator
       if(!_isUndefined(_fractionCount)) fractionCount = _fractionCount
