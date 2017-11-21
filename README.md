@@ -77,7 +77,7 @@ configFractionSeparator, configSymbolPosition, configSymbolSpacing)}}
 
 ```javascript
 {
-  symbol: 'string (default : Rp)',
+  symbol: 'string (default : empty string)',
   thousandsSeparator: 'string (default : .)',
   fractionCount: 'number (default : 0)',
   fractionSeparator: 'string (default: ",")',
