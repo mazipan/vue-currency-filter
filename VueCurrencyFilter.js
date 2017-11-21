@@ -3,7 +3,7 @@ const VueCurrencyFilter = {
 
     // helper to check undefined variable
     function _isUndefined (obj) {
-      return typeof obj === "undefined" || obj === null
+      return typeof obj === "undefined"
     }
 
     if(_isUndefined(options)) options = {}
@@ -50,7 +50,9 @@ const VueCurrencyFilter = {
       if(!_isUndefined(_symbolSpacing)) symbolSpacing = _symbolSpacing
       
       // Back to default --prevent unresponding browser
-      if(!_isUndefined(thousandsSeparator) || !isNaN(thousandsSeparator)) thousandsSeparator = '.'
+      if (thousandsSeparator !== '') {
+        if(!isNaN(thousandsSeparator)) thousandsSeparator = '.'
+      }
 
       let result = 0.0
       let afterDot, beforeDot, pattern, _ref
