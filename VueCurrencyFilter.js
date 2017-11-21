@@ -10,7 +10,7 @@ const VueCurrencyFilter = {
     // init default config
     let symbolSpacing = true
 
-    let symbol = options.symbol || 'Rp'
+    let symbol = options.symbol || ''
     let thousandsSeparator = options.thousandsSeparator || '.'
     let fractionCount = options.fractionCount || 0
     let fractionSeparator = options.fractionSeparator || ','
