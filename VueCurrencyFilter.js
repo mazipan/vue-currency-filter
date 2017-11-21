@@ -41,6 +41,8 @@ const VueCurrencyFilter = {
         _symbol, _thousandsSeparator, _fractionCount, 
         _fractionSeparator, _symbolPosition, _symbolSpacing) {
 
+      let emptySeparator = false
+
       // overide again with on the fly config    
       if(!_isUndefined(_symbol)) symbol = _symbol
       if(!_isUndefined(_thousandsSeparator)) thousandsSeparator = _thousandsSeparator
@@ -50,9 +52,8 @@ const VueCurrencyFilter = {
       if(!_isUndefined(_symbolSpacing)) symbolSpacing = _symbolSpacing
       
       // Back to default --prevent unresponding browser
-      if (thousandsSeparator !== '') {
-        if(!isNaN(thousandsSeparator)) thousandsSeparator = '.'
-      }
+      if(thousandsSeparator === '') emptySeparator = true
+      if(!_isUndefined(thousandsSeparator) && !isNaN(thousandsSeparator)) thousandsSeparator = '.'
 
       let result = 0.0
       let afterDot, beforeDot, pattern, _ref
@@ -75,6 +76,11 @@ const VueCurrencyFilter = {
       while (pattern.test(beforeDot)) {
         beforeDot = beforeDot.replace(pattern, '$1' + thousandsSeparator + '$2')
       }
+
+      if(emptySeparator) {
+        beforeDot = beforeDot.replace(thousandsSeparator, '')
+      }
+
       if (fractionCount > 0) {
         result = [beforeDot, afterDot].join(fractionSeparator)
       } else {
@@ -89,6 +95,7 @@ const VueCurrencyFilter = {
       if(isNegative) {
         result = '-' + result
       }
+
       return result
     })
   }
