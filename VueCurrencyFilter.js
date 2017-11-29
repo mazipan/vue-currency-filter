@@ -53,7 +53,7 @@ const VueCurrencyFilter = {
       
       // Back to default --prevent unresponding browser
       if(thousandsSeparator === '') emptySeparator = true
-      if(!_isUndefined(thousandsSeparator) && !isNaN(thousandsSeparator)) thousandsSeparator = '.'
+      if(!_isUndefined(thousandsSeparator) && !isNaN(parseInt(thousandsSeparator))) thousandsSeparator = '.'
 
       let result = 0.0
       let afterDot, beforeDot, pattern, _ref
