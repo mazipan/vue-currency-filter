@@ -10,9 +10,6 @@ const VueCurrencyFilter = {
 
     if (_isUndefined(options)) options = {}
 
-    const EMPTY = 'empty'
-    const SPACE = 'space'
-
     // init default config
     let symbol = ''
     let thousandsSeparator = '.'
@@ -54,9 +51,6 @@ const VueCurrencyFilter = {
       if (!_isUndefined(_symbolPosition)) symbolPosition = _symbolPosition
       if (!_isUndefined(_symbolSpacing)) symbolSpacing = _symbolSpacing
       
-      if (thousandsSeparator === '') thousandsSeparator = EMPTY 
-      else if (thousandsSeparator === ' ') thousandsSeparator = SPACE
-
       let result = 0.0
       let isNegative = String(value).charAt(0) === '-'
       
@@ -88,8 +82,6 @@ const VueCurrencyFilter = {
         result = '-' + result
       }
       
-      result = result.replace(EMPTY, '').replace(SPACE, ' ')
-
       return result
     })
   }
