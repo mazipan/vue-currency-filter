@@ -1,49 +1,43 @@
 # vue-currency-filter
-[![License](https://img.shields.io/github/license/mazipan/vue-currency-filter.svg?maxAge=3600)](https://github.com/mazipan/vue-currency-filter) 
-[![Github Issue](https://img.shields.io/github/issues/mazipan/vue-currency-filter.svg?maxAge=3600)](https://github.com/mazipan/vue-currency-filter/issues) 
-[![GitHub Fork](https://img.shields.io/github/forks/mazipan/vue-currency-filter.svg?maxAge=3600)](https://github.com/mazipan/vue-currency-filter/network) 
-[![GitHub Star](https://img.shields.io/github/stars/mazipan/vue-currency-filter.svg?maxAge=3600)](https://github.com/mazipan/vue-currency-filter/stargazers) 
 
-[![version](https://img.shields.io/npm/v/vue-currency-filter.svg)](https://www.npmjs.com/package/vue-currency-filter)
-[![downloads monthly](https://img.shields.io/npm/dm/vue-currency-filter.svg)](https://www.npmjs.com/package/vue-currency-filter) 
-[![downloads](https://img.shields.io/npm/dt/vue-currency-filter.svg)](https://www.npmjs.com/package/vue-currency-filter) 
-
-[![Travis](https://img.shields.io/travis/mazipan/vue-currency-filter.svg)](https://travis-ci.org/mazipan/vue-currency-filter)
+[![version](https://img.shields.io/npm/v/vue-currency-filter.svg)](https://www.npmjs.com/package/vue-currency-filter) [![downloads](https://img.shields.io/npm/dt/vue-currency-filter.svg)](https://www.npmjs.com/package/vue-currency-filter) [![Travis](https://img.shields.io/travis/mazipan/vue-currency-filter.svg)](https://travis-ci.org/mazipan/vue-currency-filter)
 [![codecov](https://codecov.io/gh/mazipan/vue-currency-filter/branch/master/graph/badge.svg)](https://codecov.io/gh/mazipan/vue-currency-filter)
 
 :heavy_dollar_sign: Lightweight vue currency filter based on accounting.js
 
 ## Demo
-[https://mazipan.github.io/vue-currency-filter/](https://mazipan.github.io/vue-currency-filter/)
 
+[https://mazipan.github.io/vue-currency-filter/](https://mazipan.github.io/vue-currency-filter/)
 
 ## Download
 
 NPM :
+
 ```bash
 npm install vue-currency-filter
 ```
 
 Yarn :
+
 ```bash
 yarn add vue-currency-filter
 ```
 
 ## Sample Usage
 
-#### Import in `main.js` :
+#### Import in `main.js`
 
 ```javascript
 import VueCurrencyFilter from 'vue-currency-filter'
 ```
 
-#### Use Plugins : 
+#### Use Plugins
 
 ```javascript
 Vue.use(VueCurrencyFilter)
 ```
 
-#### Add Global Configuration : 
+#### Add Global Configuration
 
 ```javascript
 Vue.use(VueCurrencyFilter, 
@@ -57,20 +51,19 @@ Vue.use(VueCurrencyFilter,
 })
 ```
 
-#### Use in View :
+#### Use in View
 
 ```html
 <span>{{ 20000 | currency}}</span>
 ```
 
-#### Add Configuration In Specific Place :
+#### Add Configuration In Specific Place
 
 ```html
 <span>
 {{ textInput | currency(configSymbol, configSeparator, configFractionCount, 
 configFractionSeparator, configSymbolPosition, configSymbolSpacing)}}
-</span>
-					
+</span>	
 ```
 
 ## Available Options
@@ -90,7 +83,7 @@ configFractionSeparator, configSymbolPosition, configSymbolSpacing)}}
 
 If you'd like to contribute, head to the [contributing guidelines](/CONTRIBUTING.md). Inside you'll find directions for opening issues, coding standards, and notes on development.
 
-### Hope this will be useful for you all.
+### Hope this will be useful for you all
 
 Contact Me :
 
@@ -101,3 +94,5 @@ Contact Me :
 [![Twitter](https://img.shields.io/badge/Maz_Ipan-Twitter-55acee.svg?maxAge=3600)](https://twitter.com/Maz_Ipan) 
 [![Linkedin](https://img.shields.io/badge/irfanmaulanamazipan-Linkedin-0077b5.svg?maxAge=3600)](https://id.linkedin.com/in/irfanmaulanamazipan) 
 [![Slideshare](https://img.shields.io/badge/IrfanMaulana21-Slideshare-0077b5.svg?maxAge=3600)](https://www.slideshare.net/IrfanMaulana21) 
+
+Copyright © 2017 Under [MIT License](https://github.com/mazipan/ghibli-fans/blob/master/LICENSE)

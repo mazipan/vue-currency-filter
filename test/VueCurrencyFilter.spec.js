@@ -37,13 +37,13 @@ describe('test VueCurrencyFilter', () => {
       localVue
     })
 
-    wrapper.setData({ textInput: 5000 })
     wrapper.setData({ configSymbol: 'Rp' })
     wrapper.setData({ configSeparator: ',' })
     wrapper.setData({ configFractionCount: 2 })
     wrapper.setData({ configFractionSeparator: '.' })
     wrapper.setData({ configSymbolPosition: 'back' })
     wrapper.setData({ configSymbolSpacing: false })
+    wrapper.setData({ textInput: 5000 })
 
     let result = wrapper.find('.result__filter')
     expect(result.text()).toEqual('5,000.00Rp')
@@ -56,8 +56,8 @@ describe('test VueCurrencyFilter', () => {
       localVue
     })
 
-    wrapper.setData({ textInput: 5000 })
     wrapper.setData({ configSeparator: 5 })
+    wrapper.setData({ textInput: 5000 })
 
     let result = wrapper.find('.result__filter')
     expect(result.text()).toEqual('$ 55000')
@@ -70,9 +70,9 @@ describe('test VueCurrencyFilter', () => {
       localVue
     })
 
-    wrapper.setData({ textInput: 5000 })
     wrapper.setData({ configSymbolPosition: 'front' })
     wrapper.setData({ configSymbolSpacing: true })
+    wrapper.setData({ textInput: 5000 })
 
     let result = wrapper.find('.result__filter')
     expect(result.text()).toEqual('$ 5.000')
@@ -85,9 +85,9 @@ describe('test VueCurrencyFilter', () => {
       localVue
     })
 
-    wrapper.setData({ textInput: 5000 })
     wrapper.setData({ configSymbolPosition: 'front' })
     wrapper.setData({ configSymbolSpacing: false })
+    wrapper.setData({ textInput: 5000 })
 
     let result = wrapper.find('.result__filter')
     expect(result.text()).toEqual('$5.000')
@@ -100,9 +100,9 @@ describe('test VueCurrencyFilter', () => {
       localVue
     })
 
-    wrapper.setData({ textInput: 5000 })
     wrapper.setData({ configSymbolPosition: 'end' })
     wrapper.setData({ configSymbolSpacing: false })
+    wrapper.setData({ textInput: 5000 })
 
     let result = wrapper.find('.result__filter')
     expect(result.text()).toEqual('5.000$')
@@ -115,9 +115,9 @@ describe('test VueCurrencyFilter', () => {
       localVue
     })
 
-    wrapper.setData({ textInput: 5000 })
     wrapper.setData({ configSymbolPosition: 'end' })
     wrapper.setData({ configSymbolSpacing: true })
+    wrapper.setData({ textInput: 5000 })
 
     let result = wrapper.find('.result__filter')
     expect(result.text()).toEqual('5.000 $')
@@ -144,16 +144,16 @@ describe('test VueCurrencyFilter', () => {
       localVue
     })
 
-    wrapper.setData({ textInput: 5000 })
     wrapper.setData({ configSymbol: undefined })
     wrapper.setData({ configSeparator: undefined})
     wrapper.setData({ configFractionCount: undefined })
     wrapper.setData({ configFractionSeparator: undefined })
     wrapper.setData({ configSymbolPosition: undefined })
     wrapper.setData({ configSymbolSpacing: undefined })
+    wrapper.setData({ textInput: 5000 })
 
     let result = wrapper.find('.result__filter')
-    expect(result.text()).toEqual('$ 5.000')
+    expect(result.text()).toEqual('5.000')
   })
 });
 
