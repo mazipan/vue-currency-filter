@@ -8,6 +8,15 @@ const VueCurrencyFilter = {
       return typeof obj === "undefined"
     }
 
+    function _resetAllConfig (options) {
+      symbol = _isUndefined(options.symbol) ? '' : options.symbol
+      thousandsSeparator = _isUndefined(options.thousandsSeparator) ? '.' : options.thousandsSeparator
+      fractionCount = _isUndefined(options.fractionCount) ? 0 : options.fractionCount
+      fractionSeparator = _isUndefined(options.fractionSeparator) ? ',' : options.fractionSeparator
+      symbolPosition = _isUndefined(options.symbolPosition) ? 'front' : options.symbolPosition
+      symbolSpacing = _isUndefined(options.symbolSpacing) ? true : options.symbolSpacing
+    }
+
     if (_isUndefined(options)) options = {}
 
     // init default config
@@ -19,29 +28,19 @@ const VueCurrencyFilter = {
     let symbolSpacing = true
 
     // overide with custom config if exist
-    if (!_isUndefined(options.symbol)) {
-      symbol = options.symbol
-    }
-    if (!_isUndefined(options.thousandsSeparator)) {
-      thousandsSeparator = options.thousandsSeparator
-    }
-    if (!_isUndefined(options.fractionCount)) {
-      fractionCount = options.fractionCount
-    }
-    if (!_isUndefined(options.fractionSeparator)) {
-      fractionSeparator = options.fractionSeparator
-    }
-    if (!_isUndefined(options.symbolPosition)) {
-      symbolPosition = options.symbolPosition
-    }
-    if (!_isUndefined(options.symbolSpacing)) {
-      symbolSpacing = options.symbolSpacing
-    }
+    _resetAllConfig(options)  
 
     Vue.filter('currency', 
       function (value, 
-        _symbol, _thousandsSeparator, _fractionCount, 
-        _fractionSeparator, _symbolPosition, _symbolSpacing) {
+        _symbol, 
+        _thousandsSeparator, 
+        _fractionCount, 
+        _fractionSeparator, 
+        _symbolPosition, 
+        _symbolSpacing) {
+      
+      // reset first before re-apply config
+      _resetAllConfig(options)
 
       // overide again with on the fly config    
       if (!_isUndefined(_symbol)) symbol = _symbol

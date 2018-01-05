@@ -11,9 +11,14 @@
 				<input type="tel" pattern="[0-9]*" v-model="textInput" class="textfield textfield--shadow"/>
 	      
 				<div><b>Before filter</b> : {{ textInput }}</div>
-	      <div>
-					<b>After filter</b> : 
+	      
+				<div>
+					<b>After filter - Custom Configuration</b> : 
 					<b class="result__filter">{{ textInput | currency(configSymbol, configSeparator, configFractionCount, configFractionSeparator, configSymbolPosition, configSymbolSpacing) }}</b>
+				</div>
+	      <div>
+					<b>After filter - Default Configuration</b> : 
+					<b class="result__filter--default">{{ textInput | currency}}</b>
 				</div>
 
 				<h2>Customize Config :</h2>
