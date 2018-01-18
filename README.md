@@ -1,9 +1,10 @@
-# vue-currency-filter
+# :heavy_dollar_sign: Vue Currency Filter
+
+> Lightweight vue currency filter based on accounting.js
 
 [![version](https://img.shields.io/npm/v/vue-currency-filter.svg)](https://www.npmjs.com/package/vue-currency-filter) [![downloads](https://img.shields.io/npm/dt/vue-currency-filter.svg)](https://www.npmjs.com/package/vue-currency-filter) [![Travis](https://img.shields.io/travis/mazipan/vue-currency-filter.svg)](https://travis-ci.org/mazipan/vue-currency-filter)
 [![codecov](https://codecov.io/gh/mazipan/vue-currency-filter/branch/master/graph/badge.svg)](https://codecov.io/gh/mazipan/vue-currency-filter)
 
-:heavy_dollar_sign: Lightweight vue currency filter based on accounting.js
 
 ## Demo
 
@@ -11,15 +12,11 @@
 
 ## Download
 
-NPM :
-
 ```bash
+# NPM
 npm install vue-currency-filter
-```
 
-Yarn :
-
-```bash
+# Yarn
 yarn add vue-currency-filter
 ```
 
