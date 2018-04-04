@@ -54,6 +54,35 @@ Vue.use(VueCurrencyFilter,
 <span>{{ 20000 | currency}}</span>
 ```
 
+#### Usage in Nuxt.js
+
+Create file `plugins/currency.js`, with code :
+
+```js
+import VueCurrencyFilter from 'vue-currency-filter'
+import Vue from 'vue'
+Vue.use(VueCurrencyFilter, {
+  symbol: '$',
+  thousandsSeparator: '.',
+  fractionCount: 2,
+  fractionSeparator: ',',
+  symbolPosition: 'front',
+  symbolSpacing: true
+})
+```
+
+Then update your nuxt.config.js, with code :
+
+```js
+module.exports = {
+  plugins: [
+    { src: '~/plugins/currency', ssr: false }
+  ]
+}
+```
+
+See [this commit](https://github.com/mazipan/nuxt-blog/commit/59b69e67ca47da973d3c065f57ddecb36ce6da2b) for sample in Nuxt.js.
+
 #### Add Configuration In Specific Place
 
 ```html
