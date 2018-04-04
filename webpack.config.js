@@ -18,10 +18,13 @@ module.exports = {
     umdNamedDefine: true,
     jsonpFunction: 'WebpackJsonp'
   },
+  externals: {
+    'vue$': 'vue/dist/vue.esm.js',
+  },
   resolve: {
     extensions: ['.js'],
     alias: {
-      'vue$': 'vue/dist/vue.common.js'
+      'vue$': 'vue/dist/vue.esm.js'
     }
   },
   devtool: '#source-map',
@@ -33,9 +36,6 @@ module.exports = {
         loader: 'babel-loader'
       }
     ]
-  },
-  externals: {
-    "vue": "Vue"
   },
   plugins: [
     new webpack.DefinePlugin({
