@@ -4,9 +4,9 @@ import App from '../App.vue'
 import VueCurrencyFilter from '../VueCurrencyFilter'
 
 describe('test VueCurrencyFilter', () => {
-  it('Test with all default config', () => {    
+  it('Test with all default config', () => {
     let localVue = createLocalVue()
-    
+
     localVue.use(VueCurrencyFilter)
 
     let wrapper = shallow(App, {
@@ -17,7 +17,7 @@ describe('test VueCurrencyFilter', () => {
     expect(result.text()).toEqual('$ 20.000')
   })
 
-  it('Test with negative value', () => {    
+  it('Test with negative value', () => {
     let localVue = createLocalVue()
     localVue.use(VueCurrencyFilter)
 
@@ -29,7 +29,7 @@ describe('test VueCurrencyFilter', () => {
     let result = wrapper.find('.result__filter')
     expect(result.text()).toEqual('-$ 20.000')
   })
-  it('Test change config on the fly', () => {    
+  it('Test change config on the fly', () => {
     let localVue = createLocalVue()
     localVue.use(VueCurrencyFilter)
 
@@ -37,18 +37,20 @@ describe('test VueCurrencyFilter', () => {
       localVue
     })
 
-    wrapper.setData({ configSymbol: 'Rp' })
-    wrapper.setData({ configSeparator: ',' })
-    wrapper.setData({ configFractionCount: 2 })
-    wrapper.setData({ configFractionSeparator: '.' })
-    wrapper.setData({ configSymbolPosition: 'back' })
-    wrapper.setData({ configSymbolSpacing: false })
-    wrapper.setData({ textInput: 5000 })
+    wrapper.setData({
+      configSymbol: 'Rp',
+      configSeparator: ',',
+      configFractionCount: 2,
+      configFractionSeparator: '.',
+      configSymbolPosition: 'back',
+      configSymbolSpacing: false,
+      textInput: 5000
+    })
 
     let result = wrapper.find('.result__filter')
     expect(result.text()).toEqual('5,000.00Rp')
   })
-  it('Test thousandsSeparator has number value', () => {    
+  it('Test thousandsSeparator has number value', () => {
     let localVue = createLocalVue()
     localVue.use(VueCurrencyFilter)
 
@@ -56,13 +58,15 @@ describe('test VueCurrencyFilter', () => {
       localVue
     })
 
-    wrapper.setData({ configSeparator: 5 })
-    wrapper.setData({ textInput: 5000 })
+    wrapper.setData({
+      textInput: 5000,
+      configSeparator: 5
+    })
 
     let result = wrapper.find('.result__filter')
     expect(result.text()).toEqual('$ 55000')
   })
-  it('Test symbolPosition:front symbolSpacing:true', () => {    
+  it('Test symbolPosition:front symbolSpacing:true', () => {
     let localVue = createLocalVue()
     localVue.use(VueCurrencyFilter)
 
@@ -70,14 +74,16 @@ describe('test VueCurrencyFilter', () => {
       localVue
     })
 
-    wrapper.setData({ configSymbolPosition: 'front' })
-    wrapper.setData({ configSymbolSpacing: true })
-    wrapper.setData({ textInput: 5000 })
+    wrapper.setData({
+      configSymbolPosition: 'front',
+      configSymbolSpacing: true,
+      textInput: 5000
+    })
 
     let result = wrapper.find('.result__filter')
     expect(result.text()).toEqual('$ 5.000')
   })
-  it('Test symbolPosition:front symbolSpacing:false', () => {    
+  it('Test symbolPosition:front symbolSpacing:false', () => {
     let localVue = createLocalVue()
     localVue.use(VueCurrencyFilter)
 
@@ -85,14 +91,16 @@ describe('test VueCurrencyFilter', () => {
       localVue
     })
 
-    wrapper.setData({ configSymbolPosition: 'front' })
-    wrapper.setData({ configSymbolSpacing: false })
-    wrapper.setData({ textInput: 5000 })
+    wrapper.setData({
+      configSymbolPosition: 'front',
+      configSymbolSpacing: false,
+      textInput: 5000
+    })
 
     let result = wrapper.find('.result__filter')
     expect(result.text()).toEqual('$5.000')
   })
-  it('Test symbolPosition:end symbolSpacing:false', () => {    
+  it('Test symbolPosition:end symbolSpacing:false', () => {
     let localVue = createLocalVue()
     localVue.use(VueCurrencyFilter)
 
@@ -100,14 +108,16 @@ describe('test VueCurrencyFilter', () => {
       localVue
     })
 
-    wrapper.setData({ configSymbolPosition: 'end' })
-    wrapper.setData({ configSymbolSpacing: false })
-    wrapper.setData({ textInput: 5000 })
+    wrapper.setData({
+      configSymbolPosition: 'end',
+      configSymbolSpacing: false,
+      textInput: 5000
+    })
 
     let result = wrapper.find('.result__filter')
     expect(result.text()).toEqual('5.000$')
   })
-  it('Test symbolPosition:end symbolSpacing:true', () => {    
+  it('Test symbolPosition:end symbolSpacing:true', () => {
     let localVue = createLocalVue()
     localVue.use(VueCurrencyFilter)
 
@@ -115,14 +125,50 @@ describe('test VueCurrencyFilter', () => {
       localVue
     })
 
-    wrapper.setData({ configSymbolPosition: 'end' })
-    wrapper.setData({ configSymbolSpacing: true })
-    wrapper.setData({ textInput: 5000 })
+    wrapper.setData({
+      configSymbolPosition: 'end',
+      configSymbolSpacing: true,
+      textInput: 5000
+    })
 
     let result = wrapper.find('.result__filter')
     expect(result.text()).toEqual('5.000 $')
   })
-  it('Test value isNan', () => {    
+  it('Test rounding up value', () => {
+    let localVue = createLocalVue()
+    localVue.use(VueCurrencyFilter)
+
+    let wrapper = shallow(App, {
+      localVue
+    })
+
+    wrapper.setData({
+      textInput: '9.0755555555',
+      configFractionCount: 2
+    })
+
+    let result = wrapper.find('.result__filter')
+    expect(result.text()).toEqual('$ 9,08')
+  })
+
+  it('Test rounding down value', () => {
+    let localVue = createLocalVue()
+    localVue.use(VueCurrencyFilter)
+
+    let wrapper = shallow(App, {
+      localVue
+    })
+
+    wrapper.setData({
+      textInput: '9.074444444444',
+      configFractionCount: 2
+    })
+
+    let result = wrapper.find('.result__filter')
+    expect(result.text()).toEqual('$ 9,07')
+  })
+
+  it('Test value isNaN', () => {
     let localVue = createLocalVue()
     localVue.use(VueCurrencyFilter)
 
@@ -136,7 +182,7 @@ describe('test VueCurrencyFilter', () => {
     expect(result.text()).toEqual('$ 0')
   })
   // should be in last test case
-  it('Test set all config to undefined', () => {    
+  it('Test set all config to undefined', () => {
     let localVue = createLocalVue()
     localVue.use(VueCurrencyFilter)
 
@@ -144,13 +190,15 @@ describe('test VueCurrencyFilter', () => {
       localVue
     })
 
-    wrapper.setData({ configSymbol: undefined })
-    wrapper.setData({ configSeparator: undefined})
-    wrapper.setData({ configFractionCount: undefined })
-    wrapper.setData({ configFractionSeparator: undefined })
-    wrapper.setData({ configSymbolPosition: undefined })
-    wrapper.setData({ configSymbolSpacing: undefined })
-    wrapper.setData({ textInput: 5000 })
+    wrapper.setData({
+      configSymbol: undefined,
+      configSeparator: undefined,
+      configFractionCount: undefined,
+      configFractionSeparator: undefined,
+      configSymbolPosition: undefined,
+      configSymbolSpacing: undefined,
+      textInput: 5000
+    })
 
     let result = wrapper.find('.result__filter')
     expect(result.text()).toEqual('5.000')

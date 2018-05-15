@@ -28,31 +28,31 @@ const VueCurrencyFilter = {
     let symbolSpacing = true
 
     // overide with custom config if exist
-    _resetAllConfig(options)  
+    _resetAllConfig(options)
 
-    Vue.filter('currency', 
-      function (value, 
-        _symbol, 
-        _thousandsSeparator, 
-        _fractionCount, 
-        _fractionSeparator, 
-        _symbolPosition, 
+    Vue.filter('currency',
+      function (value,
+        _symbol,
+        _thousandsSeparator,
+        _fractionCount,
+        _fractionSeparator,
+        _symbolPosition,
         _symbolSpacing) {
-      
+
       // reset first before re-apply config
       _resetAllConfig(options)
 
-      // overide again with on the fly config    
+      // overide again with on the fly config
       if (!_isUndefined(_symbol)) symbol = _symbol
       if (!_isUndefined(_thousandsSeparator)) thousandsSeparator = _thousandsSeparator
       if (!_isUndefined(_fractionCount)) fractionCount = _fractionCount
       if (!_isUndefined(_fractionSeparator)) fractionSeparator = _fractionSeparator
       if (!_isUndefined(_symbolPosition)) symbolPosition = _symbolPosition
       if (!_isUndefined(_symbolSpacing)) symbolSpacing = _symbolSpacing
-      
+
       let result = 0.0
       let isNegative = String(value).charAt(0) === '-'
-      
+
       if (isNegative) {
         value = String(value).slice(1)
       }
@@ -69,6 +69,10 @@ const VueCurrencyFilter = {
         formatConfig = symbolSpacing ? "%v %s" : "%v%s"
       }
 
+      if (fractionCount > 0) {
+        value = accounting.toFixed(value, fractionCount)
+      }
+
       result = accounting.formatMoney(value, {
         format:  formatConfig,
         symbol: symbol,
@@ -80,7 +84,7 @@ const VueCurrencyFilter = {
       if (isNegative) {
         result = '-' + result
       }
-      
+
       return result
     })
   }
