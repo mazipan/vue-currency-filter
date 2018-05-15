@@ -1,59 +1,119 @@
-var webpack = require('webpack')
-var path = require('path')
-var npm = require("./package.json")
-const CompressionPlugin = require("compression-webpack-plugin")
+const path = require('path');
+const fs = require('fs');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-require('es6-promise').polyfill();
+const NODE_ENV = process.env.NODE_ENV;
 
-module.exports = {
+const setPath = function(folderName) {
+  return path.join(__dirname, folderName);
+}
+
+const buildingForLocal = () => {
+  return (NODE_ENV === 'development');
+};
+
+const setPublicPath = () => {
+  return '/vue-currency-filter/';
+};
+
+const extractHTML = new HtmlWebpackPlugin({
+  title: 'History Search',
+  filename: 'index.html',
+  inject: true,
+  template: setPath('/demo/index.ejs'),
+  minify: {
+    removeAttributeQuotes: true,
+    collapseWhitespace: true,
+    html5: true,
+    minifyCSS: true,
+    removeComments: true,
+    removeEmptyAttributes: true
+  },
+  environment: process.env.NODE_ENV
+});
+
+
+const config = {
   entry: {
-    app: './VueCurrencyFilter.js'
+    app: path.join(setPath('demo'), 'demo.js')
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/dist',
-    filename: 'VueCurrencyFilter.bundle.js',
-    library: 'VueCurrencyFilter',
-    libraryTarget: 'umd',
-    umdNamedDefine: true,
-    jsonpFunction: 'WebpackJsonp'
+    path: buildingForLocal() ? path.resolve(__dirname) : setPath('dist-demo'),
+    publicPath: setPublicPath(),
+    filename: buildingForLocal() ? 'js/[name].js' : 'js/[name].[hash].js'
   },
-  externals: {
-    'vue$': 'vue/dist/vue.esm.js',
-  },
-  resolve: {
-    extensions: ['.js'],
-    alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+  optimization:{
+    runtimeChunk: false,
+    splitChunks: {
+      chunks: "all", //Taken from https://gist.github.com/sokra/1522d586b8e5c0f5072d7565c2bee693
     }
   },
-  devtool: '#source-map',
+  resolveLoader: {
+    modules: [ 'node_modules' ],
+  },
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js'
+    },
+    extensions: ['*', '.js', '.vue', '.json']
+  },
+  mode: buildingForLocal() ? 'development' : 'production',
+  devServer: {
+    historyApiFallback: true,
+    noInfo: false
+  },
+  plugins: [
+    extractHTML,
+    new webpack.DefinePlugin({
+      'process.env': {
+        isStaging: (NODE_ENV === 'development' || NODE_ENV === 'staging'),
+        NODE_ENV: '"'+NODE_ENV+'"'
+      }
+    })
+  ],
   module: {
     rules: [
       {
+        test: /\.css$/,
+        use: [
+          'vue-style-loader',
+          'css-loader'
+        ],
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          'sass-loader'
+        ],
+      },
+      {
+        test: /\.sass$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          'sass-loader?indentedSyntax'
+        ],
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: {
+          loaders: {
+            js: 'babel-loader',
+            scss: 'vue-style-loader!css-loader!sass-loader',
+            sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
+          }
+        }
+      },
+      {
         test: /\.js$/,
-        exclude: path.resolve(__dirname, 'node_modules'),
-        loader: 'babel-loader'
+        loader: 'babel-loader',
+        exclude: /node_modules/
       }
     ]
-  },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': '"production"'
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      },
-      sourceMap: false
-    }),
-    new webpack.BannerPlugin({
-      banner: `VueCurrencyFilter v.${npm.version}`
-    }),
-    new CompressionPlugin({
-      algorithm: 'gzip'
-    })
-  ]
-}
+  }
+};
+module.exports = config;

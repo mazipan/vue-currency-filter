@@ -1,4 +1,4 @@
-# 💵🥂  Vue Currency Filter
+# 💸🍻 Vue Currency Filter
 
 > Lightweight vue currency filter based on accounting.js
 
