@@ -121,4 +121,4 @@ Contact Me :
 [![Linkedin](https://img.shields.io/badge/irfanmaulanamazipan-Linkedin-0077b5.svg?maxAge=3600)](https://id.linkedin.com/in/irfanmaulanamazipan)
 [![Slideshare](https://img.shields.io/badge/IrfanMaulana21-Slideshare-0077b5.svg?maxAge=3600)](https://www.slideshare.net/IrfanMaulana21)
 
-Copyright © 2017 Under [MIT License](https://github.com/mazipan/ghibli-fans/blob/master/LICENSE)
+Copyright © 2017 Built with ❤️ by Irfan Maulana
