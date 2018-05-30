@@ -1,7 +1,7 @@
 import { createLocalVue, shallow } from 'vue-test-utils'
 
-import App from '../App.vue'
-import VueCurrencyFilter from '../VueCurrencyFilter'
+import App from '@/demo/App.vue'
+import VueCurrencyFilter from '@/VueCurrencyFilter'
 
 describe('test VueCurrencyFilter', () => {
   it('Test with all default config', () => {

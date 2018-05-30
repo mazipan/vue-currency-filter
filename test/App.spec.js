@@ -1,15 +1,15 @@
 import { createLocalVue, shallow } from 'vue-test-utils'
 
-import App from '../App.vue'
-import VueCurrencyFilter from '../VueCurrencyFilter'
+import App from '@/demo/App.vue'
+import VueCurrencyFilter from '@/VueCurrencyFilter'
 
 describe('test App.vue', () => {
-  it('Test with all default config', () => {    
+  it('Test with all default config', () => {
     let localVue = createLocalVue()
-    
-    localVue.use(VueCurrencyFilter, 
+
+    localVue.use(VueCurrencyFilter,
     {
-      symbol : 'Rp', 
+      symbol : 'Rp',
       thousandsSeparator: ',',
       fractionCount: 3,
       fractionSeparator: '-',
