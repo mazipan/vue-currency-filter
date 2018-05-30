@@ -14,10 +14,8 @@ const config = {
     app: './VueCurrencyFilter.js'
   },
   output: {
-    library: "VueCurrencyFilter",
-    libraryTarget: "umd",
-    filename: "VueCurrencyFilter.bundle.js",
-    umdNamedDefine: true,
+    library: ['commonjs', 'commonjs2'],
+    filename: "VueCurrencyFilter.bundle.js"
   },
   optimization:{
     runtimeChunk: false
