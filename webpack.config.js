@@ -14,7 +14,7 @@ const buildingForLocal = () => {
 };
 
 const setPublicPath = () => {
-  return '/vue-currency-filter/';
+  return buildingForLocal() ? '/' : '/vue-currency-filter/';
 };
 
 const extractHTML = new HtmlWebpackPlugin({
