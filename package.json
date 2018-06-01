@@ -1,7 +1,7 @@
 {
   "name": "vue-currency-filter",
   "description": "Lightweight vue currency filter based on accounting.js",
-  "version": "2.2.2",
+  "version": "2.2.4",
   "license": "MIT",
   "author": "Irfan Maulana (https://github.com/mazipan/)",
   "homepage": "https://mazipan.github.io/vue-currency-filter/",
@@ -25,8 +25,8 @@
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --open",
-    "build-demo": "cross-env NODE_ENV=production webpack --mode production --progress --hide-modules",
-    "build-lib": "cross-env NODE_ENV=production webpack --mode production --progress --hide-modules --config webpack.config.prod.js",
+    "build-demo": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "build-lib": "cross-env NODE_ENV=production webpack --progress --hide-modules --config webpack.config.prod.js",
     "publish-demo": "node ./publish-demo.js",
     "test": "./node_modules/.bin/jest --coverage",
     "dist": "npm run build-demo && npm run build-lib && npm run publish-demo"
