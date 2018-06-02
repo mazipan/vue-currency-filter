@@ -8,6 +8,20 @@ import App from './App.vue'
 /* global process */
 if (process.env.NODE_ENV !== 'production') {
   Vue.config.devtools = true
+} else {
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker
+    .register('/vue-currency-filter/sw.js')
+    .then(reg => {
+      console.log('Service Worker has been registered');
+    })
+    .catch(e =>
+      console.error('Error during service worker registration:', e)
+    );
+  } else {
+    console.warn('Service Worker is not supported');
+  }
 }
 
 Vue.use(require('vue-script2'))

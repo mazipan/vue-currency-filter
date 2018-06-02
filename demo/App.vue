@@ -1,16 +1,20 @@
 <template>
   <div id="app" class="VueCurrencyFilter">
 
-		<header role="header" class="site__header header"><div class="header__wrapper"><div class="header__brand"> <a href="https://mazipan.github.io/demo/"> <img src="https://mazipan.github.io/images/irfan-maulana.jpg" alt="Irfan Maulana" title="Irfan Maulana"> </a><div class="header__title"> Irfan Maulana | Demo</div></div></div> </header>
+		<header role="header" class="site__header header">
+      <div class="header__wrapper">
+        <div class="header__brand">
+          <a href="#">
+            <img src="favicon/favicon-96x96.png" alt="Vue-Currency-Filter Logo" title="Vue-Currency-Filter Logo">
+          </a>
+          <div class="header__title"> Vue-Currency-Filter</div>
+        </div>
+      </div>
+    </header>
 
 		<div class="app">
     	<div class="grid__row content centered">
 	      <h1>Lightweight vue currency filter based on accounting.js By Irfan Maulana</h1>
-
-        <InArticleAdsense
-            data-ad-client="ca-pub-5442972248172818"
-            data-ad-slot="7974047383">
-        </InArticleAdsense>
 
 				<h2>Example : </h2>
 				<input type="tel" pattern="[0-9]*" v-model="textInput" class="textfield textfield--shadow"/>
@@ -26,6 +30,11 @@
 					<b>After filter - Custom Configuration</b> :
 					<b class="result__filter">{{ textInput | currency(configSymbol, configSeparator, configFractionCount, configFractionSeparator, configSymbolPosition, configSymbolSpacing) }}</b>
 				</div>
+
+        <InArticleAdsense
+            data-ad-client="ca-pub-5442972248172818"
+            data-ad-slot="7974047383">
+        </InArticleAdsense>
 
 				<h2>Customize Config :</h2>
 				<div class="form__group">
@@ -167,24 +176,27 @@
     </div>
 
     <div class="grid__row content centered"><h2>Contribute</h2><p> Feel free to fork <i class="fa fa-code-fork"></i> on <a href="https://github.com/mazipan/vue-currency-filter" target="_blank">GitHub <i class="fa fa-github"></i></a> if you have any features <i class="fa fa-cart-plus"></i> or bugs <i class="fa fa-bug"></i>!</p></div>
-    <div class="grid__row content centered"><p> Copyright © 2017 <a href="https://mazipanneh.com/blog/">Irfan Maulana</a>, All Rights Reserved.</p></div>
+
+    <footer class="footer">
+      Copyright © 2017 Irfan Maulana, All Rights Reserved.
+    </footer>
 
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app',
-  data () {
+  name: "app",
+  data() {
     return {
-			textInput: 20000,
-			configSymbol: '$',
-			configSeparator: '.',
-			configFractionCount: 0,
-			configFractionSeparator: ',',
-			configSymbolPosition: 'front',
+      textInput: 20000,
+      configSymbol: "$",
+      configSeparator: ".",
+      configFractionCount: 0,
+      configFractionSeparator: ",",
+      configSymbolPosition: "front",
       configSymbolSpacing: true,
-      templateHtml: '<span>{{ 20000 | currency}}</span>',
+      templateHtml: "<span>{{ 20000 | currency}}</span>",
       templateHtmlCustom: `
           <!-- or with custom config -->
           <span>
@@ -194,28 +206,56 @@ export default {
             )
           }}
           </span>`
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="scss">
-.form__group{
-	max-width: 500px;
+$theme: #f0843b;
+
+a{
+  color: $theme;
 }
-.form__icon{
-	width: 250px;
+pre{
+  border-left: solid .25em $theme;
 }
-.form__wrapper{
-	margin-left: 5px;
+.radio--blue:checked+label:before {
+    background-color: $theme;
 }
-.m-b-5{
-	margin-bottom: 5px;
+.radio--blue+label:after, .radio--blue+label:before {
+    border: 1px solid $theme;
 }
-.result__filter, .result__filter--default{
+.header{-webkit-box-shadow:0 1px 2px rgba(0,0,0,.075);-moz-box-shadow:0 1px 2px rgba(0,0,0,.075);box-shadow:0 1px 2px rgba(0,0,0,.075);position:fixed;top:0;z-index:100;width:100%;height:60px;background:rgba(240, 133, 59, 1)}
+.header__wrapper{display:flex;justify-content:space-between;align-items:center}
+.header__brand{display:flex;justify-content:space-between;align-items:center;margin:.2em}
+.header__brand img{width:50px;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}
+.header__title{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;font-style:normal;font-size:1.8rem;font-weight:500;margin-left:.5em}.app{margin-top:70px}
+
+.form__group {
+  max-width: 500px;
+}
+.form__icon {
+  width: 250px;
+  background-color: $theme;
+}
+.form__wrapper {
+  margin-left: 5px;
+}
+.m-b-5 {
+  margin-bottom: 5px;
+}
+.result__filter,
+.result__filter--default {
   font-size: 20px;
 }
-.left{
+.left {
   text-align: left;
+}
+.footer{
+  width:100%;
+  background:rgba(240, 133, 59, 1);
+  text-align: center;
+  padding: 1em;
 }
 </style>
