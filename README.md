@@ -1,5 +1,10 @@
 # 💸🍻 Vue Currency Filter
 
+
+<a href="https://github.com/mazipan/vue-currency-filter"><img
+  src="https://raw.githubusercontent.com/mazipan/vue-currency-filter/master/assets/VueJS-Currency-128px.png" alt="Vue Currency Filter Logo"
+  width="128" align="right"></a>
+  
 > Lightweight vue currency filter based on accounting.js
 
 [![version](https://img.shields.io/npm/v/vue-currency-filter.svg)](https://www.npmjs.com/package/vue-currency-filter) [![downloads](https://img.shields.io/npm/dt/vue-currency-filter.svg)](https://www.npmjs.com/package/vue-currency-filter) [![Travis](https://img.shields.io/travis/mazipan/vue-currency-filter.svg)](https://travis-ci.org/mazipan/vue-currency-filter)
@@ -109,6 +114,10 @@ configFractionSeparator, configSymbolPosition, configSymbolSpacing)}}
 
 If you'd like to contribute, head to the [contributing guidelines](/CONTRIBUTING.md). Inside you'll find directions for opening issues, coding standards, and notes on development.
 
-### Hope this will be useful for you all
+## Credit
+
+- [@iqbalhood](https://github.com/iqbalhood): VueCurrencyFilter logo creator (see [#19](https://github.com/mazipan/vue-currency-filter/issues/19))
+
+## Hope this will be useful for you all
 
 Copyright © 2017 Built with ❤️ by Irfan Maulana
