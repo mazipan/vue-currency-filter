@@ -203,5 +203,18 @@ describe('test VueCurrencyFilter', () => {
     let result = wrapper.find('.result__filter')
     expect(result.text()).toEqual('5.000')
   })
+
+  it('Test config width object', () => {
+    let localVue = createLocalVue()
+
+    localVue.use(VueCurrencyFilter)
+
+    let wrapper = shallow(App, {
+      localVue
+    })
+
+    let result = wrapper.find('.result__filter--object')
+    expect(result.text()).toEqual('¥ 20.000,00')
+  })
 });
 
