@@ -16,16 +16,16 @@ self.__precacheManifest = [
     "url": "/vue-currency-filter/js/vendors~app.58ff2f48575ec77caed2.js.gz"
   },
   {
-    "revision": "32a42f51b20aeeeda377ef5f743484c6",
-    "url": "/vue-currency-filter/favicon/apple-icon-76x76.png"
+    "revision": "64ae6ae143d9a962d9675d781dddaf1a",
+    "url": "/vue-currency-filter/favicon/apple-icon-precomposed.png"
   },
   {
     "revision": "1fac4e43616ddfc1288296f939f22725",
     "url": "/vue-currency-filter/index.html.gz"
   },
   {
-    "revision": "64ae6ae143d9a962d9675d781dddaf1a",
-    "url": "/vue-currency-filter/favicon/apple-icon-precomposed.png"
+    "revision": "c7f90ddb0c317954ab6304a6efaa452c",
+    "url": "/vue-currency-filter/favicon/apple-icon-60x60.png"
   },
   {
     "revision": "d6e3d51b750760a6af4a4169a1f9a8ce",
@@ -40,12 +40,12 @@ self.__precacheManifest = [
     "url": "/vue-currency-filter/index.html"
   },
   {
-    "revision": "64ae6ae143d9a962d9675d781dddaf1a",
-    "url": "/vue-currency-filter/favicon/apple-icon.png"
+    "revision": "b98d485dd94ecdeed38356b84dd49f94",
+    "url": "/vue-currency-filter/favicon/favicon-32x32.png"
   },
   {
-    "revision": "1e048e8c5de507e2063110f97c273a8f",
-    "url": "/vue-currency-filter/favicon/apple-icon-114x114.png"
+    "revision": "3c0892056675749a561dbf1d975d29f7",
+    "url": "/vue-currency-filter/favicon/apple-icon-120x120.png"
   },
   {
     "revision": "30614caaeda33165c43831666c9cee02",
@@ -56,52 +56,52 @@ self.__precacheManifest = [
     "url": "/vue-currency-filter/favicon/apple-icon-144x144.png"
   },
   {
-    "revision": "c7f90ddb0c317954ab6304a6efaa452c",
-    "url": "/vue-currency-filter/favicon/apple-icon-60x60.png"
-  },
-  {
-    "revision": "bf4bde3694c72ba3f15acd51d0c91bcc",
-    "url": "/vue-currency-filter/favicon/favicon-96x96.png"
-  },
-  {
-    "revision": "eee1ee3d64615c86b945300281cf7529",
-    "url": "/vue-currency-filter/favicon/apple-icon-180x180.png"
-  },
-  {
-    "revision": "4f8b9ac8425a27caf36524e3c11613fe",
-    "url": "/vue-currency-filter/favicon/apple-icon-72x72.png"
-  },
-  {
-    "revision": "fed8d5e7ff28464bae568499bcd002aa",
-    "url": "/vue-currency-filter/favicon/favicon.ico"
+    "revision": "8bfb9be076bc1393841c62af87ca97d5",
+    "url": "/vue-currency-filter/favicon/apple-icon-57x57.png"
   },
   {
     "revision": "20581bd7f06e3a9627d067ffca937109",
     "url": "/vue-currency-filter/favicon/ms-icon-144x144.png"
   },
   {
-    "revision": "8bfb9be076bc1393841c62af87ca97d5",
-    "url": "/vue-currency-filter/favicon/apple-icon-57x57.png"
+    "revision": "eee1ee3d64615c86b945300281cf7529",
+    "url": "/vue-currency-filter/favicon/apple-icon-180x180.png"
   },
   {
-    "revision": "3c0892056675749a561dbf1d975d29f7",
-    "url": "/vue-currency-filter/favicon/apple-icon-120x120.png"
+    "revision": "32a42f51b20aeeeda377ef5f743484c6",
+    "url": "/vue-currency-filter/favicon/apple-icon-76x76.png"
+  },
+  {
+    "revision": "fed8d5e7ff28464bae568499bcd002aa",
+    "url": "/vue-currency-filter/favicon/favicon.ico"
+  },
+  {
+    "revision": "bf4bde3694c72ba3f15acd51d0c91bcc",
+    "url": "/vue-currency-filter/favicon/favicon-96x96.png"
+  },
+  {
+    "revision": "4f8b9ac8425a27caf36524e3c11613fe",
+    "url": "/vue-currency-filter/favicon/apple-icon-72x72.png"
+  },
+  {
+    "revision": "b049a187e778e029dc2a948492bf7deb",
+    "url": "/vue-currency-filter/favicon/manifest.json"
   },
   {
     "revision": "484a5adc143a6076d3bd9ecf32858a98",
     "url": "/vue-currency-filter/favicon/favicon-16x16.png"
   },
   {
+    "revision": "64ae6ae143d9a962d9675d781dddaf1a",
+    "url": "/vue-currency-filter/favicon/apple-icon.png"
+  },
+  {
     "revision": "653d077300a12f09a69caeea7a8947f8",
     "url": "/vue-currency-filter/favicon/browserconfig.xml"
   },
   {
-    "revision": "b98d485dd94ecdeed38356b84dd49f94",
-    "url": "/vue-currency-filter/favicon/favicon-32x32.png"
-  },
-  {
-    "revision": "b049a187e778e029dc2a948492bf7deb",
-    "url": "/vue-currency-filter/favicon/manifest.json"
+    "revision": "1e048e8c5de507e2063110f97c273a8f",
+    "url": "/vue-currency-filter/favicon/apple-icon-114x114.png"
   },
   {
     "revision": "bf4bde3694c72ba3f15acd51d0c91bcc",
