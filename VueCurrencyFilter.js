@@ -42,6 +42,15 @@ const VueCurrencyFilter = {
       // reset first before re-apply config
       _resetAllConfig(options)
 
+      if (typeof _symbol === 'object') {
+        _thousandsSeparator = _symbol.thousandsSeparator
+        _fractionCount = _symbol.fractionCount
+        _fractionSeparator = _symbol.fractionSeparator
+        _symbolPosition = _symbol.symbolPosition
+        _symbolSpacing = _symbol.symbolSpacing
+        _symbol = _symbol.symbol
+      }
+
       // overide again with on the fly config
       if (!_isUndefined(_symbol)) symbol = _symbol
       if (!_isUndefined(_thousandsSeparator)) thousandsSeparator = _thousandsSeparator

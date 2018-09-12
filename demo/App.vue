@@ -31,6 +31,11 @@
 					<b class="result__filter">{{ textInput | currency(configSymbol, configSeparator, configFractionCount, configFractionSeparator, configSymbolPosition, configSymbolSpacing) }}</b>
 				</div>
 
+        <div>
+					<b>After filter - Custom Configuration Using Object</b> :
+					<b class="result__filter--object">{{ textInput | currency({ fractionCount: 2, symbol: '¥' }) }}</b>
+				</div>
+
         <InArticleAdsense
             data-ad-client="ca-pub-5442972248172818"
             data-ad-slot="7974047383">
