@@ -1,7 +1,7 @@
 {
   "name": "vue-currency-filter",
   "description": "Lightweight vue currency filter based on accounting.js",
-  "version": "2.2.6",
+  "version": "2.1.0",
   "license": "MIT",
   "author": "Irfan Maulana (https://github.com/mazipan/)",
   "homepage": "https://mazipan.github.io/vue-currency-filter/",
