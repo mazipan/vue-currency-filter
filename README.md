@@ -97,6 +97,21 @@ configFractionSeparator, configSymbolPosition, configSymbolSpacing)}}
 </span>
 ```
 
+**Now configurations is also available as Object**, thanks to [sunhengzhe](https://github.com/sunhengzhe) [PR #25](https://github.com/mazipan/vue-currency-filter/pull/25/commits/052a741644556f4d1140e7b7e1ba96a8e2c0d015):
+
+```html
+<span>
+{{ textInput | currency({
+  symbol: '',
+  thousandsSeparator: '',
+  fractionCount: '',
+  fractionSeparator: '',
+  symbolPosition: '',
+  symbolSpacing: ''
+})}}
+</span>
+```
+
 ## Available Options
 
 ```javascript
