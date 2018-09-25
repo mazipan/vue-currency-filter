@@ -1,7 +1,10 @@
-import { createLocalVue, shallow } from 'vue-test-utils'
+import { createLocalVue, shallowMount } from '@vue/test-utils'
 
-import App from '@/demo/App.vue'
-import VueCurrencyFilter from '@/VueCurrencyFilter'
+import App from '../demo/App.vue'
+import VueCurrencyFilter from '../VueCurrencyFilter'
+
+import helper from './helper'
+helper.initHelper();
 
 describe('test VueCurrencyFilter', () => {
   it('Test with all default config', () => {
@@ -9,7 +12,7 @@ describe('test VueCurrencyFilter', () => {
 
     localVue.use(VueCurrencyFilter)
 
-    let wrapper = shallow(App, {
+    let wrapper = shallowMount(App, {
       localVue
     })
 
@@ -21,7 +24,7 @@ describe('test VueCurrencyFilter', () => {
     let localVue = createLocalVue()
     localVue.use(VueCurrencyFilter)
 
-    let wrapper = shallow(App, {
+    let wrapper = shallowMount(App, {
       localVue
     })
     wrapper.setData({ textInput: -20000 })
@@ -33,7 +36,7 @@ describe('test VueCurrencyFilter', () => {
     let localVue = createLocalVue()
     localVue.use(VueCurrencyFilter)
 
-    let wrapper = shallow(App, {
+    let wrapper = shallowMount(App, {
       localVue
     })
 
@@ -54,7 +57,7 @@ describe('test VueCurrencyFilter', () => {
     let localVue = createLocalVue()
     localVue.use(VueCurrencyFilter)
 
-    let wrapper = shallow(App, {
+    let wrapper = shallowMount(App, {
       localVue
     })
 
@@ -70,7 +73,7 @@ describe('test VueCurrencyFilter', () => {
     let localVue = createLocalVue()
     localVue.use(VueCurrencyFilter)
 
-    let wrapper = shallow(App, {
+    let wrapper = shallowMount(App, {
       localVue
     })
 
@@ -87,7 +90,7 @@ describe('test VueCurrencyFilter', () => {
     let localVue = createLocalVue()
     localVue.use(VueCurrencyFilter)
 
-    let wrapper = shallow(App, {
+    let wrapper = shallowMount(App, {
       localVue
     })
 
@@ -104,7 +107,7 @@ describe('test VueCurrencyFilter', () => {
     let localVue = createLocalVue()
     localVue.use(VueCurrencyFilter)
 
-    let wrapper = shallow(App, {
+    let wrapper = shallowMount(App, {
       localVue
     })
 
@@ -121,7 +124,7 @@ describe('test VueCurrencyFilter', () => {
     let localVue = createLocalVue()
     localVue.use(VueCurrencyFilter)
 
-    let wrapper = shallow(App, {
+    let wrapper = shallowMount(App, {
       localVue
     })
 
@@ -138,7 +141,7 @@ describe('test VueCurrencyFilter', () => {
     let localVue = createLocalVue()
     localVue.use(VueCurrencyFilter)
 
-    let wrapper = shallow(App, {
+    let wrapper = shallowMount(App, {
       localVue
     })
 
@@ -155,7 +158,7 @@ describe('test VueCurrencyFilter', () => {
     let localVue = createLocalVue()
     localVue.use(VueCurrencyFilter)
 
-    let wrapper = shallow(App, {
+    let wrapper = shallowMount(App, {
       localVue
     })
 
@@ -172,7 +175,7 @@ describe('test VueCurrencyFilter', () => {
     let localVue = createLocalVue()
     localVue.use(VueCurrencyFilter)
 
-    let wrapper = shallow(App, {
+    let wrapper = shallowMount(App, {
       localVue
     })
 
@@ -186,7 +189,7 @@ describe('test VueCurrencyFilter', () => {
     let localVue = createLocalVue()
     localVue.use(VueCurrencyFilter)
 
-    let wrapper = shallow(App, {
+    let wrapper = shallowMount(App, {
       localVue
     })
 
@@ -209,7 +212,7 @@ describe('test VueCurrencyFilter', () => {
 
     localVue.use(VueCurrencyFilter)
 
-    let wrapper = shallow(App, {
+    let wrapper = shallowMount(App, {
       localVue
     })
 

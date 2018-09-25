@@ -1,7 +1,10 @@
-import { createLocalVue, shallow } from 'vue-test-utils'
+import { createLocalVue, shallowMount } from '@vue/test-utils'
 
-import App from '@/demo/App.vue'
-import VueCurrencyFilter from '@/VueCurrencyFilter'
+import App from '../demo/App.vue'
+import VueCurrencyFilter from '../VueCurrencyFilter'
+
+import helper from './helper'
+helper.initHelper();
 
 describe('test App.vue', () => {
   it('Test with all default config', () => {
@@ -17,7 +20,7 @@ describe('test App.vue', () => {
       symbolSpacing: false
     })
 
-    let wrapper = shallow(App, {
+    let wrapper = shallowMount(App, {
       localVue
     })
 

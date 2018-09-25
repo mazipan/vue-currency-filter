@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const CompressionPlugin = require("compression-webpack-plugin")
 const { GenerateSW } = require('workbox-webpack-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 const NODE_ENV = process.env.NODE_ENV;
 
@@ -67,6 +68,7 @@ const config = {
     noInfo: false
   },
   plugins: [
+    new VueLoaderPlugin(),
     extractHTML,
     new webpack.DefinePlugin({
       'process.env': {
@@ -124,9 +126,14 @@ const config = {
         }
       },
       {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
       }
     ]
   }
