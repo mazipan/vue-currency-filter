@@ -1,4 +1,4 @@
-import accounting from 'accounting'
+import accounting from './accounting'
 
 const VueCurrencyFilter = {
   install (Vue, options) {
