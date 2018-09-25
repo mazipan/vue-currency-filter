@@ -1,5 +1,4 @@
-# 💸🍻 Vue Currency Filter
-
+# Vue Currency Filter
 
 <a href="https://github.com/mazipan/vue-currency-filter"><img
   src="https://raw.githubusercontent.com/mazipan/vue-currency-filter/master/assets/VueJS-Currency-128px.png" alt="Vue Currency Filter Logo"
@@ -9,7 +8,6 @@
 
 [![version](https://img.shields.io/npm/v/vue-currency-filter.svg)](https://www.npmjs.com/package/vue-currency-filter) [![downloads](https://img.shields.io/npm/dt/vue-currency-filter.svg)](https://www.npmjs.com/package/vue-currency-filter) [![Travis](https://img.shields.io/travis/mazipan/vue-currency-filter.svg)](https://travis-ci.org/mazipan/vue-currency-filter)
 [![codecov](https://codecov.io/gh/mazipan/vue-currency-filter/branch/master/graph/badge.svg)](https://codecov.io/gh/mazipan/vue-currency-filter)
-
 
 ## Demo
 
@@ -27,19 +25,21 @@ yarn add vue-currency-filter
 
 ## Sample Usage
 
-#### Import in `main.js`
+Step by step to using  `vue-currency-filter`:
+
+### Import in `main.js`
 
 ```javascript
 import VueCurrencyFilter from 'vue-currency-filter'
 ```
 
-#### Use Plugins
+### Use Plugins
 
 ```javascript
 Vue.use(VueCurrencyFilter)
 ```
 
-#### Add Global Configuration
+### Add Global Configuration
 
 ```javascript
 Vue.use(VueCurrencyFilter,
@@ -53,13 +53,13 @@ Vue.use(VueCurrencyFilter,
 })
 ```
 
-#### Use in View
+### Use in View
 
 ```html
 <span>{{ 20000 | currency}}</span>
 ```
 
-#### Usage in Nuxt.js
+### Usage in Nuxt.js
 
 Create file `plugins/currency.js`, with code :
 
@@ -88,7 +88,7 @@ module.exports = {
 
 See [this commit](https://github.com/mazipan/nuxt-blog/commit/59b69e67ca47da973d3c065f57ddecb36ce6da2b) for sample in Nuxt.js.
 
-#### Add Configuration In Specific Place
+### Add Configuration In Specific Place
 
 ```html
 <span>
