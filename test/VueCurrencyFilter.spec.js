@@ -1,4 +1,7 @@
-import { createLocalVue, shallowMount } from '@vue/test-utils'
+import {
+  createLocalVue,
+  shallowMount
+} from '@vue/test-utils'
 
 import App from '../demo/App.vue'
 import VueCurrencyFilter from '../VueCurrencyFilter'
@@ -27,7 +30,9 @@ describe('test VueCurrencyFilter', () => {
     let wrapper = shallowMount(App, {
       localVue
     })
-    wrapper.setData({ textInput: -20000 })
+    wrapper.setData({
+      textInput: -20000
+    })
 
     let result = wrapper.find('.result__filter')
     expect(result.text()).toEqual('-$ 20.000')
@@ -179,7 +184,9 @@ describe('test VueCurrencyFilter', () => {
       localVue
     })
 
-    wrapper.setData({ textInput: 'NotANumber' })
+    wrapper.setData({
+      textInput: 'NotANumber'
+    })
 
     let result = wrapper.find('.result__filter')
     expect(result.text()).toEqual('$ 0')
@@ -207,7 +214,7 @@ describe('test VueCurrencyFilter', () => {
     expect(result.text()).toEqual('5.000')
   })
 
-  it('Test config width object', () => {
+  it('Test pass config with object', () => {
     let localVue = createLocalVue()
 
     localVue.use(VueCurrencyFilter)
@@ -219,5 +226,36 @@ describe('test VueCurrencyFilter', () => {
     let result = wrapper.find('.result__filter--object')
     expect(result.text()).toEqual('¥ 20.000,00')
   })
-});
 
+  it('Test hit $CurrencyFilter.setConfig', () => {
+    let localVue = createLocalVue()
+
+    localVue.use(VueCurrencyFilter)
+
+    let wrapper = shallowMount(App, {
+      localVue
+    })
+
+    wrapper.setData({
+      configSymbol: undefined,
+      configSeparator: undefined,
+      configFractionCount: undefined,
+      configFractionSeparator: undefined,
+      configSymbolPosition: undefined,
+      configSymbolSpacing: undefined,
+      textInput: 5000
+    })
+
+    expect(typeof wrapper.vm.$CurrencyFilter.setConfig).toEqual('function')
+    let result = wrapper.find('.result__filter')
+    expect(result.text()).toEqual('5.000')
+
+    wrapper.vm.$CurrencyFilter.setConfig({
+      symbol: '$'
+    })
+    wrapper.vm.updateData({
+      thousandsSeparator: ','
+    })
+    expect(result.text()).toEqual('$ 5,000')
+  })
+});

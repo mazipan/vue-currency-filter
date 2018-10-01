@@ -190,6 +190,8 @@
 </template>
 
 <script>
+import utils from '../utils'
+
 export default {
   name: "app",
   data() {
@@ -212,6 +214,28 @@ export default {
           }}
           </span>`
     };
+  },
+  methods: {
+    updateData(options) {
+      if (!utils.__isNull(options.symbol)){
+        this.configSymbol = options.symbol
+      }
+      if (!utils.__isNull(options.thousandsSeparator)){
+        this.configSeparator = options.thousandsSeparator
+      }
+      if (!utils.__isNull(options.fractionCount)){
+        this.configFractionCount = options.fractionCount
+      }
+      if (!utils.__isNull(options.fractionSeparator)){
+        this.configFractionSeparator = options.fractionSeparator
+      }
+      if (!utils.__isNull(options.symbolPosition)){
+        this.configSymbolPosition = options.symbolPosition
+      }
+      if (!utils.__isNull(options.symbolSpacing)){
+        this.configSymbolSpacing = options.symbolSpacing
+      }
+    }
   }
 };
 </script>

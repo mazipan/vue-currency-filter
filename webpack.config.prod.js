@@ -17,11 +17,10 @@ const config = {
     filename: "VueCurrencyFilter.bundle.js",
     libraryTarget: 'commonjs2'
   },
-  optimization:{
-    runtimeChunk: false
-  },
   resolveLoader: {
-    modules: [setPath('node_modules')]
+    modules: [
+      setPath('node_modules')
+    ]
   },
   mode: 'production',
   plugins: [

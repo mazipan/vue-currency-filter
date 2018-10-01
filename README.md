@@ -97,7 +97,7 @@ configFractionSeparator, configSymbolPosition, configSymbolSpacing)}}
 </span>
 ```
 
-**Now configurations is also available as Object**, thanks to [sunhengzhe](https://github.com/sunhengzhe) [PR #25](https://github.com/mazipan/vue-currency-filter/pull/25/commits/052a741644556f4d1140e7b7e1ba96a8e2c0d015):
+**Now configurations is also available as Object**, thanks to [sunhengzhe](https://github.com/sunhengzhe) in [PR #25](https://github.com/mazipan/vue-currency-filter/pull/25/commits/052a741644556f4d1140e7b7e1ba96a8e2c0d015):
 
 ```html
 <span>
@@ -124,6 +124,18 @@ configFractionSeparator, configSymbolPosition, configSymbolSpacing)}}
   symbolSpacing: 'boolean (default: true)'
 }
 ```
+
+## Update Global Configs
+
+Since global config only can be setted from `Vue.use(VueCurrencyFilter, configs)`, but sometimes we need to update this global configs on runtime process.
+
+from v3.1.0 we intoduce prototype method that can be update this global configs. You can use anywhere in your components like this code below:
+
+```js
+this.$CurrencyFilter.setConfig(newConfigs)
+```
+
+But please be aware, this method is only update global configs without trigger to re-run filter function. So maybe you will face not sync data from your configs and your view. You need to update some value to trigger this new configs applied.
 
 ## Contributing
 
