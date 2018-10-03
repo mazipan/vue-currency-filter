@@ -5,36 +5,35 @@ import utils from './utils'
  * --0-- Moderate and maintain by Irfan Maulana <github.com/mazipan> for Vue-Currency-Filter needed --0--
  */
 // Create the local library object, to be exported or referenced globally later
-var lib = {};
+var lib = {}
 /* --- Exposed settings --- */
 
 // The library's settings configuration object. Contains default parameters for
 // currency and number formatting
 lib.settings = {
-	currency: {
-		symbol: "$", // default currency symbol is '$'
-		format: "%s%v", // controls output: %s = symbol, %v = value (can be object, see docs)
-		decimal: ".", // decimal point separator
-		thousand: ",", // thousands separator
-		precision: 2, // decimal places
-		grouping: 3 // digit grouping (not implemented yet)
-	},
-	number: {
-		precision: 0, // default precision on numbers is 0
-		grouping: 3, // digit grouping (not implemented yet)
-		thousand: ",",
-		decimal: "."
-	}
-};
+  currency: {
+    symbol: '$', // default currency symbol is '$'
+    format: '%s%v', // controls output: %s = symbol, %v = value (can be object, see docs)
+    decimal: '.', // decimal point separator
+    thousand: ',', // thousands separator
+    precision: 2, // decimal places
+    grouping: 3 // digit grouping (not implemented yet)
+  },
+  number: {
+    precision: 0, // default precision on numbers is 0
+    grouping: 3, // digit grouping (not implemented yet)
+    thousand: ',',
+    decimal: '.'
+  }
+}
 
 /**
  * Check and normalise the value of precision (must be positive integer)
  */
 function checkPrecision(val, base) {
-	val = Math.round(Math.abs(val));
-	return isNaN(val) ? base : val;
+  val = Math.round(Math.abs(val))
+  return isNaN(val) ? base : val
 }
-
 
 /**
  * Parses a format string or object and returns format obj for use in rendering
@@ -46,36 +45,35 @@ function checkPrecision(val, base) {
  * Either string or format.pos must contain "%v" (value) to be valid
  */
 function checkCurrencyFormat(format) {
-	var defaults = lib.settings.currency.format;
+  var defaults = lib.settings.currency.format
 
-	// Allow function as format parameter (should return string or object):
-	if (typeof format === "function") format = format();
+  // Allow function as format parameter (should return string or object):
+  if (typeof format === 'function') format = format()
 
-	// Format can be a string, in which case `value` ("%v") must be present:
-	if (utils.__isString(format) && format.match("%v")) {
+  // Format can be a string, in which case `value` ("%v") must be present:
+  if (utils.__isString(format) && format.match('%v')) {
 
-		// Create and return positive, negative and zero formats:
-		return {
-			pos: format,
-			neg: format.replace("-", "").replace("%v", "-%v"),
-			zero: format
-		};
+    // Create and return positive, negative and zero formats:
+    return {
+      pos: format,
+      neg: format.replace('-', '').replace('%v', '-%v'),
+      zero: format
+    }
 
-		// If no format, or object is missing valid positive value, use defaults:
-	} else if (!format || !format.pos || !format.pos.match("%v")) {
+    // If no format, or object is missing valid positive value, use defaults:
+  } else if (!format || !format.pos || !format.pos.match('%v')) {
 
-		// If defaults is a string, casts it to an object for faster checking next time:
-		return (!utils.__isString(defaults)) ? defaults : lib.settings.currency.format = {
-			pos: defaults,
-			neg: defaults.replace("%v", "-%v"),
-			zero: defaults
-		};
+    // If defaults is a string, casts it to an object for faster checking next time:
+    return (!utils.__isString(defaults)) ? defaults : lib.settings.currency.format = {
+      pos: defaults,
+      neg: defaults.replace('%v', '-%v'),
+      zero: defaults
+    }
 
-	}
-	// Otherwise, assume format was fine:
-	return format;
+  }
+  // Otherwise, assume format was fine:
+  return format
 }
-
 
 /* --- API Methods --- */
 
@@ -92,35 +90,34 @@ function checkCurrencyFormat(format) {
  * Doesn't throw any errors (`NaN`s become 0) but this may change in future
  */
 var unformat = lib.unformat = lib.parse = function (value, decimal) {
-	// Recursively unformat arrays:
-	if (utils.__isArray(value)) {
-		return utils.__map(value, function (val) {
-			return unformat(val, decimal);
-		});
-	}
+  // Recursively unformat arrays:
+  if (utils.__isArray(value)) {
+    return utils.__map(value, function (val) {
+      return unformat(val, decimal)
+    })
+  }
 
-	// Fails silently (need decent errors):
-	value = value || 0;
+  // Fails silently (need decent errors):
+  value = value || 0
 
-	// Return the value as-is if it's already a number:
-	if (typeof value === "number") return value;
+  // Return the value as-is if it's already a number:
+  if (typeof value === 'number') return value
 
-	// Default decimal point comes from settings, but could be set to eg. "," in opts:
-	decimal = decimal || lib.settings.number.decimal;
+  // Default decimal point comes from settings, but could be set to eg. "," in opts:
+  decimal = decimal || lib.settings.number.decimal
 
-	// Build regex to strip out everything except digits, decimal point and minus sign:
-	var regex = new RegExp("[^0-9-" + decimal + "]", ["g"]),
-		unformatted = parseFloat(
-			("" + value)
-			.replace(/\((?=\d+)(.*)\)/, "-$1") // replace bracketed values with negatives
-			.replace(regex, '') // strip out any cruft
-			.replace(decimal, '.') // make sure decimal point is standard
-		);
+  // Build regex to strip out everything except digits, decimal point and minus sign:
+  var regex = new RegExp('[^0-9-' + decimal + ']', ['g']),
+    unformatted = parseFloat(
+      ('' + value)
+        .replace(/\((?=\d+)(.*)\)/, '-$1') // replace bracketed values with negatives
+        .replace(regex, '') // strip out any cruft
+        .replace(decimal, '.') // make sure decimal point is standard
+    )
 
-	// This will fail silently which may cause trouble, let's wait and see:
-	return !isNaN(unformatted) ? unformatted : 0;
-};
-
+  // This will fail silently which may cause trouble, let's wait and see:
+  return !isNaN(unformatted) ? unformatted : 0
+}
 
 /**
  * Implementation of toFixed() that treats floats more like decimals
@@ -129,14 +126,13 @@ var unformat = lib.unformat = lib.parse = function (value, decimal) {
  * problems for accounting- and finance-related software.
  */
 var toFixed = lib.toFixed = function (value, precision) {
-	precision = checkPrecision(precision, lib.settings.number.precision);
+  precision = checkPrecision(precision, lib.settings.number.precision)
 
-	var exponentialForm = Number(lib.unformat(value) + 'e' + precision);
-	var rounded = Math.round(exponentialForm);
-	var finalResult = Number(rounded + 'e-' + precision).toFixed(precision);
-	return finalResult;
-};
-
+  var exponentialForm = Number(lib.unformat(value) + 'e' + precision)
+  var rounded = Math.round(exponentialForm)
+  var finalResult = Number(rounded + 'e-' + precision).toFixed(precision)
+  return finalResult
+}
 
 /**
  * Format a number, with comma-separated thousands and custom precision/decimal places
@@ -146,38 +142,36 @@ var toFixed = lib.toFixed = function (value, precision) {
  * 2nd parameter `precision` can be an object matching `settings.number`
  */
 var formatNumber = lib.formatNumber = lib.format = function (number, precision, thousand, decimal) {
-	// Resursively format arrays:
-	if (utils.__isArray(number)) {
-		return utils.__map(number, function (val) {
-			return formatNumber(val, precision, thousand, decimal);
-		});
-	}
+  // Resursively format arrays:
+  if (utils.__isArray(number)) {
+    return utils.__map(number, function (val) {
+      return formatNumber(val, precision, thousand, decimal)
+    })
+  }
 
-	// Clean up number:
-	number = unformat(number);
+  // Clean up number:
+  number = unformat(number)
 
-	// Build options object from second param (if object) or all params, extending defaults:
-	var opts = utils.__defaults(
-			(utils.__isObject(precision) ? precision : {
-				precision: precision,
-				thousand: thousand,
-				decimal: decimal
-			}),
-			lib.settings.number
-		),
+  // Build options object from second param (if object) or all params, extending defaults:
+  var opts = utils.__defaults(
+      (utils.__isObject(precision) ? precision : {
+        precision: precision,
+        thousand: thousand,
+        decimal: decimal
+      }),
+      lib.settings.number
+    ),
+    // Clean up precision
+    usePrecision = checkPrecision(opts.precision),
 
-		// Clean up precision
-		usePrecision = checkPrecision(opts.precision),
+    // Do some calc:
+    negative = number < 0 ? '-' : '',
+    base = parseInt(toFixed(Math.abs(number || 0), usePrecision), 10) + '',
+    mod = base.length > 3 ? base.length % 3 : 0
 
-		// Do some calc:
-		negative = number < 0 ? "-" : "",
-		base = parseInt(toFixed(Math.abs(number || 0), usePrecision), 10) + "",
-		mod = base.length > 3 ? base.length % 3 : 0;
-
-	// Format the number:
-	return negative + (mod ? base.substr(0, mod) + opts.thousand : "") + base.substr(mod).replace(/(\d{3})(?=\d)/g, "$1" + opts.thousand) + (usePrecision ? opts.decimal + toFixed(Math.abs(number), usePrecision).split('.')[1] : "");
-};
-
+  // Format the number:
+  return negative + (mod ? base.substr(0, mod) + opts.thousand : '') + base.substr(mod).replace(/(\d{3})(?=\d)/g, '$1' + opts.thousand) + (usePrecision ? opts.decimal + toFixed(Math.abs(number), usePrecision).split('.')[1] : '')
+}
 
 /**
  * Format a number into currency
@@ -191,37 +185,37 @@ var formatNumber = lib.formatNumber = lib.format = function (number, precision, 
  * To do: tidy up the parameters
  */
 var formatMoney = lib.formatMoney = function (number, symbol, precision, thousand, decimal, format) {
-	// Resursively format arrays:
-	if (utils.__isArray(number)) {
-		return utils.__map(number, function (val) {
-			return formatMoney(val, symbol, precision, thousand, decimal, format);
-		});
-	}
+  // Resursively format arrays:
+  if (utils.__isArray(number)) {
+    return utils.__map(number, function (val) {
+      return formatMoney(val, symbol, precision, thousand, decimal, format)
+    })
+  }
 
-	// Clean up number:
-	number = unformat(number);
+  // Clean up number:
+  number = unformat(number)
 
-	// Build options object from second param (if object) or all params, extending defaults:
-	var opts = utils.__defaults(
-			(utils.__isObject(symbol) ? symbol : {
-				symbol: symbol,
-				precision: precision,
-				thousand: thousand,
-				decimal: decimal,
-				format: format
-			}),
-			lib.settings.currency
-		),
+  // Build options object from second param (if object) or all params, extending defaults:
+  var opts = utils.__defaults(
+      (utils.__isObject(symbol) ? symbol : {
+        symbol: symbol,
+        precision: precision,
+        thousand: thousand,
+        decimal: decimal,
+        format: format
+      }),
+      lib.settings.currency
+    ),
 
-		// Check format (returns object with pos, neg and zero):
-		formats = checkCurrencyFormat(opts.format),
+    // Check format (returns object with pos, neg and zero):
+    formats = checkCurrencyFormat(opts.format),
 
-		// Choose which format to use for this value:
-		useFormat = number > 0 ? formats.pos : number < 0 ? formats.neg : formats.zero;
+    // Choose which format to use for this value:
+    useFormat = number > 0 ? formats.pos : number < 0 ? formats.neg : formats.zero
 
-	// Return with currency symbol added:
-	return useFormat.replace('%s', opts.symbol).replace('%v', formatNumber(Math.abs(number), checkPrecision(opts.precision), opts.thousand, opts.decimal));
-};
+  // Return with currency symbol added:
+  return useFormat.replace('%s', opts.symbol).replace('%v', formatNumber(Math.abs(number), checkPrecision(opts.precision), opts.thousand, opts.decimal))
+}
 
 
 /**
@@ -294,4 +288,4 @@ var formatMoney = lib.formatMoney = function (number, symbol, precision, thousan
 // 	});
 // };
 
-export default lib;
+export default lib

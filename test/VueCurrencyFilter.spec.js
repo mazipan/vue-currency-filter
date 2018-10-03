@@ -7,7 +7,7 @@ import App from '../demo/App.vue'
 import VueCurrencyFilter from '../VueCurrencyFilter'
 
 import helper from './helper'
-helper.initHelper();
+helper.initHelper()
 
 describe('test VueCurrencyFilter', () => {
   it('Test with all default config', () => {
@@ -258,4 +258,4 @@ describe('test VueCurrencyFilter', () => {
     })
     expect(result.text()).toEqual('$ 5,000')
   })
-});
+})

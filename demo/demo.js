@@ -10,17 +10,17 @@ if (process.env.NODE_ENV !== 'production') {
   Vue.config.devtools = true
 } else {
 
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker
-    .register('/vue-currency-filter/sw.js')
-    .then(reg => {
-      console.log('Service Worker has been registered');
-    })
-    .catch(e =>
-      console.error('Error during service worker registration:', e)
-    );
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('/vue-currency-filter/sw.js')
+      .then(() => {
+        console.log('Service Worker has been registered')
+      })
+      .catch(e =>
+        console.error('Error during service worker registration:', e)
+      )
   } else {
-    console.warn('Service Worker is not supported');
+    console.warn('Service Worker is not supported')
   }
 }
 
@@ -37,4 +37,3 @@ new Vue({
   el: '#app',
   render: h => h(App)
 })
-
