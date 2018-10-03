@@ -14,7 +14,7 @@ const VueCurrencyFilter = {
     }
 
     if (utils.__isNull(options)) options = {}
-    let configs = utils.__defaults(options, defaultConfig);
+    let configs = utils.__defaults(options, defaultConfig)
 
     const filterCurrency = function (value,
       _symbol,
@@ -49,11 +49,11 @@ const VueCurrencyFilter = {
         result = amount
       }
 
-      let formatConfig = "%s%v"
+      let formatConfig = '%s%v'
       if (runtimeConfig.symbolPosition === 'front') {
-        formatConfig = runtimeConfig.symbolSpacing ? "%s %v" : "%s%v"
+        formatConfig = runtimeConfig.symbolSpacing ? '%s %v' : '%s%v'
       } else {
-        formatConfig = runtimeConfig.symbolSpacing ? "%v %s" : "%v%s"
+        formatConfig = runtimeConfig.symbolSpacing ? '%v %s' : '%v%s'
       }
 
       if (runtimeConfig.fractionCount > 0) {
@@ -78,7 +78,7 @@ const VueCurrencyFilter = {
     Vue.filter('currency', filterCurrency)
     Vue.prototype.$CurrencyFilter = {
       setConfig: (options) => {
-        configs = utils.__defaults(options, defaultConfig);
+        configs = utils.__defaults(options, defaultConfig)
       }
     }
   }
