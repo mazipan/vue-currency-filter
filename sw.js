@@ -11,10 +11,10 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.5.0/workbox-sw.js");
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.1/workbox-sw.js");
 
 importScripts(
-  "/vue-currency-filter/precache-manifest.a4d4f70f302d74057d32f5d38593ace1.js"
+  "/vue-currency-filter/precache-manifest.0a46b9e85e3e548f7e206a5dcda18dd7.js"
 );
 
 /**
