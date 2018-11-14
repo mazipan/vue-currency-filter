@@ -79,6 +79,9 @@ const VueCurrencyFilter = {
     Vue.prototype.$CurrencyFilter = {
       setConfig: (options) => {
         configs = utils.__defaults(options, defaultConfig)
+      },
+      getConfig: () => {
+        return configs
       }
     }
   }
