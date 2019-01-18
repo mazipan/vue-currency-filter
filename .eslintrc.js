@@ -1,23 +1,33 @@
 module.exports = {
-    "env": {
-        "browser": true,
-        "commonjs": true,
-        "es6": true,
-        "jest": true
+    root: true,
+    env: {
+      browser: true,
+      node: true
     },
-    "extends": "eslint:recommended",
-    "parserOptions": {
-        "ecmaVersion": 2018,
-        "sourceType": "module"
+    parserOptions: {
+      parser: 'babel-eslint'
     },
-    "rules": {
-        "indent": [ "error", 2 ],
-        "linebreak-style": [ "error", "unix" ],
-        "quotes": [ "error", "single" ],
-        "semi": [ "error", "never" ],
-        "no-console": "off"
-    },
-    "overrides": {
-        "files": [ "**/*.js", "**/*.vue" ]
+    extends: ['standard', 'plugin:vue/recommended'],
+    // required to lint *.vue files
+    plugins: ['vue'],
+    // add your custom rules here
+    rules: {
+      'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+      'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+      'vue/component-name-in-template-casing': [
+        'error',
+        'PascalCase',
+        {
+          ignores: ['nuxt', 'nuxt-link', 'nuxt-child', 'no-ssr', 'script2']
+        }
+      ],
+      'vue/html-closing-bracket-newline': [
+        'error',
+        {
+          singleline: 'never',
+          multiline: 'never'
+        }
+      ]
     }
-};
+  };
+  

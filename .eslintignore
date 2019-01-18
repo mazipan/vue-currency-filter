@@ -1,1 +1,4 @@
 *.config*
+dist
+dist-demo
+accounting.js
