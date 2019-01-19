@@ -190,7 +190,7 @@
 </template>
 
 <script>
-import utils from '../utils'
+import utils from '../src/utils'
 
 export default {
   name: "app",
