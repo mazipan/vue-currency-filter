@@ -88,6 +88,44 @@ module.exports = {
 
 See [https://codesandbox.io/s/6xk1mv694n](https://codesandbox.io/s/6xk1mv694n) for Nuxt.js sample.
 
+### Usage without NPM
+
+Add script dependencies
+
+```html
+<!-- Vue Dependency -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<!-- Vue Currency Filter Dependency -->
+<script src="https://unpkg.com/vue-currency-filter@3.2.3/dist/vue-currency-filter.iife.js"></script>
+<!-- Change 3.2.3 with latest version -->
+```
+
+Use filters in global
+
+```js
+if (VueCurrencyFilter) {
+  Vue.use(VueCurrencyFilter, {
+    symbol: "£",
+    thousandsSeparator: ",",
+    fractionCount: 0,
+    fractionSeparator: ".",
+    symbolPosition: "front",
+    symbolSpacing: false
+  })
+}
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    curr: 1000
+  }
+});
+
+```
+
+See [https://codepen.io/mazipan/pen/YdmNMy](https://codepen.io/mazipan/pen/YdmNMy) for code sample.
+
 ### Add Configuration In Specific Place
 
 ```html
