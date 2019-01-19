@@ -175,6 +175,41 @@ this.$CurrencyFilter.setConfig(newConfigs)
 
 But please be aware, this method is only update global configs without trigger to re-run filter function. So maybe you will face not sync data from your configs and your view. You need to update some value to trigger this new configs applied.
 
+## How to test in Unit Test
+
+Using `@vue/test-utils` we can create test for any Vue Plugins, like:
+
+```js
+/* eslint-env jest */
+import { shallowMount, createLocalVue } from "@vue/test-utils";
+import VueCurrencyFilter from "vue-currency-filter";
+
+import Component from "../pages/myComponent.vue";
+
+describe("test myComponent", () => {
+  it("vue-currency-filter should working correctly", () => {
+    let localVue = createLocalVue();
+    localVue.use(VueCurrencyFilter, {
+      symbol: "$",
+      thousandsSeparator: ",",
+      fractionCount: 2,
+      fractionSeparator: ".",
+      symbolPosition: "front",
+      symbolSpacing: true
+    });
+
+    let wrapper = shallowMount(Component, {
+      localVue
+    });
+
+    let result = wrapper.find(".curr");
+    expect(result.text()).toEqual("$ 1,000.00");
+  });
+});
+```
+
+See sample test here: [https://codesandbox.io/s/6xk1mv694n](https://codesandbox.io/s/6xk1mv694n)
+
 ## Contributing
 
 If you'd like to contribute, head to the [contributing guidelines](/CONTRIBUTING.md). Inside you'll find directions for opening issues, coding standards, and notes on development.
