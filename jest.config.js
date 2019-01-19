@@ -1,10 +1,22 @@
 module.exports = {
   verbose: true,
+  collectCoverage: true,
   collectCoverageFrom: [
-    'src/VueCurrencyFilter.js',
-    '!**/node_modules/**'
+    // include folder
+    '**/src/**/*.{js,vue}',
+    // exclude folder and files
+    '!**/src/accounting.js',
+    '!**/node_modules/**',
+    '!**/assets/**',
+    '!**/demo/**',
+    '!**/coverage/**',
+    '!**/dist/**',
+    '!**/dist-demo/**',
+    '!**/test/**',
+    '!**/*rc.{js,vue}',
+    '!**/*.config.{js,vue}'
   ],
-  coverageDirectory: 'test/coverage',
+  coverageDirectory: 'coverage',
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
     '^vue$': 'vue/dist/vue.common.js'
