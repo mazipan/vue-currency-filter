@@ -1,7 +1,7 @@
 module.exports = {
   verbose: true,
   collectCoverageFrom: [
-    'VueCurrencyFilter.js',
+    'src/VueCurrencyFilter.js',
     '!**/node_modules/**'
   ],
   coverageDirectory: 'test/coverage',

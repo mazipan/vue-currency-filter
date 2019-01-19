@@ -1,7 +1,6 @@
 module.exports = {
-	format: ['umd'],
-  input: './VueCurrencyFilter.js',
-  filename: 'VueCurrencyFilter.bundle.js',
+	format: ['umd', 'es', 'cjs', 'umd-min', 'iife'],
+  input: './src/VueCurrencyFilter.js',
   moduleName: 'VueCurrencyFilter',
   plugins: [
     'vue',

@@ -1,3 +1,4 @@
+/* eslint-env jest */
 import Vue from 'vue'
 import Dummy from './Dummy.vue'
 

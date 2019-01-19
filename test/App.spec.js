@@ -1,7 +1,8 @@
-import { createLocalVue, shallowMount } from '@vue/test-utils'
+/* eslint-env jest */
+import { shallowMount, createLocalVue } from '@vue/test-utils'
 
 import App from '../demo/App.vue'
-import VueCurrencyFilter from '../VueCurrencyFilter'
+import VueCurrencyFilter from '../src/VueCurrencyFilter'
 
 import helper from './helper'
 helper.initHelper()
@@ -12,7 +13,7 @@ describe('test App.vue', () => {
 
     localVue.use(VueCurrencyFilter,
       {
-        symbol : 'Rp',
+        symbol: 'Rp',
         thousandsSeparator: ',',
         fractionCount: 3,
         fractionSeparator: '-',
@@ -28,4 +29,3 @@ describe('test App.vue', () => {
     expect(result.text()).toEqual('$ 20.000')
   })
 })
-
