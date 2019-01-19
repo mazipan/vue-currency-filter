@@ -86,7 +86,7 @@ module.exports = {
 }
 ```
 
-See [this commit](https://github.com/mazipan/nuxt-blog/commit/59b69e67ca47da973d3c065f57ddecb36ce6da2b) for sample in Nuxt.js.
+See [https://codesandbox.io/s/6xk1mv694n](https://codesandbox.io/s/6xk1mv694n) for Nuxt.js sample.
 
 ### Add Configuration In Specific Place
 
