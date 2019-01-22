@@ -81,7 +81,7 @@ Then update your nuxt.config.js, with code :
 ```js
 module.exports = {
   plugins: [
-    { src: '~/plugins/currency', ssr: false }
+    { src: '~/plugins/currency', ssr: true } // need to set ssr flag as true
   ]
 }
 ```
