@@ -3,7 +3,7 @@ module.exports = {
   collectCoverage: true,
   collectCoverageFrom: [
     // include folder
-    '**/src/**/*.{js,vue}',
+    '**/src/*.{js,vue}',
     // exclude folder and files
     '!**/src/accounting.js',
     '!**/node_modules/**',
