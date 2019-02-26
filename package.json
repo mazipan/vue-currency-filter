@@ -74,7 +74,7 @@
     "rollup-plugin-vue": "^4.6.1",
     "sass-loader": "^7.1.0",
     "vue": "^2.5.22",
-    "vue-google-adsense": "^1.3.0",
+    "vue-google-adsense": "^1.4.1",
     "vue-highlightjs": "1.3.3",
     "vue-jest": "^3.0.2",
     "vue-loader": "^15.5.1",
