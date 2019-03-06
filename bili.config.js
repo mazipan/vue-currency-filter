@@ -8,7 +8,7 @@ module.exports = {
   vue: {
     css: false,
     template: {
-      isProduction: true,
+      isProduction: false,
       compilerOptions: {
         preserveWhitespace: false
       }
