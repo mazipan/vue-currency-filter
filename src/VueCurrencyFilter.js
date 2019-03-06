@@ -10,7 +10,8 @@ const VueCurrencyFilter = {
       fractionCount: 0,
       fractionSeparator: ',',
       symbolPosition: 'front',
-      symbolSpacing: true
+      symbolSpacing: true,
+      precision: 0,               // Support fixed-point currency: 0 for float, 2 for 1000¢ -> $10.00
     }
 
     if (utils.__isNull(options)) options = {}
@@ -22,7 +23,8 @@ const VueCurrencyFilter = {
       _fractionCount,
       _fractionSeparator,
       _symbolPosition,
-      _symbolSpacing) {
+      _symbolSpacing,
+      _precision) {
 
       let runtimeConfig = utils.__defaults({
         symbol: _symbol,
@@ -30,7 +32,8 @@ const VueCurrencyFilter = {
         fractionCount: _fractionCount,
         fractionSeparator: _fractionSeparator,
         symbolPosition: _symbolPosition,
-        symbolSpacing: _symbolSpacing
+        symbolSpacing: _symbolSpacing,
+        precision: _precision
       }, configs)
 
       if (typeof _symbol === 'object') {
@@ -54,6 +57,10 @@ const VueCurrencyFilter = {
         formatConfig = runtimeConfig.symbolSpacing ? '%s %v' : '%s%v'
       } else {
         formatConfig = runtimeConfig.symbolSpacing ? '%v %s' : '%v%s'
+      }
+
+      if (runtimeConfig.precision > 0) {
+        value = accounting.unformat(value) / Math.pow(10, runtimeConfig.precision) // 1095 -> 10.95
       }
 
       if (runtimeConfig.fractionCount > 0) {
