@@ -20,6 +20,24 @@ describe('test VueCurrencyFilter', () => {
     let result = wrapper.find('.result__filter')
     expect(result.text()).toEqual('$ 20.000')
   })
+  
+  it('Test with number scaling', () => {
+    let localVue = createLocalVue()
+
+    localVue.use(VueCurrencyFilter)
+
+    let wrapper = shallowMount(App, {
+      localVue
+    })
+    wrapper.setData({
+      textInput: 1095,
+      configFractionCount: 2,
+      configPrecision: 2
+    })
+
+    let result = wrapper.find('.result__filter')
+    expect(result.text()).toEqual('$ 10,95')
+  })
 
   it('Test with negative value', () => {
     let localVue = createLocalVue()

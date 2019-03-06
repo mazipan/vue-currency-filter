@@ -28,7 +28,7 @@
 
 				<div>
 					<b>After filter - Custom Configuration</b> :
-					<b class="result__filter">{{ textInput | currency(configSymbol, configSeparator, configFractionCount, configFractionSeparator, configSymbolPosition, configSymbolSpacing) }}</b>
+					<b class="result__filter">{{ textInput | currency(configSymbol, configSeparator, configFractionCount, configFractionSeparator, configSymbolPosition, configSymbolSpacing, configPrecision) }}</b>
 				</div>
 
         <div>
@@ -203,13 +203,15 @@ export default {
       configFractionSeparator: ",",
       configSymbolPosition: "front",
       configSymbolSpacing: true,
+      configPrecision:0,
       templateHtml: "<span>{{ 20000 | currency}}</span>",
       templateHtmlCustom: `
           <!-- or with custom config -->
           <span>
           {{ 20000 | currency(
               configSymbol, configSeparator, configFractionCount,
-              configFractionSeparator, configSymbolPosition, configSymbolSpacing
+              configFractionSeparator, configSymbolPosition, configSymbolSpacing,
+              configPrecision
             )
           }}
           </span>`
@@ -234,6 +236,9 @@ export default {
       }
       if (!utils.__isNull(options.symbolSpacing)){
         this.configSymbolSpacing = options.symbolSpacing
+      }
+      if (!utils.__isNull(options.precision)){
+        this.precision = options.precision
       }
     }
   }
