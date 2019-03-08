@@ -1,5 +1,5 @@
 # Vue Currency Filter
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
 
 <a href="https://github.com/mazipan/vue-currency-filter"><img
   src="https://raw.githubusercontent.com/mazipan/vue-currency-filter/master/assets/VueJS-Currency-128px.png" alt="Vue Currency Filter Logo"
@@ -229,8 +229,8 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/all-contri
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-| [<img src="https://avatars0.githubusercontent.com/u/7221389?v=4" width="100px;" alt="Irfan Maulana"/><br /><sub><b>Irfan Maulana</b></sub>](https://www.mazipan.xyz/)<br />[💻](https://github.com/mazipan/vue-currency-filter/commits?author=mazipan "Code") |
-| :---: |
+| [<img src="https://avatars0.githubusercontent.com/u/7221389?v=4" width="100px;" alt="Irfan Maulana"/><br /><sub><b>Irfan Maulana</b></sub>](https://www.mazipan.xyz/)<br />[💻](https://github.com/mazipan/vue-currency-filter/commits?author=mazipan "Code") | [<img src="https://avatars3.githubusercontent.com/u/1563756?v=4" width="100px;" alt="iqbalhood"/><br /><sub><b>iqbalhood</b></sub>](https://about.me/iqbalhood)<br />[🎨](#design-iqbalhood "Design") |
+| :---: | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
