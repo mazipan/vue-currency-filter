@@ -26,6 +26,15 @@
       "contributions": [
         "design"
       ]
+    },
+    {
+      "login": "sunhengzhe",
+      "name": "孙恒哲",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/8614151?v=4",
+      "profile": "https://sunhengzhe.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
