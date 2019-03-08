@@ -10,10 +10,10 @@ self.__precacheManifest = [
     "url": "/vue-currency-filter/js/vendors~app.0edc9b2f22d99610ba94.js"
   },
   {
-    "url": "/vue-currency-filter/js/vendors~app.0edc9b2f22d99610ba94.js.gz"
+    "url": "/vue-currency-filter/js/app.0edc9b2f22d99610ba94.js.gz"
   },
   {
-    "url": "/vue-currency-filter/js/app.0edc9b2f22d99610ba94.js.gz"
+    "url": "/vue-currency-filter/js/vendors~app.0edc9b2f22d99610ba94.js.gz"
   },
   {
     "revision": "4f8b9ac8425a27caf36524e3c11613fe",
@@ -40,8 +40,8 @@ self.__precacheManifest = [
     "url": "/vue-currency-filter/index.html"
   },
   {
-    "revision": "653d077300a12f09a69caeea7a8947f8",
-    "url": "/vue-currency-filter/favicon/browserconfig.xml"
+    "revision": "64ae6ae143d9a962d9675d781dddaf1a",
+    "url": "/vue-currency-filter/favicon/apple-icon.png"
   },
   {
     "revision": "bf4bde3694c72ba3f15acd51d0c91bcc",
@@ -81,15 +81,15 @@ self.__precacheManifest = [
   },
   {
     "revision": "64ae6ae143d9a962d9675d781dddaf1a",
-    "url": "/vue-currency-filter/favicon/apple-icon.png"
+    "url": "/vue-currency-filter/favicon/apple-icon-precomposed.png"
   },
   {
     "revision": "1e048e8c5de507e2063110f97c273a8f",
     "url": "/vue-currency-filter/favicon/apple-icon-114x114.png"
   },
   {
-    "revision": "64ae6ae143d9a962d9675d781dddaf1a",
-    "url": "/vue-currency-filter/favicon/apple-icon-precomposed.png"
+    "revision": "653d077300a12f09a69caeea7a8947f8",
+    "url": "/vue-currency-filter/favicon/browserconfig.xml"
   },
   {
     "revision": "484a5adc143a6076d3bd9ecf32858a98",
