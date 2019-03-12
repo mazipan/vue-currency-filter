@@ -11,6 +11,7 @@
   "jsdelivr": "dist/vue-currency-filter.iife.js",
   "files": [
     "dist",
+    "nuxt",
     "accounting.js",
     "utils.js",
     "VueCurrencyFilter.js"

@@ -62,32 +62,25 @@ Vue.use(VueCurrencyFilter,
 
 ### Usage in Nuxt.js
 
-Create file `plugins/currency.js`, with code :
+Add `vue-currency-filter/nuxt` to modules section of `nuxt.config.js`
 
 ```js
-import VueCurrencyFilter from 'vue-currency-filter'
-import Vue from 'vue'
-Vue.use(VueCurrencyFilter, {
-  symbol: '$',
-  thousandsSeparator: ',',
-  fractionCount: 2,
-  fractionSeparator: '.',
-  symbolPosition: 'front',
-  symbolSpacing: true
-})
-```
+{
+  modules: [
+    'vue-currency-filter/nuxt',
 
-Then update your nuxt.config.js, with code :
-
-```js
-module.exports = {
-  plugins: [
-    { src: '~/plugins/currency', ssr: true } // need to set ssr flag as true
+    // Or if you have custom options...
+    ['vue-currency-filter/nuxt', {
+      symbol: '$',
+      thousandsSeparator: ',',
+      fractionCount: 2,
+      fractionSeparator: '.',
+      symbolPosition: 'front',
+      symbolSpacing: true
+    }],
   ]
 }
 ```
-
-See [https://codesandbox.io/s/6xk1mv694n](https://codesandbox.io/s/6xk1mv694n) for Nuxt.js sample.
 
 ### Usage without NPM
 
