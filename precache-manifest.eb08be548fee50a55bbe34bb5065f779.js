@@ -52,12 +52,12 @@ self.__precacheManifest = [
     "url": "/vue-currency-filter/favicon/apple-icon-120x120.png"
   },
   {
-    "revision": "68173ed4ea897e06a12c5d8e590fa189",
-    "url": "/vue-currency-filter/favicon/apple-icon-152x152.png"
-  },
-  {
     "revision": "20581bd7f06e3a9627d067ffca937109",
     "url": "/vue-currency-filter/favicon/apple-icon-144x144.png"
+  },
+  {
+    "revision": "68173ed4ea897e06a12c5d8e590fa189",
+    "url": "/vue-currency-filter/favicon/apple-icon-152x152.png"
   },
   {
     "revision": "d6e3d51b750760a6af4a4169a1f9a8ce",
