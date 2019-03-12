@@ -1,14 +1,29 @@
 # Vue Currency Filter
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors)
 
-<a href="https://github.com/mazipan/vue-currency-filter"><img
-  src="https://raw.githubusercontent.com/mazipan/vue-currency-filter/master/assets/VueJS-Currency-128px.png" alt="Vue Currency Filter Logo"
-  width="128" align="right"></a>
-  
+<p align="center"><a href="https://mazipan.github.io/vue-currency-filter/" target="_blank" rel="noopener noreferrer"><img width="128" src="https://raw.githubusercontent.com/mazipan/vue-currency-filter/master/assets/VueJS-Currency-128px.png" alt="Vue Currency Logo"></a></p>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/vue-currency-filter">
+    <img src="https://img.shields.io/npm/v/vue-currency-filter.svg" alt="NPM Version">
+  </a>
+  <a href="https://bundlephobia.com/result?p=vue-currency-filter">
+    <img src="https://badgen.net/bundlephobia/minzip/vue-currency-filter" alt="Bundlephobia Size">
+  </a>
+  <a href="https://www.npmjs.com/package/vue-currency-filter">
+    <img src="https://img.shields.io/npm/dt/vue-currency-filter.svg" alt="Download All Time">
+  </a>
+  <a href="https://travis-ci.org/mazipan/vue-currency-filter">
+    <img src="https://img.shields.io/travis/mazipan/vue-currency-filter.svg" alt="Travis Build">
+  </a>
+  <a href="https://codecov.io/gh/mazipan/vue-currency-filter">
+    <img src="https://codecov.io/gh/mazipan/vue-currency-filter/branch/master/graph/badge.svg" alt="Code Coverage">
+  </a>
+  <a href="#contributors">
+    <img src="https://img.shields.io/badge/all_contributors-4-orange.svg" alt="All Contributors">
+  </a>
+</p>
+
 > Lightweight vue currency filter based on accounting.js
-
-[![version](https://img.shields.io/npm/v/vue-currency-filter.svg)](https://www.npmjs.com/package/vue-currency-filter) ![minified](https://badgen.net/bundlephobia/minzip/vue-currency-filter) [![downloads](https://img.shields.io/npm/dt/vue-currency-filter.svg)](https://www.npmjs.com/package/vue-currency-filter) [![Travis](https://img.shields.io/travis/mazipan/vue-currency-filter.svg)](https://travis-ci.org/mazipan/vue-currency-filter)
-[![codecov](https://codecov.io/gh/mazipan/vue-currency-filter/branch/master/graph/badge.svg)](https://codecov.io/gh/mazipan/vue-currency-filter)
 
 ## Demo
 
