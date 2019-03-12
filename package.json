@@ -1,7 +1,7 @@
 {
   "name": "vue-currency-filter",
   "description": "Lightweight vue currency filter based on accounting.js",
-  "version": "3.2.3",
+  "version": "3.3.0",
   "license": "MIT",
   "author": "Irfan Maulana (https://github.com/mazipan/)",
   "homepage": "https://mazipan.github.io/vue-currency-filter/",
@@ -28,10 +28,6 @@
   },
   "bugs": {
     "url": "https://github.com/mazipan/vue-currency-filter/issues"
-  },
-  "engines": {
-    "node": ">= 4.0.0",
-    "npm": ">= 3.0.0"
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --open",
