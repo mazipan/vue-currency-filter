@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "eee1ee3d64615c86b945300281cf7529",
-    "url": "/vue-currency-filter/favicon/apple-icon-180x180.png"
+    "revision": "8bfb9be076bc1393841c62af87ca97d5",
+    "url": "/vue-currency-filter/favicon/apple-icon-57x57.png"
   },
   {
     "url": "/vue-currency-filter/js/app.0edc9b2f22d99610ba94.js"
@@ -64,8 +64,8 @@ self.__precacheManifest = [
     "url": "/vue-currency-filter/favicon/ms-icon-310x310.png"
   },
   {
-    "revision": "8bfb9be076bc1393841c62af87ca97d5",
-    "url": "/vue-currency-filter/favicon/apple-icon-57x57.png"
+    "revision": "eee1ee3d64615c86b945300281cf7529",
+    "url": "/vue-currency-filter/favicon/apple-icon-180x180.png"
   },
   {
     "revision": "c7f90ddb0c317954ab6304a6efaa452c",
