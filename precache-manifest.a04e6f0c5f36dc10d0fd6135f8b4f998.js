@@ -40,8 +40,8 @@ self.__precacheManifest = [
     "url": "/vue-currency-filter/favicon/apple-icon-precomposed.png"
   },
   {
-    "revision": "6c8c78793a061930896c5464e178fbfb",
-    "url": "/vue-currency-filter/favicon/android-icon-36x36.png"
+    "revision": "4f8b9ac8425a27caf36524e3c11613fe",
+    "url": "/vue-currency-filter/favicon/android-icon-72x72.png"
   },
   {
     "revision": "1e048e8c5de507e2063110f97c273a8f",
@@ -52,16 +52,16 @@ self.__precacheManifest = [
     "url": "/vue-currency-filter/favicon/apple-icon-120x120.png"
   },
   {
-    "revision": "20581bd7f06e3a9627d067ffca937109",
-    "url": "/vue-currency-filter/favicon/apple-icon-144x144.png"
-  },
-  {
     "revision": "68173ed4ea897e06a12c5d8e590fa189",
     "url": "/vue-currency-filter/favicon/apple-icon-152x152.png"
   },
   {
-    "revision": "4f8b9ac8425a27caf36524e3c11613fe",
-    "url": "/vue-currency-filter/favicon/android-icon-72x72.png"
+    "revision": "20581bd7f06e3a9627d067ffca937109",
+    "url": "/vue-currency-filter/favicon/apple-icon-144x144.png"
+  },
+  {
+    "revision": "d6e3d51b750760a6af4a4169a1f9a8ce",
+    "url": "/vue-currency-filter/favicon/ms-icon-310x310.png"
   },
   {
     "revision": "8bfb9be076bc1393841c62af87ca97d5",
@@ -72,12 +72,12 @@ self.__precacheManifest = [
     "url": "/vue-currency-filter/favicon/apple-icon-60x60.png"
   },
   {
-    "revision": "d6e3d51b750760a6af4a4169a1f9a8ce",
-    "url": "/vue-currency-filter/favicon/ms-icon-310x310.png"
+    "revision": "30614caaeda33165c43831666c9cee02",
+    "url": "/vue-currency-filter/favicon/ms-icon-150x150.png"
   },
   {
-    "revision": "79a8281bb2d155b8f0c1298fea6b2cd1",
-    "url": "/vue-currency-filter/favicon/android-icon-48x48.png"
+    "revision": "20581bd7f06e3a9627d067ffca937109",
+    "url": "/vue-currency-filter/favicon/ms-icon-144x144.png"
   },
   {
     "revision": "bf4bde3694c72ba3f15acd51d0c91bcc",
@@ -112,12 +112,12 @@ self.__precacheManifest = [
     "url": "/vue-currency-filter/favicon/manifest.json"
   },
   {
-    "revision": "20581bd7f06e3a9627d067ffca937109",
-    "url": "/vue-currency-filter/favicon/ms-icon-144x144.png"
+    "revision": "79a8281bb2d155b8f0c1298fea6b2cd1",
+    "url": "/vue-currency-filter/favicon/android-icon-48x48.png"
   },
   {
-    "revision": "30614caaeda33165c43831666c9cee02",
-    "url": "/vue-currency-filter/favicon/ms-icon-150x150.png"
+    "revision": "6c8c78793a061930896c5464e178fbfb",
+    "url": "/vue-currency-filter/favicon/android-icon-36x36.png"
   },
   {
     "revision": "8a3db9acbcad761b5769c7b5ec85cc3e",
