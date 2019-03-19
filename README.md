@@ -225,7 +225,10 @@ If you'd like to contribute, head to the [contributing guidelines](/CONTRIBUTING
 
 ## Credit
 
-- [@iqbalhood](https://github.com/iqbalhood): VueCurrencyFilter logo creator (see [#19](https://github.com/mazipan/vue-currency-filter/issues/19))
+- [@iqbalhood](https://github.com/iqbalhood) as logo creator (see [#19](https://github.com/mazipan/vue-currency-filter/issues/19))
+- [Jetbrain](https://www.jetbrains.com/?from=vue-currency-filter) for amazing WebStorm IDE
+
+[<img src="https://raw.githubusercontent.com/mazipan/vue-currency-filter/master/jetbrains.png" width="100px;" />](https://www.jetbrains.com/?from=vue-currency-filter)
 
 ## Hope this will be useful for you all
 
