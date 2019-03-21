@@ -1,5 +1,7 @@
 # Vue Currency Filter
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mazipan/vue-currency-filter.svg)](https://greenkeeper.io/)
+
 <p align="center"><a href="https://mazipan.github.io/vue-currency-filter/" target="_blank" rel="noopener noreferrer"><img width="128" src="https://raw.githubusercontent.com/mazipan/vue-currency-filter/master/assets/VueJS-Currency-128px.png" alt="Vue Currency Logo"></a></p>
 
 <p align="center">
