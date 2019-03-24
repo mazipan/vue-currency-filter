@@ -41,15 +41,15 @@ self.__precacheManifest = [
   },
   {
     "revision": "64ae6ae143d9a962d9675d781dddaf1a",
-    "url": "/vue-currency-filter/favicon/apple-icon-precomposed.png"
+    "url": "/vue-currency-filter/favicon/apple-icon.png"
   },
   {
-    "revision": "bf4bde3694c72ba3f15acd51d0c91bcc",
-    "url": "/vue-currency-filter/favicon/android-icon-96x96.png"
+    "revision": "1e048e8c5de507e2063110f97c273a8f",
+    "url": "/vue-currency-filter/favicon/apple-icon-114x114.png"
   },
   {
-    "revision": "3c0892056675749a561dbf1d975d29f7",
-    "url": "/vue-currency-filter/favicon/apple-icon-120x120.png"
+    "revision": "30614caaeda33165c43831666c9cee02",
+    "url": "/vue-currency-filter/favicon/ms-icon-150x150.png"
   },
   {
     "revision": "20581bd7f06e3a9627d067ffca937109",
@@ -60,8 +60,8 @@ self.__precacheManifest = [
     "url": "/vue-currency-filter/favicon/apple-icon-152x152.png"
   },
   {
-    "revision": "30614caaeda33165c43831666c9cee02",
-    "url": "/vue-currency-filter/favicon/ms-icon-150x150.png"
+    "revision": "20581bd7f06e3a9627d067ffca937109",
+    "url": "/vue-currency-filter/favicon/ms-icon-144x144.png"
   },
   {
     "revision": "8bfb9be076bc1393841c62af87ca97d5",
@@ -72,20 +72,20 @@ self.__precacheManifest = [
     "url": "/vue-currency-filter/favicon/apple-icon-60x60.png"
   },
   {
-    "revision": "20581bd7f06e3a9627d067ffca937109",
-    "url": "/vue-currency-filter/favicon/ms-icon-144x144.png"
-  },
-  {
     "revision": "b049a187e778e029dc2a948492bf7deb",
     "url": "/vue-currency-filter/favicon/manifest.json"
   },
   {
-    "revision": "64ae6ae143d9a962d9675d781dddaf1a",
-    "url": "/vue-currency-filter/favicon/apple-icon.png"
+    "revision": "fed8d5e7ff28464bae568499bcd002aa",
+    "url": "/vue-currency-filter/favicon/favicon.ico"
   },
   {
-    "revision": "1e048e8c5de507e2063110f97c273a8f",
-    "url": "/vue-currency-filter/favicon/apple-icon-114x114.png"
+    "revision": "64ae6ae143d9a962d9675d781dddaf1a",
+    "url": "/vue-currency-filter/favicon/apple-icon-precomposed.png"
+  },
+  {
+    "revision": "3c0892056675749a561dbf1d975d29f7",
+    "url": "/vue-currency-filter/favicon/apple-icon-120x120.png"
   },
   {
     "revision": "653d077300a12f09a69caeea7a8947f8",
@@ -104,8 +104,8 @@ self.__precacheManifest = [
     "url": "/vue-currency-filter/favicon/favicon-96x96.png"
   },
   {
-    "revision": "fed8d5e7ff28464bae568499bcd002aa",
-    "url": "/vue-currency-filter/favicon/favicon.ico"
+    "revision": "bf4bde3694c72ba3f15acd51d0c91bcc",
+    "url": "/vue-currency-filter/favicon/android-icon-96x96.png"
   },
   {
     "revision": "4f8b9ac8425a27caf36524e3c11613fe",
