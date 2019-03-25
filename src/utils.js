@@ -1,21 +1,23 @@
-const nativeMap = Array.prototype.map,
-  nativeIsArray = Array.isArray,
-  toString = Object.prototype.toString
+const nativeMap = Array.prototype.map
+
+const nativeIsArray = Array.isArray
+
+const toString = Object.prototype.toString
 
 export default {
-  __isNull(obj) {
+  __isNull (obj) {
     return typeof obj === 'undefined' || obj === null
   },
-  __isString(obj) {
+  __isString (obj) {
     return !!(obj === '' || (obj && obj.charCodeAt && obj.substr))
   },
-  __isArray(obj) {
+  __isArray (obj) {
     return nativeIsArray ? nativeIsArray(obj) : toString.call(obj) === '[object Array]'
   },
-  __isObject(obj) {
+  __isObject (obj) {
     return obj && toString.call(obj) === '[object Object]'
   },
-  __defaults(object, defs) {
+  __defaults (object, defs) {
     var key
     object = object || {}
     defs = defs || {}
@@ -28,9 +30,10 @@ export default {
     }
     return object
   },
-  __map(obj, iterator, context) {
-    var results = [],
-      i, j
+  __map (obj, iterator, context) {
+    var results = []
+
+    var i; var j
 
     if (!obj) return results
 

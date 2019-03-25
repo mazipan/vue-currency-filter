@@ -2,3 +2,5 @@
 dist
 dist-demo
 src/accounting.js
+test/coverage/**
+nuxt/**

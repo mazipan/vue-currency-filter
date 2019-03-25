@@ -163,6 +163,7 @@ configFractionSeparator, configSymbolPosition, configSymbolSpacing)}}
 
 ```javascript
 {
+  name: 'string (default: currency)', // using for multiple instance filters
   symbol: 'string (default : empty string)',
   thousandsSeparator: 'string (default : .)',
   fractionCount: 'number (default : 0)',
