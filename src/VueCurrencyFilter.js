@@ -4,6 +4,7 @@ import utils from './utils'
 const VueCurrencyFilter = {
   install (Vue, options) {
     const defaultConfig = {
+      name: 'currency',
       symbol: '',
       thousandsSeparator: '.',
       fractionCount: 0,
@@ -13,7 +14,8 @@ const VueCurrencyFilter = {
     }
 
     if (utils.__isNull(options)) options = {}
-    let configs = utils.__defaults(options, defaultConfig)
+    let globalConfigs = utils.__defaults(options, defaultConfig)
+    let { name, ...configs } = globalConfigs
 
     const filterCurrency = function (value,
       _symbol,
@@ -73,7 +75,7 @@ const VueCurrencyFilter = {
       return result
     }
 
-    Vue.filter('currency', filterCurrency)
+    Vue.filter(name, filterCurrency)
     Vue.prototype.$CurrencyFilter = {
       setConfig: (options) => {
         configs = utils.__defaults(options, defaultConfig)
