@@ -1,9 +1,8 @@
-import accounting from './accounting' 
+import accounting from './accounting'
 import utils from './utils'
 
 const VueCurrencyFilter = {
-  install(Vue, options) {
-
+  install (Vue, options) {
     const defaultConfig = {
       symbol: '',
       thousandsSeparator: '.',
@@ -23,7 +22,6 @@ const VueCurrencyFilter = {
       _fractionSeparator,
       _symbolPosition,
       _symbolSpacing) {
-
       let runtimeConfig = utils.__defaults({
         symbol: _symbol,
         thousandsSeparator: _thousandsSeparator,
@@ -65,7 +63,7 @@ const VueCurrencyFilter = {
         symbol: runtimeConfig.symbol,
         precision: runtimeConfig.fractionCount,
         thousand: runtimeConfig.thousandsSeparator,
-        decimal: runtimeConfig.fractionSeparator,
+        decimal: runtimeConfig.fractionSeparator
       })
 
       if (isNegative) {
