@@ -2,169 +2,280 @@
   <div
     id="app"
     class="VueCurrencyFilter">
-    <header
-      role="header"
-      class="site__header header">
-      <div class="header__wrapper">
-        <div class="header__brand">
-          <a href="#">
-            <img
-              src="favicon/favicon-96x96.png"
-              alt="Vue-Currency-Filter Logo"
-              title="Vue-Currency-Filter Logo">
+    <section class="hero is-primary is-medium">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <figure
+            class="image is-128x128"
+            style="margin: auto;">
+            <img src="/vue-currency-filter/favicon/favicon-96x96.png">
+          </figure>
+          <h1 class="title">
+            Vue Currency Filter
+          </h1>
+          <h2 class="subtitle">
+            Lightweight vue currency filter based
+          </h2>
+          <a
+            href="https://github.com/mazipan/vue-currency-filter"
+            class="button is-primary is-inverted is-outlined">
+            Fork in Github
           </a>
-          <div class="header__title">
-            Vue-Currency-Filter
+          <br><br>
+          <a
+            href="https://www.npmjs.com/package/vue-currency-filter"
+            target="_blank"
+            rel="noopener noreferer">
+            <img
+              alt="NPM Version"
+              src="https://img.shields.io/npm/v/vue-currency-filter.svg">
+          </a>
+          <a
+            href="https://github.com/mazipan/vue-currency-filter"
+            target="_blank"
+            rel="noopener noreferer">
+            <img
+              alt="GitHub Stars"
+              src="https://img.shields.io/github/stars/mazipan/vue-currency-filter.svg?style=social">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="ads">
+      <InArticleAdsense
+        data-ad-client="ca-pub-5442972248172818"
+        data-ad-slot="7974047383" />
+    </section>
+
+    <section class="container configs">
+      <h2 class="title">
+        ⚙️ Customize Config
+      </h2>
+
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">
+            Symbol:
+          </label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <input
+                v-model="configSymbol"
+                class="input"
+                type="text"
+                placeholder="e.g. $">
+            </div>
           </div>
         </div>
       </div>
-    </header>
 
-    <div class="app">
-      <div class="grid__row content centered">
-        <h1>Lightweight vue currency filter based on accounting.js By Irfan Maulana</h1>
-
-        <h2>Example : </h2>
-        <input
-          v-model="textInput"
-          type="tel"
-          pattern="[0-9]*"
-          class="textfield textfield--shadow">
-
-        <div><b>Before filter</b> : {{ textInput }}</div>
-
-        <div>
-          <b>After filter - Default Configuration</b> :
-          <b class="result__filter--default">
-            {{ textInput | currency }}
-          </b>
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">
+            Separator:
+          </label>
         </div>
-
-        <div>
-          <b>After filter - Custom Configuration</b> :
-          <b class="result__filter">
-            {{ textInput | currency(configSymbol, configSeparator, configFractionCount, configFractionSeparator, configSymbolPosition, configSymbolSpacing) }}
-          </b>
-        </div>
-
-        <div>
-          <b>After filter - Custom Configuration Using Object</b> :
-          <b class="result__filter--object">
-            {{ textInput | currency({ fractionCount: 2, symbol: '¥' }) }}
-          </b>
-        </div>
-
-        <InArticleAdsense
-          data-ad-client="ca-pub-5442972248172818"
-          data-ad-slot="7974047383" />
-
-        <h2>Customize Config :</h2>
-        <div class="form__group">
-          <div class="form__icon form__icon--radius-left">
-            Symbol
-          </div>
-          <input
-            v-model="configSymbol"
-            class="textfield"
-            type="text">
-        </div>
-
-        <div class="form__group">
-          <div class="form__icon form__icon--radius-left">
-            Separator
-          </div>
-          <input
-            v-model="configSeparator"
-            class="textfield"
-            type="text">
-        </div>
-
-        <div class="form__group">
-          <div class="form__icon form__icon--radius-left">
-            Fraction Count
-          </div>
-          <input
-            v-model="configFractionCount"
-            class="textfield"
-            type="tel"
-            pattern="[0-9]*">
-        </div>
-
-        <div class="form__group">
-          <div class="form__icon form__icon--radius-left">
-            Fraction Separator
-          </div>
-          <input
-            v-model="configFractionSeparator"
-            class="textfield"
-            type="text">
-        </div>
-
-        <div class="form__group m-b-5">
-          <div class="form__icon form__icon--radius-left">
-            Symbol Position
-          </div>
-          <div class="form__wrapper">
-            <input
-              id="radio-form-1"
-              v-model="configSymbolPosition"
-              class="radio radio--blue"
-              type="radio"
-              name="radio-symbol"
-              :value="'front'">
-            <label for="radio-form-1">
-              Front
-            </label>
-            <input
-              id="radio-form-2"
-              v-model="configSymbolPosition"
-              class="radio radio--blue"
-              type="radio"
-              name="radio-symbol"
-              :value="'back'">
-            <label for="radio-form-2">
-              End of text
-            </label>
-          </div>
-        </div>
-
-        <div class="form__group m-b-5">
-          <div class="form__icon form__icon--radius-left">
-            Symbol Spacing
-          </div>
-          <div class="form__wrapper">
-            <input
-              id="radio-form-3"
-              v-model="configSymbolSpacing"
-              class="radio radio--blue"
-              type="radio"
-              name="radio-spacing"
-              :value="true">
-            <label for="radio-form-3">
-              Yes
-            </label>
-            <input
-              id="radio-form-4"
-              v-model="configSymbolSpacing"
-              class="radio radio--blue"
-              type="radio"
-              name="radio-spacing"
-              :value="false">
-            <label for="radio-form-4">
-              No
-            </label>
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <input
+                v-model="configSeparator"
+                class="input"
+                type="text"
+                placeholder="e.g. .">
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <InArticleAdsense
-      data-ad-client="ca-pub-5442972248172818"
-      data-ad-slot="7974047383" />
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">
+            Fraction Count:
+          </label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <input
+                v-model="configFractionCount"
+                class="input"
+                type="tel"
+                pattern="[0-9]*"
+                placeholder="e.g. 2">
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <div class="grid__row content centered">
-      <h2>Download</h2>
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">
+            Fraction Separator:
+          </label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <input
+                v-model="configFractionSeparator"
+                class="input"
+                type="text"
+                placeholder="e.g. .">
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label">
+            Symbol Position:
+          </label>
+        </div>
+        <div class="field-body">
+          <div class="field is-narrow">
+            <div class="control">
+              <label class="radio">
+                <input
+                  id="radio-form-1"
+                  v-model="configSymbolPosition"
+                  type="radio"
+                  name="radio-symbol"
+                  :value="'front'">
+                Before Text
+              </label>
+              <label class="radio">
+                <input
+                  id="radio-form-2"
+                  v-model="configSymbolPosition"
+                  type="radio"
+                  name="radio-symbol"
+                  :value="'back'">
+                After Text
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label">
+            Symbol Spacing:
+          </label>
+        </div>
+        <div class="field-body">
+          <div class="field is-narrow">
+            <div class="control">
+              <label class="radio">
+                <input
+                  id="radio-form-3"
+                  v-model="configSymbolSpacing"
+                  type="radio"
+                  name="radio-spacing"
+                  :value="true">
+                Use Spacing
+              </label>
+              <label class="radio">
+                <input
+                  id="radio-form-4"
+                  v-model="configSymbolSpacing"
+                  type="radio"
+                  name="radio-spacing"
+                  :value="false">
+                Remove Spacing
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">
+            Currency:
+          </label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <input
+                v-model="textInput"
+                type="tel"
+                pattern="[0-9]*"
+                class="input"
+                placeholder="e.g. 123456789">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">
+            Result - Global Config:
+          </label>
+        </div>
+        <div
+          class="field-body"
+          style="align-items: flex-end;">
+          <div class="field">
+            <b class="subtitle result__filter--default">
+              {{ textInput | currency }}
+            </b>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">
+            Result - Custom Config:
+          </label>
+        </div>
+        <div
+          class="field-body"
+          style="align-items: flex-end;">
+          <div class="field">
+            <b class="subtitle result__filter--default">
+              {{ textInput | currency(configSymbol, configSeparator, configFractionCount, configFractionSeparator, configSymbolPosition, configSymbolSpacing) }}
+            </b>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">
+            Result - Static Config:
+          </label>
+        </div>
+        <div
+          class="field-body"
+          style="align-items: flex-end;">
+          <div class="field">
+            <b class="subtitle result__filter--default">
+              {{ textInput | currency({ fractionCount: 2, symbol: '¥' }) }}
+            </b>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ads">
+      <InArticleAdsense
+        data-ad-client="ca-pub-5442972248172818"
+        data-ad-slot="7974047383" />
+    </section>
+
+    <section class="container docs">
+      <h2 class="title">
+        🚀 Download
+      </h2>
       <pre v-highlightjs>
         <code class="bash">
           # NPM
@@ -174,12 +285,16 @@
           yarn add vue-currency-filter
         </code>
       </pre>
-    </div>
+    </section>
 
-    <div class="grid__row content centered">
-      <h2>Usage Guide</h2>
-
-      <h3>In main.js</h3>
+    <section class="container docs">
+      <h2 class="title">
+        ❓ Usage Guide
+      </h2>
+      <br>
+      <h3 class="subtitle">
+        In main.js
+      </h3>
       <pre v-highlightjs>
         <code class="javascript">
           import VueCurrencyFilter from 'vue-currency-filter'
@@ -196,19 +311,25 @@
         </code>
       </pre>
 
-      <h3>In template</h3>
+      <h3 class="subtitle">
+        In template
+      </h3>
       <pre v-highlightjs>
         <code class="html">
           {{ templateHtml }}
           {{ templateHtmlCustom }}
         </code>
       </pre>
-    </div>
+    </section>
 
-    <div class="grid__row content centered">
-      <h2>For Nuxt.js Project</h2>
-
-      <h3>Create file `plugins/currency.js`, with code :</h3>
+    <section class="container docs">
+      <h2 class="title">
+        📟 For Nuxt.js Project
+      </h2>
+      <br>
+      <h3 class="subtitle">
+        Create file `plugins/currency.js`, with code :
+      </h3>
       <pre v-highlightjs>
         <code class="javascript">
           import VueCurrencyFilter from 'vue-currency-filter'
@@ -225,7 +346,9 @@
         </code>
       </pre>
 
-      <h3>Then update your nuxt.config.js, with code :</h3>
+      <h3 class="subtitle">
+        Then update your nuxt.config.js, with code :
+      </h3>
       <pre v-highlightjs>
         <code class="javascript">
           module.exports = {
@@ -235,21 +358,7 @@
           }
         </code>
       </pre>
-    </div>
-
-    <div class="grid__row content centered">
-      <h2>Contribute</h2><p>
-        Feel free to fork <i class="fa fa-code-fork" /> on <a
-          href="https://github.com/mazipan/vue-currency-filter"
-          target="_blank">
-          GitHub <i class="fa fa-github" />
-        </a> if you have any features <i class="fa fa-cart-plus" /> or bugs <i class="fa fa-bug" />!
-      </p>
-    </div>
-
-    <footer class="footer">
-      Copyright © 2017 Irfan Maulana, All Rights Reserved.
-    </footer>
+    </section>
   </div>
 </template>
 
@@ -305,50 +414,11 @@ export default {
 </script>
 
 <style lang="scss">
-$theme: #f0843b;
-
-a{
-  color: $theme;
+@import "~bulma-dracula/src/bulma-dracula.scss";
+pre {
+  padding: 0;
 }
-pre{
-  border-left: solid .25em $theme;
-}
-.radio--blue:checked+label:before {
-    background-color: $theme;
-}
-.radio--blue+label:after, .radio--blue+label:before {
-    border: 1px solid $theme;
-}
-.header{-webkit-box-shadow:0 1px 2px rgba(0,0,0,.075);-moz-box-shadow:0 1px 2px rgba(0,0,0,.075);box-shadow:0 1px 2px rgba(0,0,0,.075);position:fixed;top:0;z-index:100;width:100%;height:60px;background:rgba(240, 133, 59, 1)}
-.header__wrapper{display:flex;justify-content:space-between;align-items:center}
-.header__brand{display:flex;justify-content:space-between;align-items:center;margin:.2em}
-.header__brand img{width:50px;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}
-.header__title{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;font-style:normal;font-size:1.8rem;font-weight:500;margin-left:.5em}.app{margin-top:70px}
-
-.form__group {
-  max-width: 500px;
-}
-.form__icon {
-  width: 250px;
-  background-color: $theme;
-}
-.form__wrapper {
-  margin-left: 5px;
-}
-.m-b-5 {
-  margin-bottom: 5px;
-}
-.result__filter,
-.result__filter--default {
-  font-size: 20px;
-}
-.left {
-  text-align: left;
-}
-.footer{
-  width:100%;
-  background:rgba(240, 133, 59, 1);
-  text-align: center;
-  padding: 1em;
+.container{
+  margin-top: 2em;
 }
 </style>

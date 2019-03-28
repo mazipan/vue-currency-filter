@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const CompressionPlugin = require("compression-webpack-plugin")
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
@@ -65,13 +66,16 @@ const config = {
     noInfo: false
   },
   plugins: [
-    new VueLoaderPlugin(),
-    extractHTML,
     new webpack.DefinePlugin({
       'process.env': {
         isStaging: (NODE_ENV === 'development' || NODE_ENV === 'staging'),
         NODE_ENV: '"'+NODE_ENV+'"'
       }
+    }),
+    new VueLoaderPlugin(),
+    extractHTML,
+    new MiniCssExtractPlugin({
+      filename: "[name].[hash].css"
     }),
     new CompressionPlugin({
       algorithm: 'gzip'
@@ -88,14 +92,18 @@ const config = {
       {
         test: /\.css$/,
         use: [
-          'vue-style-loader',
+          process.env.NODE_ENV !== 'production'
+            ? 'vue-style-loader'
+            : MiniCssExtractPlugin.loader,
           'css-loader'
         ],
       },
       {
         test: /\.scss$/,
         use: [
-          'vue-style-loader',
+          process.env.NODE_ENV !== 'production'
+            ? 'vue-style-loader'
+            : MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader'
         ],
@@ -103,7 +111,9 @@ const config = {
       {
         test: /\.sass$/,
         use: [
-          'vue-style-loader',
+          process.env.NODE_ENV !== 'production'
+            ? 'vue-style-loader'
+            : MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader?indentedSyntax'
         ],
@@ -113,9 +123,7 @@ const config = {
         loader: 'vue-loader',
         options: {
           loaders: {
-            js: 'babel-loader',
-            scss: 'vue-style-loader!css-loader!sass-loader',
-            sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
+            js: 'babel-loader'
           }
         }
       },
