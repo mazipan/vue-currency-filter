@@ -7,8 +7,8 @@
         <div class="container has-text-centered">
           <figure
             class="image is-128x128"
-            style="margin: auto;">
-            <img src="/vue-currency-filter/favicon/VueJS-Currency-128px">
+            style="margin: 0 auto 2em;">
+            <img src="/vue-currency-filter/favicon/VueJS-Currency-128px.png">
           </figure>
           <h1 class="title">
             Vue Currency Filter
