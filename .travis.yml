@@ -3,7 +3,8 @@ node_js: '8'
 branches:
   only:
   - master
-script: 
+  - /^greenkeeper/.*$/
+script:
   - npm run build-demo
 after_script:
   - npm install -g codecov
