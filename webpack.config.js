@@ -1,97 +1,35 @@
-const path = require('path');
-const fs = require('fs');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+var webpack = require('webpack')
+var path = require('path')
+var npm = require("./package.json")
 const CompressionPlugin = require("compression-webpack-plugin")
-const { GenerateSW } = require('workbox-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
-const NODE_ENV = process.env.NODE_ENV;
-
-const setPath = function(folderName) {
-  return path.join(__dirname, folderName);
-}
-
-const buildingForLocal = () => {
-  return (NODE_ENV === 'development');
-};
-
-const setPublicPath = () => {
-  return buildingForLocal() ? '/' : '/vue-currency-filter/';
-};
-
-const extractHTML = new HtmlWebpackPlugin({
-  title: 'History Search',
-  filename: 'index.html',
-  inject: true,
-  template: setPath('/demo/index.ejs'),
-  minify: {
-    removeAttributeQuotes: true,
-    collapseWhitespace: true,
-    html5: true,
-    minifyCSS: true,
-    removeComments: true,
-    removeEmptyAttributes: true
-  },
-  environment: process.env.NODE_ENV
-});
-
-
-const config = {
+module.exports = {
   entry: {
-    app: path.join(setPath('demo'), 'demo.js')
+    VueCurrencyFilter: './src/VueCurrencyFilter.js',
   },
   output: {
-    path: buildingForLocal() ? path.resolve(__dirname) : setPath('dist-demo'),
-    publicPath: setPublicPath(),
-    filename: buildingForLocal() ? 'js/[name].js' : 'js/[name].[hash].js'
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/dist',
+    filename: '[name].min.js',
+    library: 'VueCurrencyFilter',
+    libraryTarget: 'umd',
+    umdNamedDefine: true,
+    jsonpFunction: 'WebpackJsonp'
   },
-  optimization:{
-    runtimeChunk: false,
-    splitChunks: {
-      chunks: "all", //Taken from https://gist.github.com/sokra/1522d586b8e5c0f5072d7565c2bee693
-    }
-  },
-  resolveLoader: {
-    modules: [ 'node_modules' ],
+  mode: 'production',
+  optimization: {
+    minimize: true
   },
   resolve: {
+    extensions: ['.js', ],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
-    },
-    extensions: ['*', '.js', '.vue', '.json']
+      'vue$': 'vue/dist/vue.common.js'
+    }
   },
-  mode: buildingForLocal() ? 'development' : 'production',
-  devServer: {
-    historyApiFallback: true,
-    noInfo: false
-  },
-  plugins: [
-    new VueLoaderPlugin(),
-    extractHTML,
-    new webpack.DefinePlugin({
-      'process.env': {
-        isStaging: (NODE_ENV === 'development' || NODE_ENV === 'staging'),
-        NODE_ENV: '"'+NODE_ENV+'"'
-      }
-    }),
-    new CompressionPlugin({
-      algorithm: 'gzip'
-    }),
-    new CopyWebpackPlugin([
-      {
-        from: 'demo/favicon',
-        to: 'favicon'
-      }
-    ]),
-    new GenerateSW({
-      swDest: 'sw.js'
-    })
-  ],
+  devtool: '#source-map',
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.css$/,
         use: [
           'vue-style-loader',
@@ -126,13 +64,27 @@ const config = {
         }
       },
       {
-        test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader'
-        }
+        test: /\.js$/,
+        exclude: path.resolve(__dirname, 'node_modules'),
+        loader: 'babel-loader',
       }
     ]
-  }
-};
-module.exports = config;
+  },
+  externals: {
+    "vue": "Vue"
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': '"production"'
+      }
+    }),
+    new VueLoaderPlugin(),
+    new webpack.BannerPlugin({
+      banner: `VueCurrencyFilter v${npm.version} by Irfan Maulana <github.com/mazipan>`
+    }),
+    new CompressionPlugin({
+      algorithm: 'gzip'
+    })
+  ]
+}
