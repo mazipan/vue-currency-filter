@@ -241,7 +241,7 @@
           class="field-body"
           style="align-items: flex-end;">
           <div class="field">
-            <b class="subtitle result__filter--default">
+            <b class="subtitle result__filter">
               {{ textInput | currency(configSymbol, configSeparator, configFractionCount, configFractionSeparator, configSymbolPosition, configSymbolSpacing) }}
             </b>
           </div>
@@ -258,7 +258,7 @@
           class="field-body"
           style="align-items: flex-end;">
           <div class="field">
-            <b class="subtitle result__filter--default">
+            <b class="subtitle result__filter--object">
               {{ textInput | currency({ fractionCount: 2, symbol: '¥' }) }}
             </b>
           </div>
