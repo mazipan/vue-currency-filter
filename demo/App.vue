@@ -8,7 +8,7 @@
           <figure
             class="image is-128x128"
             style="margin: auto;">
-            <img src="/vue-currency-filter/favicon/favicon-96x96.png">
+            <img src="/vue-currency-filter/favicon/VueJS-Currency-128px">
           </figure>
           <h1 class="title">
             Vue Currency Filter
