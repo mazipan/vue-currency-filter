@@ -4,8 +4,15 @@ branches:
   only:
   - master
   - /^greenkeeper/.*$/
+cache:
+  yarn: true
+  directories:
+    - node_modules
+install:
+  - yarn install
 script:
-  - npm run build-demo
+  - yarn build:demo
+  - yarn test
 after_script:
   - npm install -g codecov
   - codecov
