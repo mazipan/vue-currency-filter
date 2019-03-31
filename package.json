@@ -1,6 +1,6 @@
 {
   "name": "vue-currency-filter",
-  "description": "Lightweight vue currency filter based on accounting.js",
+  "description": "🍒 Lightweight vue currency filter based on accounting.js",
   "version": "3.4.1",
   "license": "MIT",
   "author": "Irfan Maulana (https://github.com/mazipan/)",
