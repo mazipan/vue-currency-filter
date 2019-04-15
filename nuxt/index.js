@@ -7,7 +7,7 @@ module.exports = function nuxtVueCurrencyFilter (moduleOptions) {
   }
 
   this.addPlugin({
-    ssr: true,
+    ssr: false,
     src: resolve(__dirname, 'plugin.js'),
     fileName: 'vue-currency-filter.js',
     options
