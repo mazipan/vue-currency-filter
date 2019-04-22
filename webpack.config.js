@@ -8,6 +8,7 @@ module.exports = {
   entry: {
     VueCurrencyFilter: './src/VueCurrencyFilter.js',
   },
+  target: 'node',
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist',
