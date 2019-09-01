@@ -1,7 +1,5 @@
 const nativeMap = Array.prototype.map
-
 const nativeIsArray = Array.isArray
-
 const toString = Object.prototype.toString
 
 export default {
