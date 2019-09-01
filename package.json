@@ -9,9 +9,11 @@
   "module": "dist/VueCurrencyFilter.min.js",
   "unpkg": "dist/VueCurrencyFilter.min.js",
   "jsdelivr": "dist/VueCurrencyFilter.min.js",
+  "typings": "types/index.d.ts",
   "files": [
     "dist",
     "nuxt",
+    "types",
     "accounting.js",
     "utils.js",
     "VueCurrencyFilter.js"
