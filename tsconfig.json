@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "declaration": true,
+    "declarationDir": "dist",
+    "target": "esnext",
+    "module": "esnext",
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["src/*"],
+    },
+    // "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "outDir": "compiled",
+    "isolatedModules": false,
+    "pretty": true,
+    "typeRoots": ["./node_modules/@types", "./types"],
+    "types": ["jest"],
+    "lib": ["dom", "es2015", "es2016"]
+  },
+  "exclude": [
+    "node_modules",
+    "assets",
+    "demo",
+    "nuxt",
+    "test"
+  ],
+  "include": ["types", "types/typings.d.ts"]
+}
