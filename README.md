@@ -15,14 +15,8 @@
   <a href="https://travis-ci.org/mazipan/vue-currency-filter">
     <img src="https://img.shields.io/travis/mazipan/vue-currency-filter.svg" alt="Travis Build">
   </a>
-  <a href="https://codecov.io/gh/mazipan/vue-currency-filter">
-    <img src="https://codecov.io/gh/mazipan/vue-currency-filter/branch/master/graph/badge.svg" alt="Code Coverage">
-  </a>
   <a href="#contributors">
     <img src="https://img.shields.io/badge/all_contributors-4-orange.svg" alt="All Contributors">
-  </a>
-  <a href="https://greenkeeper.io/">
-    <img src="https://badges.greenkeeper.io/mazipan/vue-currency-filter.svg" alt="Greenkeeper">
   </a>
 </p>
 
