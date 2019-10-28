@@ -9644,9 +9644,9 @@ vue-eslint-parser@^5.0.0:
     lodash "^4.17.11"
 
 vue-google-adsense@^1.5.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/vue-google-adsense/-/vue-google-adsense-1.7.0.tgz#b269b6ac7515b26100838d8413e4edf515d7b445"
-  integrity sha512-QlnEOwem9Kk8SGzSHhEcrNQPF6v27JaN2ur9vIe4mTf5i6DiBzQrGib97dTCMRlqnBObp1mu4eb+r3v5KgILGw==
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/vue-google-adsense/-/vue-google-adsense-1.8.0.tgz#803f3c5719ba781488bfd4533153490b070c60ae"
+  integrity sha512-NAN+/yD73KA9mXeRw2Fu/njCTYNGmB2S445WOgGfmiUYV3mddwXcI7EhVC5baJ/jDbbN5fKfgCjX3bOBscxX/Q==
   dependencies:
     vue "^2.6.10"
     vue-script2 "2.1.0"
