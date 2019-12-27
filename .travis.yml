@@ -12,10 +12,10 @@ install:
   - yarn install
 script:
   - yarn build:demo
-  - yarn test
+  # - yarn test
 after_script:
-  - npm install -g codecov
-  - codecov
+  # - npm install -g codecov
+  # - codecov
 deploy:
   provider: pages
   skip-cleanup: true
