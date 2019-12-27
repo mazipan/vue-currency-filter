@@ -1,7 +1,7 @@
 {
   "name": "vue-currency-filter",
   "description": "🍒 Lightweight vue currency filter based on accounting.js",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "license": "MIT",
   "private": false,
   "scripts": {
