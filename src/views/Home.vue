@@ -1,14 +1,12 @@
 <template>
-  <div
-    id="app"
-    class="VueCurrencyFilter">
+  <div class="home VueCurrencyFilter">
     <section class="hero is-primary is-medium">
       <div class="hero-body">
         <div class="container has-text-centered">
           <figure
             class="image is-128x128"
             style="margin: 0 auto 2em;">
-            <img src="/vue-currency-filter/favicon/VueJS-Currency-128px.png">
+            <img src="/img/icons/VueJS-Currency-128px.png">
           </figure>
           <h1 class="title">
             Vue Currency Filter
@@ -223,7 +221,7 @@
         <div
           class="field-body"
           style="align-items: flex-end;">
-          <div class="field">
+          <div class="field" style="text-align: left">
             <b class="subtitle result__filter--default">
               {{ textInput | currency }}
             </b>
@@ -240,7 +238,7 @@
         <div
           class="field-body"
           style="align-items: flex-end;">
-          <div class="field">
+          <div class="field" style="text-align: left">
             <b class="subtitle result__filter">
               {{ textInput | currency(configSymbol, configSeparator, configFractionCount, configFractionSeparator, configSymbolPosition, configSymbolSpacing) }}
             </b>
@@ -257,7 +255,7 @@
         <div
           class="field-body"
           style="align-items: flex-end;">
-          <div class="field">
+          <div class="field" style="text-align: left">
             <b class="subtitle result__filter--object">
               {{ textInput | currency({ fractionCount: 2, symbol: '¥' }) }}
             </b>
@@ -276,15 +274,9 @@
       <h2 class="title">
         🚀 Download
       </h2>
-      <pre v-highlightjs>
-        <code class="bash">
-          # NPM
-          npm install vue-currency-filter
-
-          # Yarn
-          yarn add vue-currency-filter
-        </code>
-      </pre>
+      <prism language="javascript">
+          {{ templateDownload }}
+      </prism>
     </section>
 
     <section class="container docs">
@@ -295,31 +287,17 @@
       <h3 class="subtitle">
         In main.js
       </h3>
-      <pre v-highlightjs>
-        <code class="javascript">
-          import VueCurrencyFilter from 'vue-currency-filter'
-          Vue.use(VueCurrencyFilter) // or with custom config
-          Vue.use(VueCurrencyFilter,
-          {
-            symbol : '$',
-            thousandsSeparator: '.',
-            fractionCount: 2,
-            fractionSeparator: ',',
-            symbolPosition: 'front',
-            symbolSpacing: true
-          })
-        </code>
-      </pre>
+      <prism language="javascript">
+          {{ templateMainJS }}
+      </prism>
 
       <h3 class="subtitle">
         In template
       </h3>
-      <pre v-highlightjs>
-        <code class="html">
+      <prism language="html">
           {{ templateHtml }}
           {{ templateHtmlCustom }}
-        </code>
-      </pre>
+      </prism>
     </section>
 
     <section class="container docs">
@@ -330,43 +308,42 @@
       <h3 class="subtitle">
         Create file `plugins/currency.js`, with code :
       </h3>
-      <pre v-highlightjs>
-        <code class="javascript">
-          import VueCurrencyFilter from 'vue-currency-filter'
-          Vue.use(VueCurrencyFilter) // or with custom config
-          Vue.use(VueCurrencyFilter,
-          {
-            symbol : '$',
-            thousandsSeparator: '.',
-            fractionCount: 2,
-            fractionSeparator: ',',
-            symbolPosition: 'front',
-            symbolSpacing: true
-          })
-        </code>
-      </pre>
+      <prism language="javascript">
+          {{ templatePlugin }}
+      </prism>
 
       <h3 class="subtitle">
         Then update your nuxt.config.js, with code :
       </h3>
-      <pre v-highlightjs>
-        <code class="javascript">
-          module.exports = {
-            plugins: [
-              { src: '~/plugins/currency', ssr: false }
-            ]
-          }
-        </code>
-      </pre>
+      <prism language="javascript">
+        {{ templateNuxtConfig }}
+      </prism>
     </section>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          Built with ❤️ by Irfan Maulana
+        </p>
+      </div>
+    </footer>
   </div>
 </template>
 
 <script>
-import utils from '../src/utils'
+import Vue from 'vue'
+import 'prismjs'
+import 'prismjs/themes/prism-twilight.css'
+import 'prismjs/components/prism-scss.min'
+import 'prismjs/plugins/autolinker/prism-autolinker.min'
+import 'prismjs/plugins/autolinker/prism-autolinker.css'
+import Prism from 'vue-prism-component'
+
+import utils from '../lib/utils'
+Vue.component('prism', Prism)
 
 export default {
-  name: 'App',
+  name: 'Home',
   data () {
     return {
       textInput: 20000,
@@ -376,16 +353,60 @@ export default {
       configFractionSeparator: ',',
       configSymbolPosition: 'front',
       configSymbolSpacing: true,
-      templateHtml: '<span>{{ 20000 | currency}}</span>',
+      templateDownload: `
+# NPM
+npm install vue-currency-filter
+
+# Yarn
+yarn add vue-currency-filter
+`,
+      templateMainJS: `
+import VueCurrencyFilter from 'vue-currency-filter'
+Vue.use(VueCurrencyFilter)
+// or with custom config
+Vue.use(VueCurrencyFilter, {
+  symbol : '$',
+  thousandsSeparator: '.',
+  fractionCount: 2,
+  fractionSeparator: ',',
+  symbolPosition: 'front',
+  symbolSpacing: true
+})
+      `,
+      templatePlugin: `
+import VueCurrencyFilter from 'vue-currency-filter'
+
+Vue.use(VueCurrencyFilter)
+// or with custom config
+Vue.use(VueCurrencyFilter, {
+  symbol : '$',
+  thousandsSeparator: '.',
+  fractionCount: 2,
+  fractionSeparator: ',',
+  symbolPosition: 'front',
+  symbolSpacing: true
+})
+      `,
+      templateNuxtConfig: `
+module.exports = {
+  plugins: [
+    { src: '~/plugins/currency', ssr: false }
+  ]
+}
+      `,
+      templateHtml: `
+<span>{{ 20000 | currency}}</span>
+
+`,
       templateHtmlCustom: `
-          <!-- or with custom config -->
-          <span>
-          {{ 20000 | currency(
-              configSymbol, configSeparator, configFractionCount,
-              configFractionSeparator, configSymbolPosition, configSymbolSpacing
-            )
-          }}
-          </span>`
+<!-- or with custom config -->
+<span>
+{{ 20000 | currency(
+    configSymbol, configSeparator, configFractionCount,
+    configFractionSeparator, configSymbolPosition, configSymbolSpacing
+  )
+}}
+</span>`
     }
   },
   methods: {
@@ -415,7 +436,22 @@ export default {
 
 <style lang="scss">
 @import "~bulma-dracula/src/bulma-dracula.scss";
-pre {
+
+pre:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+.radio, .footer{
+  color: #fff;
+}
+
+.number{
+  text-align: center;
+  vertical-align: middle;
+  font-size: .9rem;
+  border-radius: 0;
+  background-color: transparent;
+  margin: 0;
   padding: 0;
 }
 .container{
