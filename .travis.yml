@@ -21,7 +21,7 @@ deploy:
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
   keep-history: true
-  local-dir: dist-demo
+  local-dir: dist
   verbose: true
   on:
     branch: master

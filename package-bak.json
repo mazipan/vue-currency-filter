@@ -1,0 +1,106 @@
+{
+  "name": "vue-currency-filter",
+  "description": "🍒 Lightweight vue currency filter based on accounting.js",
+  "version": "4.0.1",
+  "license": "MIT",
+  "author": "Irfan Maulana (https://github.com/mazipan/)",
+  "homepage": "https://mazipan.github.io/vue-currency-filter/",
+  "main": "dist-lib/VueCurrencyFilter.common.js",
+  "module": "dist-lib/VueCurrencyFilter.common.js",
+  "unpkg": "dist-lib/VueCurrencyFilter.umd.min.js",
+  "jsdelivr": "dist-lib/VueCurrencyFilter.umd.min.js",
+  "typings": "types/index.d.ts",
+  "files": [
+    "dist-lib",
+    "nuxt",
+    "types"
+  ],
+  "keywords": [
+    "vue 2 currency",
+    "vue currency",
+    "vue currency filter",
+    "vue filter"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mazipan/vue-currency-filter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mazipan/vue-currency-filter/issues"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --hot --color --open --config webpack.config.demo.js",
+    "build:demo": "rimraf dist-demo && cross-env NODE_ENV=production webpack --progress --hide-modules --config webpack.config.demo.js",
+    "build:lib": "rimraf dist && cross-env NODE_ENV=production webpack --config webpack.config.js",
+		"build": "npm run build:demo && npm run build:lib",
+		"build:vue-cli": "vue-cli-service build",
+    "publish-demo": "node ./publish-demo.js",
+    "test": "./node_modules/.bin/jest --coverage",
+    "dist": "npm run build-demo && npm run build-lib && npm run publish-demo",
+    "lint": "eslint --ext .js,.vue --ignore-path .eslintignore .",
+    "lint-fix": "eslint --ext .js,.vue --ignore-path .eslintignore . --fix"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/plugin-syntax-dynamic-import": "^7.7.4",
+    "@babel/plugin-syntax-jsx": "^7.7.4",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-typescript": "^7.7.7",
+    "@vue/test-utils": "^1.0.0-beta.30",
+    "autoprefixer": "^9.7.3",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "24.9.0",
+    "babel-loader": "^8.0.6",
+    "bulma-dracula": "^1.0.3",
+    "compression-webpack-plugin": "^3.0.1",
+    "copy-webpack-plugin": "5.1.1",
+    "cross-env": "^6.0.3",
+    "css-loader": "^3.4.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-vue": "^6.0.2",
+    "gh-pages": "2.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.1.0",
+    "jest": "^24.9.0",
+    "jest-serializer-vue": "^2.0.2",
+    "lint-staged": "^9.5.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
+    "typescript": "^3.7.4",
+    "vue": "^2.6.11",
+    "vue-google-adsense": "^1.8.0",
+    "vue-highlightjs": "1.3.3",
+    "vue-jest": "^3.0.5",
+    "vue-loader": "^15.8.3",
+    "vue-script2": "^2.1.0",
+    "vue-style-loader": "4.1.2",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1",
+    "webpack-serve": "^3.2.0"
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "ts-loader": "^6.2.1",
+    "tsc": "^1.20150623.0"
+  }
+}

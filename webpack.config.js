@@ -30,7 +30,13 @@ module.exports = {
   },
   devtool: '#source-map',
   module: {
-    rules: [{
+    rules: [
+      {
+        test: /\.(ts)?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+			{
         test: /\.css$/,
         use: [
           'vue-style-loader',
