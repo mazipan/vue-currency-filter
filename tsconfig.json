@@ -16,9 +16,6 @@
     "sourceMap": true,
     "baseUrl": ".",
     "types": [
-      "typePatches",
-      "node",
-      "webpack-env"
     ],
     "paths": {
       "@/*": [
