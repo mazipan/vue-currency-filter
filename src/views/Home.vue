@@ -6,7 +6,7 @@
           <figure
             class="image is-128x128"
             style="margin: 0 auto 2em;">
-            <img src="/img/icons/VueJS-Currency-128px.png">
+            <img src="img/icons/VueJS-Currency-128px.png">
           </figure>
           <h1 class="title">
             Vue Currency Filter
