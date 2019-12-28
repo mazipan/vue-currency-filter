@@ -13,7 +13,7 @@ install:
 script:
   - yarn build:demo
   # - yarn test
-after_script:
+# after_script:
   # - npm install -g codecov
   # - codecov
 deploy:
