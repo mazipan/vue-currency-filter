@@ -12,6 +12,9 @@ install:
   - yarn install
 script:
   - yarn build:demo
+  # only for test the build process
+  - yarn build:lib:tsc
+  # temporary hide
   # - yarn test
 # after_script:
   # - npm install -g codecov
