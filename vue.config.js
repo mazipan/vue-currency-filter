@@ -5,6 +5,9 @@ module.exports = {
       libraryExport: 'default'
     }
   },
+  pwa: {
+    themeColor: '#000'
+  }
   // chainWebpack: config => {
   //   config.module
   //     .rule('vue')
