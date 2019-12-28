@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: 'vue-currency-filter',
+  publicPath: '/vue-currency-filter',
   configureWebpack: {
     output: {
       libraryExport: 'default'
