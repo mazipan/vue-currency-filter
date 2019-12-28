@@ -9,6 +9,7 @@
     "serve": "vue-cli-service serve",
     "build:demo": "vue-cli-service build",
     "build:lib": "vue-cli-service build --dest dist-lib --target lib --name VueCurrencyFilter ./src/lib/VueCurrencyFilter.ts",
+    "build:lib:tsc": "tsc ./src/lib/VueCurrencyFilter.ts",
     "lint": "vue-cli-service lint --fix"
   },
   "author": "Irfan Maulana (https://github.com/mazipan/)",
@@ -66,6 +67,7 @@
     "register-service-worker": "1.6.2",
     "sass-loader": "8.0.0",
     "typescript": "3.7.4",
+    "tsc": "latest",
     "vue-class-component": "7.1.0",
     "vue-google-adsense": "1.8.0",
     "vue-prism-component": "^1.1.1",
