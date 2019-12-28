@@ -1,4 +1,5 @@
 module.exports = {
+  publicPath: 'vue-currency-filter'
   // chainWebpack: config => {
   //   config.module
   //     .rule('vue')
