@@ -6,24 +6,25 @@
     "strict": true,
     "jsx": "preserve",
     "importHelpers": true,
-		"moduleResolution": "node",
-		"noImplicitAny": false,
-		"strictNullChecks": false,
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "strictNullChecks": false,
     "experimentalDecorators": true,
     "allowJs": true,
     "esModuleInterop": true,
-		"allowSyntheticDefaultImports": true,
+    "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": ".",
     "types": [
-			"typePatches",
+      "typePatches",
+      "node",
       "webpack-env"
     ],
     "paths": {
       "@/*": [
         "src/*"
-			],
-			"@lib/*": [
+      ],
+      "@lib/*": [
         "src/lib/*"
       ]
     },
