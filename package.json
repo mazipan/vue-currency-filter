@@ -1,26 +1,28 @@
 {
   "name": "vue-currency-filter",
   "description": "🍒 Lightweight vue currency filter based on accounting.js",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "license": "MIT",
   "private": false,
   "scripts": {
     "dev": "vue-cli-service serve",
     "serve": "vue-cli-service serve",
+    "prepare": "yarn build:lib:tsc",
     "build:demo": "vue-cli-service build",
-    "build:lib": "vue-cli-service build --dest dist-lib --target lib --name VueCurrencyFilter ./src/lib/VueCurrencyFilter.ts",
-    "build:lib:tsc": "tsc ./src/lib/VueCurrencyFilter.ts",
+    "build:lib": "vue-cli-service build --dest lib-out --target lib --name VueCurrencyFilter ./src/lib/VueCurrencyFilter.ts",
+    "build:lib:tsc": "tsc ./src/lib/VueCurrencyFilter.ts -m CommonJS --outDir ./lib-out",
+    "check:size": "node ./check-size.js",
     "lint": "vue-cli-service lint --fix"
   },
   "author": "Irfan Maulana (https://github.com/mazipan/)",
   "homepage": "https://mazipan.github.io/vue-currency-filter/",
-  "main": "dist-lib/VueCurrencyFilter.common.js",
-  "module": "dist-lib/VueCurrencyFilter.common.js",
-  "unpkg": "dist-lib/VueCurrencyFilter.umd.min.js",
-  "jsdelivr": "dist-lib/VueCurrencyFilter.umd.min.js",
+  "main": "lib-out/VueCurrencyFilter.js",
+  "module": "lib-out/VueCurrencyFilter.js",
+  "unpkg": "lib-out/VueCurrencyFilter.js",
+  "jsdelivr": "lib-out/VueCurrencyFilter.js",
   "typings": "types/index.d.ts",
   "files": [
-    "dist-lib",
+    "lib-out",
     "nuxt",
     "types"
   ],
@@ -40,7 +42,9 @@
   "peerDependencies": {
     "vue": "2.6.11"
   },
-  "dependencies": {},
+  "dependencies": {
+    "chalk": "^3.0.0"
+  },
   "devDependencies": {
     "@types/node": "12.12.22",
     "@typescript-eslint/eslint-plugin": "2.13.0",
@@ -56,6 +60,7 @@
     "@vue/eslint-config-typescript": "5.0.1",
     "babel-eslint": "10.0.3",
     "bulma-dracula": "1.0.3",
+    "bytes": "^3.1.0",
     "core-js": "3.6.1",
     "eslint": "6.8.0",
     "eslint-plugin-import": "2.19.1",
@@ -63,12 +68,13 @@
     "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-standard": "4.0.1",
     "eslint-plugin-vue": "6.1.0",
+    "gzip-size": "^5.1.1",
     "node-sass": "4.13.0",
     "prismjs": "1.17.1",
     "register-service-worker": "1.6.2",
     "sass-loader": "8.0.0",
-    "typescript": "3.7.4",
     "tsc": "latest",
+    "typescript": "3.7.4",
     "vue-class-component": "7.1.0",
     "vue-google-adsense": "1.8.0",
     "vue-prism-component": "1.1.1",

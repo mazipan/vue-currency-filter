@@ -1,5 +1,5 @@
 import { toFixed, formatMoney } from './accounting'
-import utils from './utils'
+import { __isNull, __defaults } from './utils';
 
 const VueCurrencyFilter = {
   install (Vue, options) {
@@ -13,8 +13,8 @@ const VueCurrencyFilter = {
       symbolSpacing: true
     }
 
-    if (utils.__isNull(options)) options = {}
-    const globalConfigs = utils.__defaults(options, defaultConfig)
+    if (__isNull(options)) options = {}
+    const globalConfigs = __defaults(options, defaultConfig)
     let { name, ...configs } = globalConfigs
 
     const filterCurrency = function (value,
@@ -24,7 +24,7 @@ const VueCurrencyFilter = {
       _fractionSeparator,
       _symbolPosition,
       _symbolSpacing) {
-      let runtimeConfig = utils.__defaults({
+      let runtimeConfig = __defaults({
         symbol: _symbol,
         thousandsSeparator: _thousandsSeparator,
         fractionCount: _fractionCount,
@@ -34,7 +34,7 @@ const VueCurrencyFilter = {
       }, configs)
 
       if (typeof _symbol === 'object') {
-        runtimeConfig = utils.__defaults(_symbol, configs)
+        runtimeConfig = __defaults(_symbol, configs)
       }
 
       let result = 0.0
@@ -80,7 +80,7 @@ const VueCurrencyFilter = {
     Vue.filter(name, filterCurrency)
     Vue.prototype.$CurrencyFilter = {
       setConfig: (options) => {
-        configs = utils.__defaults(options, defaultConfig)
+        configs = __defaults(options, defaultConfig)
       },
       getConfig: () => {
         return configs

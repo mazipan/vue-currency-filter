@@ -1,4 +1,4 @@
-import utils from './utils'
+import { __isString, __isArray, __map, __defaults, __isObject } from './utils';
 
 const lib = {
   settings: {
@@ -43,7 +43,7 @@ export function checkCurrencyFormat (format) {
   if (typeof format === 'function') format = format()
 
   // Format can be a string, in which case `value` ("%v") must be present:
-  if (utils.__isString(format) && format.match('%v')) {
+  if (__isString(format) && format.match('%v')) {
     // Create and return positive, negative and zero formats:
     return {
       pos: format,
@@ -54,7 +54,7 @@ export function checkCurrencyFormat (format) {
     // If no format, or object is missing valid positive value, use defaults:
   } else if (!format || !format.pos || !format.pos.match('%v')) {
     // If defaults is a string, casts it to an object for faster checking next time:
-    return !utils.__isString(defaults)
+    return !__isString(defaults)
       ? defaults
       // @ts-ignore
       : (lib.settings.currency.format = {
@@ -69,8 +69,8 @@ export function checkCurrencyFormat (format) {
 
 export const unformat = function (value, decimal?) {
   // Recursively unformat arrays:
-  if (utils.__isArray(value)) {
-    return utils.__map(value, function (val) {
+  if (__isArray(value)) {
+    return __map(value, function (val) {
       return unformat(val, decimal)
     })
   }
@@ -127,8 +127,8 @@ export const formatNumber = function (
   decimal
 ) {
   // Resursively format arrays:
-  if (utils.__isArray(number)) {
-    return utils.__map(number, function (val) {
+  if (__isArray(number)) {
+    return __map(number, function (val) {
       return formatNumber(val, precision, thousand, decimal)
     })
   }
@@ -137,8 +137,8 @@ export const formatNumber = function (
   number = unformat(number)
 
   // Build options object from second param (if object) or all params, extending defaults:
-  var opts = utils.__defaults(
-    utils.__isObject(precision)
+  var opts = __defaults(
+    __isObject(precision)
       ? precision
       : {
         precision: precision,
@@ -185,8 +185,8 @@ export const formatMoney = function (
   format
 ) {
   // Resursively format arrays:
-  if (utils.__isArray(number)) {
-    return utils.__map(number, function (val) {
+  if (__isArray(number)) {
+    return __map(number, function (val) {
       return formatMoney(val, symbol, precision, thousand, decimal, format)
     })
   }
@@ -195,8 +195,8 @@ export const formatMoney = function (
   number = unformat(number)
 
   // Build options object from second param (if object) or all params, extending defaults:
-  var opts = utils.__defaults(
-    utils.__isObject(symbol)
+  var opts = __defaults(
+    __isObject(symbol)
       ? symbol
       : {
         symbol: symbol,
@@ -225,12 +225,4 @@ export const formatMoney = function (
         opts.decimal
       )
     )
-}
-
-export default {
-  ...lib,
-  unformat,
-  toFixed,
-  formatNumber,
-  formatMoney
 }

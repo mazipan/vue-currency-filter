@@ -1,7 +1,8 @@
 .DS_Store
 node_modules
 /dist
-/dist-lib
+/lib-out/*.js
+/lib-out/*.ts
 
 # local env files
 .env.local

@@ -14,6 +14,7 @@ script:
   - yarn build:demo
   # only for test the build process
   - yarn build:lib:tsc
+  - yarn check:size
   # temporary hide
   # - yarn test
 # after_script:
