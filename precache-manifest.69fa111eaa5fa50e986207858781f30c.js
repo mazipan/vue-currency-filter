@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "94fae3df2528ca64cfaf",
+    "revision": "5a4c4c02138b9874bf9b",
     "url": "/vue-currency-filter/css/app.83db837b.css"
   },
   {
@@ -8,12 +8,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/vue-currency-filter/css/chunk-vendors.8094700e.css"
   },
   {
-    "revision": "5babb36f965574d6a1180a23ed5d0912",
+    "revision": "37de728b97faacf5cdd320af3bfd94a5",
     "url": "/vue-currency-filter/index.html"
   },
   {
-    "revision": "94fae3df2528ca64cfaf",
-    "url": "/vue-currency-filter/js/app.6bb1cd99.js"
+    "revision": "5a4c4c02138b9874bf9b",
+    "url": "/vue-currency-filter/js/app.533f44e0.js"
   },
   {
     "revision": "981aea39f9a56c75c4f1",
