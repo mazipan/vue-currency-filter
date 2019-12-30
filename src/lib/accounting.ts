@@ -1,4 +1,4 @@
-import { __isString, __isArray, __map, __defaults, __isObject } from './utils';
+import { __isString, __isArray, __map, __defaults, __isObject } from './utils'
 
 const lib = {
   settings: {

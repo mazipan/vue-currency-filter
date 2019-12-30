@@ -2,23 +2,23 @@ const nativeMap = Array.prototype.map
 const nativeIsArray = Array.isArray
 const toString = Object.prototype.toString
 
-export function __isNull(obj: any): boolean {
+export function __isNull (obj: any): boolean {
   return typeof obj === 'undefined' || obj === null
 };
 
-export function __isString(obj: any): boolean {
+export function __isString (obj: any): boolean {
   return !!(obj === '' || (obj && obj.charCodeAt && obj.substr))
 };
 
-export function __isArray(obj: any): boolean {
+export function __isArray (obj: any): boolean {
   return nativeIsArray ? nativeIsArray(obj) : toString.call(obj) === '[object Array]'
 };
 
-export function __isObject(obj: any): boolean {
+export function __isObject (obj: any): boolean {
   return obj && toString.call(obj) === '[object Object]'
 };
 
-export function __defaults(object, defs) {
+export function __defaults (object, defs) {
   var key
   object = object || {}
   defs = defs || {}
@@ -33,7 +33,7 @@ export function __defaults(object, defs) {
   return object
 };
 
-export function __map(obj, iterator, context?) {
+export function __map (obj, iterator, context?) {
   if (!obj) return []
   // Use native .map method if it exists:
   if (nativeMap && obj.map === nativeMap) return obj.map(iterator, context)

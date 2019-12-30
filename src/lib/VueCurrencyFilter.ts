@@ -1,5 +1,5 @@
 import { toFixed, formatMoney } from './accounting'
-import { __isNull, __defaults } from './utils';
+import { __isNull, __defaults } from './utils'
 
 const VueCurrencyFilter = {
   install (Vue, options) {
