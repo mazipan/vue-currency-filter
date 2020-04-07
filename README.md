@@ -1,26 +1,31 @@
 # 🍒 Vue Currency Filter
 
-<p align="center"><a href="https://mazipan.github.io/vue-currency-filter/" target="_blank" rel="noopener noreferrer"><img width="128" src="https://raw.githubusercontent.com/mazipan/vue-currency-filter/master/assets/VueJS-Currency-128px.png" alt="Vue Currency Logo"></a></p>
+<p align="center">
+	<a href="https://mazipan.github.io/vue-currency-filter/" target="_blank" rel="noopener noreferrer"><img width="128" src="https://raw.githubusercontent.com/mazipan/vue-currency-filter/master/assets/VueJS-Currency-128px.png" alt="Vue Currency Logo"></a>
+	<h2 align="center">Lightweight vue currency filter based on accounting.js<h2>
+</p>
 
 <p align="center">
   <a href="https://www.npmjs.com/package/vue-currency-filter">
-    <img src="https://img.shields.io/npm/v/vue-currency-filter.svg" alt="NPM Version">
+    <img height="15" src="https://img.shields.io/npm/v/vue-currency-filter.svg" alt="NPM Version">
   </a>
   <a href="https://bundlephobia.com/result?p=vue-currency-filter">
-    <img src="https://badgen.net/bundlephobia/minzip/vue-currency-filter" alt="Bundlephobia Size">
+    <img height="15" src="https://badgen.net/bundlephobia/minzip/vue-currency-filter" alt="Bundlephobia Size">
   </a>
   <a href="https://www.npmjs.com/package/vue-currency-filter">
-    <img src="https://img.shields.io/npm/dt/vue-currency-filter.svg" alt="Download All Time">
+    <img height="15" src="https://img.shields.io/npm/dt/vue-currency-filter.svg" alt="Download All Time">
   </a>
   <a href="https://travis-ci.org/mazipan/vue-currency-filter">
-    <img src="https://img.shields.io/travis/mazipan/vue-currency-filter.svg" alt="Travis Build">
+    <img height="15" src="https://img.shields.io/travis/mazipan/vue-currency-filter.svg" alt="Travis Build">
   </a>
   <a href="#contributors">
-    <img src="https://img.shields.io/badge/all_contributors-4-orange.svg" alt="All Contributors">
+    <img height="15" src="https://img.shields.io/badge/all_contributors-4-orange.svg" alt="All Contributors">
   </a>
 </p>
 
-> Lightweight vue currency filter based on accounting.js
+<p align="center">
+    <img src="screenshoot-bundlesize.png" alt="Bundle Size">
+</p>
 
 ## Demo
 
@@ -101,10 +106,7 @@ Add script dependencies
 ```html
 <!-- Vue Dependency -->
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-
-<!-- Vue Currency Filter Dependency -->
-<script src="https://unpkg.com/vue-currency-filter@3.2.3/dist/vue-currency-filter.iife.js"></script>
-<!-- Change 3.2.3 with latest version -->
+<script src="https://unpkg.com/vue-currency-filter"></script>
 ```
 
 Use filters in global
@@ -170,18 +172,6 @@ configFractionSeparator, configSymbolPosition, configSymbolSpacing)}}
 }
 ```
 
-## Update Global Configs
-
-Since global config only can be setted from `Vue.use(VueCurrencyFilter, configs)`, but sometimes we need to update this global configs on runtime process.
-
-from v3.1.0 we intoduce prototype method that can be update this global configs. You can use anywhere in your components like this code below:
-
-```js
-this.$CurrencyFilter.setConfig(newConfigs)
-```
-
-But please be aware, this method is only update global configs without trigger to re-run filter function. So maybe you will face not sync data from your configs and your view. You need to update some value to trigger this new configs applied.
-
 ## How to test in Unit Test
 
 Using `@vue/test-utils` we can create test for any Vue Plugins, like:
@@ -226,7 +216,7 @@ If you'd like to contribute, head to the [contributing guidelines](/CONTRIBUTING
 - [@iqbalhood](https://github.com/iqbalhood) as logo creator (see [#19](https://github.com/mazipan/vue-currency-filter/issues/19))
 - [Jetbrain](https://www.jetbrains.com/?from=vue-currency-filter) for amazing WebStorm IDE
 
-[<img src="https://raw.githubusercontent.com/mazipan/vue-currency-filter/master/jetbrains.png" width="100px;" />](https://www.jetbrains.com/?from=vue-currency-filter)
+[<img src="https://raw.githubusercontent.com/mazipan/vue-currency-filter/master/jetbrains.png" width="100px;"  />](https://www.jetbrains.com/?from=vue-currency-filter)
 
 ## Hope this will be useful for you all
 
@@ -238,7 +228,7 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/all-contri
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-<table><tr><td align="center"><a href="https://www.mazipan.xyz/"><img src="https://avatars0.githubusercontent.com/u/7221389?v=4" width="100px;" alt="Irfan Maulana"/><br /><sub><b>Irfan Maulana</b></sub></a><br /><a href="https://github.com/mazipan/vue-currency-filter/commits?author=mazipan" title="Code">💻</a></td><td align="center"><a href="https://about.me/iqbalhood"><img src="https://avatars3.githubusercontent.com/u/1563756?v=4" width="100px;" alt="iqbalhood"/><br /><sub><b>iqbalhood</b></sub></a><br /><a href="#design-iqbalhood" title="Design">🎨</a></td><td align="center"><a href="https://sunhengzhe.com"><img src="https://avatars3.githubusercontent.com/u/8614151?v=4" width="100px;" alt="孙恒哲"/><br /><sub><b>孙恒哲</b></sub></a><br /><a href="https://github.com/mazipan/vue-currency-filter/commits?author=sunhengzhe" title="Code">💻</a></td><td align="center"><a href="https://github.com/ricardogobbosouza"><img src="https://avatars3.githubusercontent.com/u/13064722?v=4" width="100px;" alt="Ricardo Gobbo de Souza"/><br /><sub><b>Ricardo Gobbo de Souza</b></sub></a><br /><a href="https://github.com/mazipan/vue-currency-filter/commits?author=ricardogobbosouza" title="Code">💻</a></td><td align="center"><a href="https://github.com/dsfx3d"><img src="https://avatars1.githubusercontent.com/u/14162837?v=4" width="100px;" alt="Yashodhan Singh Rathore"/><br /><sub><b>Yashodhan Singh Rathore</b></sub></a><br /><a href="https://github.com/mazipan/vue-currency-filter/commits?author=dsfx3d" title="Code">💻</a></td><td align="center"><a href="http://gijsroge.github.io"><img src="https://avatars0.githubusercontent.com/u/2242498?v=4" width="100px;" alt="Gijs Rogé"/><br /><sub><b>Gijs Rogé</b></sub></a><br /><a href="https://github.com/mazipan/vue-currency-filter/commits?author=gijsroge" title="Code">💻</a></td></tr></table>
+<table><tr><td align="center"><a href="https://www.mazipan.xyz/"><img src="https://avatars0.githubusercontent.com/u/7221389?v=4" width="100px;"  alt="Irfan Maulana"/><br /><sub><b>Irfan Maulana</b></sub></a><br /><a href="https://github.com/mazipan/vue-currency-filter/commits?author=mazipan" title="Code">💻</a></td><td align="center"><a href="https://about.me/iqbalhood"><img src="https://avatars3.githubusercontent.com/u/1563756?v=4" width="100px;"  alt="iqbalhood"/><br /><sub><b>iqbalhood</b></sub></a><br /><a href="#design-iqbalhood" title="Design">🎨</a></td><td align="center"><a href="https://sunhengzhe.com"><img src="https://avatars3.githubusercontent.com/u/8614151?v=4" width="100px;"  alt="孙恒哲"/><br /><sub><b>孙恒哲</b></sub></a><br /><a href="https://github.com/mazipan/vue-currency-filter/commits?author=sunhengzhe" title="Code">💻</a></td><td align="center"><a href="https://github.com/ricardogobbosouza"><img src="https://avatars3.githubusercontent.com/u/13064722?v=4" width="100px;"  alt="Ricardo Gobbo de Souza"/><br /><sub><b>Ricardo Gobbo de Souza</b></sub></a><br /><a href="https://github.com/mazipan/vue-currency-filter/commits?author=ricardogobbosouza" title="Code">💻</a></td><td align="center"><a href="https://github.com/dsfx3d"><img src="https://avatars1.githubusercontent.com/u/14162837?v=4" width="100px;"  alt="Yashodhan Singh Rathore"/><br /><sub><b>Yashodhan Singh Rathore</b></sub></a><br /><a href="https://github.com/mazipan/vue-currency-filter/commits?author=dsfx3d" title="Code">💻</a></td><td align="center"><a href="http://gijsroge.github.io"><img src="https://avatars0.githubusercontent.com/u/2242498?v=4" width="100px;"  alt="Gijs Rogé"/><br /><sub><b>Gijs Rogé</b></sub></a><br /><a href="https://github.com/mazipan/vue-currency-filter/commits?author=gijsroge" title="Code">💻</a></td></tr></table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 

@@ -27,7 +27,7 @@ function readDirs (dirname, onDir, onError) {
 }
 
 setTimeout(() => {
-  readDirs(path.resolve('./lib-out/'), async (filepath, filename) => {
+  readDirs(path.resolve('./packages/vue-currency-filter/dist/'), async (filepath, filename) => {
     try {
       console.log(chalk.greenBright(`> ${filename}: ${bytes(gzipSize.fileSync(filepath))}`))
     } catch (err) {

@@ -1,31 +1,36 @@
 language: node_js
-node_js: '8'
+node_js: '12'
+
 branches:
   only:
   - master
-  - /^greenkeeper/.*$/
+
 cache:
-  yarn: true
   directories:
     - node_modules
+
+before_install:
+  - npm install -g pnpm
+
 install:
-  - yarn install
+  - pnpm install
+
 script:
-  - yarn build:demo
-  # only for test the build process
-  - yarn build:lib:tsc
-  - yarn check:size
-  # temporary hide
-  # - yarn test
+  - pnpm run build:demo
+  - pnpm run build:lib
+  - pnpm run bundlesize
+  # - pnpm run test
+
 # after_script:
   # - npm install -g codecov
   # - codecov
+
 deploy:
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
   keep-history: true
-  local-dir: dist
+  local-dir: packages/demo/dist
   verbose: true
   on:
     branch: master

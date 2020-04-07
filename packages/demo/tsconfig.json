@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
+    "module": "ESNext",
     "declaration": true,
     "strict": true,
     "jsx": "preserve",
@@ -21,9 +21,6 @@
     "paths": {
       "@/*": [
         "src/*"
-      ],
-      "@lib/*": [
-        "src/lib/*"
       ]
     },
     "lib": [
@@ -34,9 +31,6 @@
     ]
   },
   "include": [
-    "src/lib/**/*.ts",
-    "src/lib/**/*.tsx",
-    "src/lib/**/*.vue",
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
