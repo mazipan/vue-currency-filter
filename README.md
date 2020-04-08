@@ -189,7 +189,8 @@ import Component from "../pages/myComponent.vue";
 
 describe("test myComponent", () => {
   it("vue-currency-filter should working correctly", () => {
-    let localVue = createLocalVue();
+    const localVue = createLocalVue();
+    
     localVue.use(VueCurrencyFilter, {
       symbol: "$",
       thousandsSeparator: ",",
@@ -199,11 +200,11 @@ describe("test myComponent", () => {
       symbolSpacing: true
     });
 
-    let wrapper = shallowMount(Component, {
+    const wrapper = shallowMount(Component, {
       localVue
     });
 
-    let result = wrapper.find(".curr");
+    const result = wrapper.find(".curr");
     expect(result.text()).toEqual("$ 1,000.00");
   });
 });
