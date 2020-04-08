@@ -1,25 +1,29 @@
 # 🍒 Vue Currency Filter
 
 <p align="center">
-	<a href="https://mazipan.github.io/vue-currency-filter/" target="_blank" rel="noopener noreferrer"><img width="128" src="https://raw.githubusercontent.com/mazipan/vue-currency-filter/master/assets/VueJS-Currency-128px.png" alt="Vue Currency Logo"></a>
+	<a href="https://mazipan.github.io/vue-currency-filter/" target="_blank" rel="noopener noreferrer">
+		<img 
+		     width="128" src="https://raw.githubusercontent.com/mazipan/vue-currency-filter/master/assets/VueJS-Currency-128px.png" 
+		     alt="Vue Currency Logo" />
+	</a>
 	<h2 align="center">Lightweight vue currency filter based on accounting.js<h2>
 </p>
 
 <p align="center">
   <a href="https://www.npmjs.com/package/vue-currency-filter">
-    <img height="15" src="https://img.shields.io/npm/v/vue-currency-filter.svg" alt="NPM Version">
+    <img height="20" src="https://img.shields.io/npm/v/vue-currency-filter.svg" alt="NPM Version">
   </a>
   <a href="https://bundlephobia.com/result?p=vue-currency-filter">
-    <img height="15" src="https://badgen.net/bundlephobia/minzip/vue-currency-filter" alt="Bundlephobia Size">
+    <img height="20" src="https://badgen.net/bundlephobia/minzip/vue-currency-filter" alt="Bundlephobia Size">
   </a>
   <a href="https://www.npmjs.com/package/vue-currency-filter">
-    <img height="15" src="https://img.shields.io/npm/dt/vue-currency-filter.svg" alt="Download All Time">
+    <img height="20" src="https://img.shields.io/npm/dt/vue-currency-filter.svg" alt="Download All Time">
   </a>
   <a href="https://travis-ci.org/mazipan/vue-currency-filter">
-    <img height="15" src="https://img.shields.io/travis/mazipan/vue-currency-filter.svg" alt="Travis Build">
+    <img height="20" src="https://img.shields.io/travis/mazipan/vue-currency-filter.svg" alt="Travis Build">
   </a>
   <a href="#contributors">
-    <img height="15" src="https://img.shields.io/badge/all_contributors-4-orange.svg" alt="All Contributors">
+    <img height="20" src="https://img.shields.io/badge/all_contributors-4-orange.svg" alt="All Contributors">
   </a>
 </p>
 
@@ -211,10 +215,11 @@ See sample test here: [https://codesandbox.io/s/6xk1mv694n](https://codesandbox.
 
 If you'd like to contribute, head to the [contributing guidelines](/CONTRIBUTING.md). Inside you'll find directions for opening issues, coding standards, and notes on development.
 
-## Credit
+## Credits
 
+- [Vue](https://vuejs.org) for amazing framework
+- [Jetbrain](https://www.jetbrains.com/?from=vue-currency-filter) for amazing support with free license for WebStorm IDE
 - [@iqbalhood](https://github.com/iqbalhood) as logo creator (see [#19](https://github.com/mazipan/vue-currency-filter/issues/19))
-- [Jetbrain](https://www.jetbrains.com/?from=vue-currency-filter) for amazing WebStorm IDE
 
 [<img src="https://raw.githubusercontent.com/mazipan/vue-currency-filter/master/jetbrains.png" width="100px;"  />](https://www.jetbrains.com/?from=vue-currency-filter)
 
