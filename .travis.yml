@@ -16,9 +16,9 @@ install:
   - pnpm install
 
 script:
-  - pnpm run build:demo
   - pnpm run build:lib
   - pnpm run bundlesize
+  - pnpm run build:demo
   # - pnpm run test
 
 # after_script:
