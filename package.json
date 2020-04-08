@@ -1,7 +1,7 @@
 {
 	"name": "@vue-currency-filter/monorepo",
 	"description": "🍒 Lightweight vue currency filter based on accounting.js",
-	"version": "5.0.0",
+	"version": "5.0.1",
 	"license": "MIT",
 	"author": "Irfan Maulana (https://github.com/mazipan/)",
 	"homepage": "https://mazipan.github.io/vue-currency-filter/",

@@ -14,6 +14,7 @@ importers:
       lint-staged: 9.5.0
   packages/demo:
     devDependencies:
+      '@types/node': 13.11.0
       '@typescript-eslint/eslint-plugin': 2.13.0_2803dd4460f313d0b6e1dfd646589a04
       '@typescript-eslint/parser': 2.13.0_eslint@6.8.0+typescript@3.7.4
       '@vue/cli-plugin-babel': 4.1.1_@vue+cli-service@4.1.1
@@ -39,6 +40,7 @@ importers:
       prismjs: 1.17.1
       register-service-worker: 1.6.2
       sass-loader: 8.0.0_node-sass@4.13.0
+      tslib: 1.11.1
       typescript: 3.7.4
       vue: 2.6.11
       vue-class-component: 7.1.0
@@ -51,6 +53,7 @@ importers:
       vue-template-compiler: 2.6.11
       vuex: 3.1.2
     specifiers:
+      '@types/node': 13.11.0
       '@typescript-eslint/eslint-plugin': 2.13.0
       '@typescript-eslint/parser': 2.13.0
       '@vue/cli-plugin-babel': 4.1.1
@@ -63,7 +66,7 @@ importers:
       '@vue/eslint-config-standard': 5.0.1
       '@vue/eslint-config-typescript': 5.0.1
       babel-eslint: 10.0.3
-      babel-loader: ^8.1.0
+      babel-loader: 8.1.0
       bulma-dracula: 1.0.3
       core-js: 3.6.1
       eslint: 6.8.0
@@ -76,6 +79,7 @@ importers:
       prismjs: 1.17.1
       register-service-worker: 1.6.2
       sass-loader: 8.0.0
+      tslib: 1.11.1
       typescript: 3.7.4
       vue: 2.6.11
       vue-class-component: 7.1.0

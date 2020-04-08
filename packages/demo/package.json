@@ -1,7 +1,7 @@
 {
 	"name": "@vue-currency-filter/demo",
 	"description": "🍒 Lightweight vue currency filter based on accounting.js",
-	"version": "5.0.0",
+	"version": "5.0.1",
 	"license": "MIT",
 	"author": "Irfan Maulana (https://github.com/mazipan/)",
 	"homepage": "https://mazipan.github.io/vue-currency-filter/",
@@ -13,7 +13,8 @@
     "lint": "vue-cli-service lint --fix"
 	},
 	"devDependencies": {
-    "vue-currency-filter": "file:../vue-currency-filter",
+		"vue-currency-filter": "file:../vue-currency-filter",
+		"@types/node": "13.11.0",
     "@typescript-eslint/eslint-plugin": "2.13.0",
     "@typescript-eslint/parser": "2.13.0",
     "@vue/cli-plugin-babel": "4.1.1",
@@ -26,7 +27,7 @@
     "@vue/eslint-config-standard": "5.0.1",
     "@vue/eslint-config-typescript": "5.0.1",
     "babel-eslint": "10.0.3",
-    "babel-loader": "^8.1.0",
+    "babel-loader": "8.1.0",
     "bulma-dracula": "1.0.3",
     "core-js": "3.6.1",
     "eslint": "6.8.0",
@@ -39,7 +40,8 @@
     "prismjs": "1.17.1",
     "register-service-worker": "1.6.2",
     "sass-loader": "8.0.0",
-    "typescript": "3.7.4",
+		"typescript": "3.7.4",
+		"tslib": "1.11.1",
     "vue": "2.6.11",
     "vue-class-component": "7.1.0",
     "vue-google-adsense": "1.8.0",
