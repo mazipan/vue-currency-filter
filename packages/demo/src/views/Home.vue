@@ -339,8 +339,11 @@ import 'prismjs/plugins/autolinker/prism-autolinker.min'
 import 'prismjs/plugins/autolinker/prism-autolinker.css'
 import Prism from 'vue-prism-component'
 
-import utils from '../lib/utils'
 Vue.component('prism', Prism)
+
+function __isNull (obj) {
+  return typeof obj === 'undefined' || obj === null
+};
 
 export default {
   name: 'Home',
@@ -411,22 +414,22 @@ module.exports = {
   },
   methods: {
     updateData (options) {
-      if (!utils.__isNull(options.symbol)) {
+      if (!__isNull(options.symbol)) {
         this.configSymbol = options.symbol
       }
-      if (!utils.__isNull(options.thousandsSeparator)) {
+      if (!__isNull(options.thousandsSeparator)) {
         this.configSeparator = options.thousandsSeparator
       }
-      if (!utils.__isNull(options.fractionCount)) {
+      if (!__isNull(options.fractionCount)) {
         this.configFractionCount = options.fractionCount
       }
-      if (!utils.__isNull(options.fractionSeparator)) {
+      if (!__isNull(options.fractionSeparator)) {
         this.configFractionSeparator = options.fractionSeparator
       }
-      if (!utils.__isNull(options.symbolPosition)) {
+      if (!__isNull(options.symbolPosition)) {
         this.configSymbolPosition = options.symbolPosition
       }
-      if (!utils.__isNull(options.symbolSpacing)) {
+      if (!__isNull(options.symbolSpacing)) {
         this.configSymbolSpacing = options.symbolSpacing
       }
     }

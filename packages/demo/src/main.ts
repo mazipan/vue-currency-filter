@@ -5,7 +5,7 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
-import VueCurrencyFilter from './lib/VueCurrencyFilter'
+import VueCurrencyFilter from 'vue-currency-filter'
 
 const script2 = require('vue-script2')
 

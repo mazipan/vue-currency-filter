@@ -1,20 +1,20 @@
-import accounting from './accounting'
-import utils from './utils'
+import { toFixed, formatMoney } from './accounting'
+import { __isNull, __defaults } from './utils'
+
+const defaultConfig = {
+  name: 'currency',
+  symbol: '',
+  thousandsSeparator: '.',
+  fractionCount: 0,
+  fractionSeparator: ',',
+  symbolPosition: 'front',
+  symbolSpacing: true
+}
 
 const VueCurrencyFilter = {
   install (Vue, options) {
-    const defaultConfig = {
-      name: 'currency',
-      symbol: '',
-      thousandsSeparator: '.',
-      fractionCount: 0,
-      fractionSeparator: ',',
-      symbolPosition: 'front',
-      symbolSpacing: true
-    }
-
-    if (utils.__isNull(options)) options = {}
-    let globalConfigs = utils.__defaults(options, defaultConfig)
+    if (__isNull(options)) options = {}
+    const globalConfigs = __defaults(options, defaultConfig)
     let { name, ...configs } = globalConfigs
 
     const filterCurrency = function (value,
@@ -24,7 +24,8 @@ const VueCurrencyFilter = {
       _fractionSeparator,
       _symbolPosition,
       _symbolSpacing) {
-      let runtimeConfig = utils.__defaults({
+
+      let runtimeConfig = __defaults({
         symbol: _symbol,
         thousandsSeparator: _thousandsSeparator,
         fractionCount: _fractionCount,
@@ -34,7 +35,7 @@ const VueCurrencyFilter = {
       }, configs)
 
       if (typeof _symbol === 'object') {
-        runtimeConfig = utils.__defaults(_symbol, configs)
+        runtimeConfig = __defaults(_symbol, configs)
       }
 
       let result = 0.0
@@ -57,10 +58,11 @@ const VueCurrencyFilter = {
       }
 
       if (runtimeConfig.fractionCount > 0) {
-        value = accounting.toFixed(value, runtimeConfig.fractionCount)
+        value = toFixed(value, runtimeConfig.fractionCount)
       }
 
-      result = accounting.formatMoney(value, {
+      // @ts-ignore
+      result = formatMoney(value, {
         format: formatConfig,
         symbol: runtimeConfig.symbol,
         precision: runtimeConfig.fractionCount,
@@ -69,6 +71,7 @@ const VueCurrencyFilter = {
       })
 
       if (isNegative) {
+        // @ts-ignore
         result = '-' + result
       }
 
@@ -78,7 +81,7 @@ const VueCurrencyFilter = {
     Vue.filter(name, filterCurrency)
     Vue.prototype.$CurrencyFilter = {
       setConfig: (options) => {
-        configs = utils.__defaults(options, defaultConfig)
+        configs = __defaults(options, defaultConfig)
       },
       getConfig: () => {
         return configs

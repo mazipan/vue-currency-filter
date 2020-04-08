@@ -1,22 +1,24 @@
 {
-	"name": "@vue-currency-filter/monorepo",
+	"name": "vue-currency-filter",
 	"description": "🍒 Lightweight vue currency filter based on accounting.js",
 	"version": "5.0.0",
 	"license": "MIT",
 	"author": "Irfan Maulana (https://github.com/mazipan/)",
 	"homepage": "https://mazipan.github.io/vue-currency-filter/",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0",
-    "build:lib": "pnpm run build --filter vue-currency-filter",
-    "build:demo": "pnpm run build --filter @vue-currency-filter/demo",
-    "bundlesize": "node ./bundlesize.js"
+	"source": "src/index.ts",
+	"main": "dist/vue-currency-filter.js",
+	"module": "dist/vue-currency-filter.module.js",
+	"unpkg": "dist/vue-currency-filter.umd.js",
+	"scripts": {
+		"build": "microbundle src/index.ts",
+		"dev": "microbundle watch"
 	},
+	"files": [
+    "dist",
+    "nuxt"
+  ],
 	"devDependencies": {
-    "bytes": "3.1.0",
-    "chalk": "3.0.0",
-    "gzip-size": "5.1.1",
-    "husky": "3.1.0",
-    "lint-staged": "9.5.0"
+		"microbundle": "^0.11.0"
 	},
   "keywords": [
     "vue 2 currency",

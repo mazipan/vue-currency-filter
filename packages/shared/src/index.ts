@@ -43,6 +43,7 @@ export function __map (obj, iterator, context?) {
   let j = 0
   // Fallback for native .map:
   for (i = 0, j = obj.length; i < j; i++) {
+    // @ts-ignore
     results[i] = iterator.call(context, obj[i], i, obj)
   }
   return results
