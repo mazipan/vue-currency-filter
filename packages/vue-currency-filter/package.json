@@ -1,7 +1,7 @@
 {
 	"name": "vue-currency-filter",
 	"description": "🍒 Lightweight vue currency filter based on accounting.js",
-	"version": "5.0.1",
+	"version": "5.0.2",
 	"license": "MIT",
 	"author": "Irfan Maulana (https://github.com/mazipan/)",
 	"homepage": "https://mazipan.github.io/vue-currency-filter/",
@@ -9,6 +9,7 @@
 	"main": "dist/vue-currency-filter.js",
 	"module": "dist/vue-currency-filter.module.js",
 	"unpkg": "dist/vue-currency-filter.umd.js",
+	"typings": "dist/index.d.ts",
 	"scripts": {
 		"build": "microbundle src/index.ts --name VueCurrencyFilter",
 		"dev": "microbundle watch"
