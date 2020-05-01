@@ -323,7 +323,7 @@
     <footer class="footer">
       <div class="content has-text-centered">
         <p>
-          Built with ❤️ by Irfan Maulana
+          Built with ❤️ by <a href="https://mazipan.space">Irfan Maulana</a>
         </p>
       </div>
     </footer>
