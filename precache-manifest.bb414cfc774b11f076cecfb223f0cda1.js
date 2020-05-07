@@ -1,14 +1,14 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e2f6f6ccbf4f95547fef",
+    "revision": "9e3d5cf04e786be55b2d",
     "url": "/vue-currency-filter/css/app.83db837b.css"
   },
   {
-    "revision": "bf90924f58a36a5a7036",
+    "revision": "5f776966db8fc98aa885",
     "url": "/vue-currency-filter/css/chunk-vendors.a189a293.css"
   },
   {
-    "revision": "681734cc5d25a9fdeddd1864f7ab7c22",
+    "revision": "62194af7325718d2bcd28f898a1a35ce",
     "url": "/vue-currency-filter/index.html"
   },
   {
@@ -16,12 +16,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/vue-currency-filter/js/about.0da19019.js"
   },
   {
-    "revision": "e2f6f6ccbf4f95547fef",
-    "url": "/vue-currency-filter/js/app.b9bc1fd7.js"
+    "revision": "9e3d5cf04e786be55b2d",
+    "url": "/vue-currency-filter/js/app.b67f522b.js"
   },
   {
-    "revision": "bf90924f58a36a5a7036",
-    "url": "/vue-currency-filter/js/chunk-vendors.2ce8aae4.js"
+    "revision": "5f776966db8fc98aa885",
+    "url": "/vue-currency-filter/js/chunk-vendors.5e6f1a84.js"
   },
   {
     "revision": "85ea44566889bcafa2d7bbcc02b96026",
