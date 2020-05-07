@@ -75,6 +75,30 @@ Vue.use(VueCurrencyFilter,
 })
 ```
 
+### Add Multiple Instance
+
+```javascript
+Vue.use(VueCurrencyFilter, [
+ { // default name 'currency'
+   symbol: '$',
+   thousandsSeparator: ',',
+   fractionCount: 2,
+   fractionSeparator: '.',
+   symbolPosition: 'front',
+   symbolSpacing: true
+ },
+ { // default name 'currency_2'
+   name: 'currency_2',
+   symbol: 'usd',
+   thousandsSeparator: ' ',
+   fractionCount: 2,
+   fractionSeparator: '.',
+   symbolPosition: 'front',
+   symbolSpacing: false
+ }
+])
+```
+
 ### Use in View
 
 ```html
@@ -99,6 +123,27 @@ Add `vue-currency-filter/nuxt` to modules section of `nuxt.config.js`
       symbolPosition: 'front',
       symbolSpacing: true
     }],
+
+    // for multiple instance
+    ['vue-currency-filter/nuxt', [
+      { // default name 'currency'
+        symbol: '$',
+        thousandsSeparator: ',',
+        fractionCount: 2,
+        fractionSeparator: '.',
+        symbolPosition: 'front',
+        symbolSpacing: true
+      },
+      { // default name 'currency_2'
+        name: 'currency_2',
+        symbol: 'usd',
+        thousandsSeparator: ' ',
+        fractionCount: 2,
+        fractionSeparator: '.',
+        symbolPosition: 'front',
+        symbolSpacing: false
+      }
+    ]],
   ]
 }
 ```
