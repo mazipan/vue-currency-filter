@@ -269,6 +269,11 @@ If you'd like to contribute, head to the [contributing guidelines](/CONTRIBUTING
 
 [<img src="https://raw.githubusercontent.com/mazipan/vue-currency-filter/master/jetbrains.png" width="100px;"  />](https://www.jetbrains.com/?from=vue-currency-filter)
 
+## Support me
+
+- Via [trakteer](https://trakteer.id/mazipan)
+- Direct support, [send me an email](mailto:mazipanneh@gmail.com)
+
 ## Hope this will be useful for you all
 
 Copyright © 2017 Built with ❤️ by Irfan Maulana
