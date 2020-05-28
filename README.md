@@ -287,7 +287,7 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/all-contri
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://www.mazipan.xyz/"><img src="https://avatars0.githubusercontent.com/u/7221389?v=4" width="100px;" alt=""/><br /><sub><b>Irfan Maulana</b></sub></a><br /><a href="https://github.com/mazipan/vue-currency-filter/commits?author=mazipan" title="Code">💻</a></td>
+    <td align="center"><a href="https://mazipan.space/"><img src="https://avatars0.githubusercontent.com/u/7221389?v=4" width="100px;" alt=""/><br /><sub><b>Irfan Maulana</b></sub></a><br /><a href="https://github.com/mazipan/vue-currency-filter/commits?author=mazipan" title="Code">💻</a></td>
     <td align="center"><a href="https://about.me/iqbalhood"><img src="https://avatars3.githubusercontent.com/u/1563756?v=4" width="100px;" alt=""/><br /><sub><b>iqbalhood</b></sub></a><br /><a href="#design-iqbalhood" title="Design">🎨</a></td>
     <td align="center"><a href="https://sunhengzhe.com"><img src="https://avatars3.githubusercontent.com/u/8614151?v=4" width="100px;" alt=""/><br /><sub><b>孙恒哲</b></sub></a><br /><a href="https://github.com/mazipan/vue-currency-filter/commits?author=sunhengzhe" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/ricardogobbosouza"><img src="https://avatars3.githubusercontent.com/u/13064722?v=4" width="100px;" alt=""/><br /><sub><b>Ricardo Gobbo de Souza</b></sub></a><br /><a href="https://github.com/mazipan/vue-currency-filter/commits?author=ricardogobbosouza" title="Code">💻</a></td>
