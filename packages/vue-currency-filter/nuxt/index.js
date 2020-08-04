@@ -1,10 +1,7 @@
 const { resolve } = require('path')
 
 module.exports = function nuxtVueCurrencyFilter (moduleOptions) {
-  const options = {
-    ...this.options.currencyFilter,
-    ...moduleOptions
-  }
+  const options = this.options.currencyFilter || moduleOptions
 
   this.addPlugin({
     ssr: true,
