@@ -15,23 +15,24 @@
 		"dev": "microbundle watch"
 	},
 	"files": [
-    "dist",
-    "nuxt"
-  ],
+		"dist",
+		"nuxt"
+	],
 	"devDependencies": {
-		"microbundle": "^0.11.0"
+		"vue": "^2.6.11",
+		"microbundle": "^0.12.3"
 	},
-  "keywords": [
-    "vue 2 currency",
-    "vue currency",
-    "vue currency filter",
-    "vue filter"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mazipan/vue-currency-filter.git"
-  },
-  "bugs": {
-    "url": "https://github.com/mazipan/vue-currency-filter/issues"
-  }
+	"keywords": [
+		"vue 2 currency",
+		"vue currency",
+		"vue currency filter",
+		"vue filter"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mazipan/vue-currency-filter.git"
+	},
+	"bugs": {
+		"url": "https://github.com/mazipan/vue-currency-filter/issues"
+	}
 }

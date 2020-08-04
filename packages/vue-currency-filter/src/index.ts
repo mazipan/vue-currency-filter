@@ -1,7 +1,9 @@
 import { toFixed, formatMoney } from './accounting'
 import { __isNull, __defaults } from './utils'
+import { PluginObject } from 'vue'
+import { CurrencyFilterMethodInstance, currencyOptions } from './types';
 
-const defaultConfig = {
+const defaultConfig: currencyOptions = {
   name: 'currency',
   symbol: '',
   thousandsSeparator: '.',
@@ -11,20 +13,20 @@ const defaultConfig = {
   symbolSpacing: true
 }
 
-const VueCurrencyFilter = {
+const VueCurrencyFilter: PluginObject<currencyOptions[] | currencyOptions> = {
   install (Vue, pluginOptions) {
-    const createFilter = (options) => {
+    const createFilter = (options: currencyOptions) => {
       if (__isNull(options)) options = {}
       const globalConfigs = __defaults(options, defaultConfig)
       let { name, ...configs } = globalConfigs
 
-      const filterCurrency = function (value,
-                                       _symbol,
-                                       _thousandsSeparator,
-                                       _fractionCount,
-                                       _fractionSeparator,
-                                       _symbolPosition,
-                                       _symbolSpacing) {
+      const filterCurrency = function (value: string,
+                                       _symbol?: string,
+                                       _thousandsSeparator?: string,
+                                       _fractionCount?: number,
+                                       _fractionSeparator?: string,
+                                       _symbolPosition?: string,
+                                       _symbolSpacing?: boolean): string | number {
 
         let runtimeConfig = __defaults({
           symbol: _symbol,
@@ -86,14 +88,15 @@ const VueCurrencyFilter = {
         },
         getConfig: () => {
           return configs
-        }
-      }
+        },
+        format: filterCurrency
+      } as CurrencyFilterMethodInstance
     }
 
     if (Array.isArray(pluginOptions)) {
       pluginOptions.forEach(options => createFilter(options))
     } else {
-      createFilter(pluginOptions)
+      createFilter(pluginOptions!)
     }
   }
 }

@@ -147,6 +147,63 @@ Add `vue-currency-filter/nuxt` to modules section of `nuxt.config.js`
   ]
 }
 ```
+or using external options
+```js
+{
+  modules: [
+    'vue-currency-filter/nuxt'
+  ]
+  currencyFilter: [
+    { // default name 'currency'
+      symbol: '$',
+      thousandsSeparator: ',',
+      fractionCount: 2,
+      fractionSeparator: '.',
+      symbolPosition: 'front',
+      symbolSpacing: true
+    },
+    { // default name 'currency_2'
+      name: 'currency_2',
+      symbol: 'usd',
+      thousandsSeparator: ' ',
+      fractionCount: 2,
+      fractionSeparator: '.',
+      symbolPosition: 'front',
+      symbolSpacing: false
+    }
+  ]
+  // or for one filter
+  currencyFilter: { // default name 'currency'
+    symbol: '$',
+    thousandsSeparator: ',',
+    fractionCount: 2,
+    fractionSeparator: '.',
+    symbolPosition: 'front',
+    symbolSpacing: true
+  }
+}
+```
+
+### Usage in Nuxt-typescript
+you must add declaration for vue and nuxt context if you want autocomplete in methods
+create file `vue-currency-filters.ts` in directory with your types
+```ts
+import { CurrencyFilterMethodInstance } from "vue-currency-filter/src/types";
+
+declare module 'vue/types/vue' {
+  interface Vue {
+    $currency: CurrencyFilterMethodInstance,
+    $currency_2: CurrencyFilterMethodInstance
+  }
+}
+
+declare module '@nuxt/types' {
+  interface NuxtAppOptions {
+    $currency: CurrencyFilterMethodInstance,
+    $currency_2: CurrencyFilterMethodInstance
+  }
+}
+```
 
 ### Usage without NPM
 
