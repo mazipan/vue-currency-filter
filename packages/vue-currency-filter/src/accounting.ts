@@ -124,12 +124,13 @@ export const formatNumber = function (
   number,
   precision,
   thousand,
-  decimal
+  decimal,
+  avoidEmptyDecimals
 ) {
   // Resursively format arrays:
   if (__isArray(number)) {
     return __map(number, function (val) {
-      return formatNumber(val, precision, thousand, decimal)
+      return formatNumber(val, precision, thousand, decimal, avoidEmptyDecimals)
     })
   }
 
@@ -154,14 +155,26 @@ export const formatNumber = function (
   var base = parseInt(toFixed(Math.abs(number || 0), usePrecision), 10) + ''
   var mod = base.length > 3 ? base.length % 3 : 0
 
+  var precisionString = ''
+  if (usePrecision) {
+    // default behaviour
+    // 1234.56 and avoidEmptyDecimals whatever   => 1234.56
+    // 1234.00 and avoidEmptyDecimals undefined  => 1234.00
+    precisionString = opts.decimal + toFixed(Math.abs(number), usePrecision).split('.')[1]
+
+    // 1234.00 and avoidEmptyDecimals == ''    => 1234
+    // 1234.00 and avoidEmptyDecimals == '##'  => 1234.##
+    if (avoidEmptyDecimals !== undefined && parseInt(toFixed(Math.abs(number || 0), 1), 10) == number){
+      precisionString = avoidEmptyDecimals === '' ? '' : opts.decimal + avoidEmptyDecimals
+    }
+  }
+
   // Format the number:
   return (
     negative +
     (mod ? base.substr(0, mod) + opts.thousand : '') +
     base.substr(mod).replace(/(\d{3})(?=\d)/g, '$1' + opts.thousand) +
-    (usePrecision
-      ? opts.decimal + toFixed(Math.abs(number), usePrecision).split('.')[1]
-      : '')
+    precisionString
   )
 }
 
@@ -182,12 +195,13 @@ export const formatMoney = function (
   precision,
   thousand,
   decimal,
-  format
+  format,
+  avoidEmptyDecimals
 ) {
   // Resursively format arrays:
   if (__isArray(number)) {
     return __map(number, function (val) {
-      return formatMoney(val, symbol, precision, thousand, decimal, format)
+      return formatMoney(val, symbol, precision, thousand, decimal, format, avoidEmptyDecimals)
     })
   }
 
@@ -203,7 +217,8 @@ export const formatMoney = function (
         precision: precision,
         thousand: thousand,
         decimal: decimal,
-        format: format
+        format: format,
+        avoidEmptyDecimals: avoidEmptyDecimals,
       },
     lib.settings.currency
   )
@@ -222,7 +237,8 @@ export const formatMoney = function (
         Math.abs(number),
         checkPrecision(opts.precision),
         opts.thousand,
-        opts.decimal
+        opts.decimal,
+        opts.avoidEmptyDecimals
       )
     )
 }
