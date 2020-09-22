@@ -15,20 +15,20 @@ const defaultConfig: currencyOptions = {
 }
 
 const VueCurrencyFilter: PluginObject<currencyOptions[] | currencyOptions> = {
-  install (Vue, pluginOptions) {
+  install(Vue, pluginOptions) {
     const createFilter = (options: currencyOptions) => {
       if (__isNull(options)) options = {}
       const globalConfigs = __defaults(options, defaultConfig)
       let { name, ...configs } = globalConfigs
 
       const filterCurrency = function (value: string,
-                                       _symbol?: string,
-                                       _thousandsSeparator?: string,
-                                       _fractionCount?: number,
-                                       _fractionSeparator?: string,
-                                       _symbolPosition?: string,
-                                       _symbolSpacing?: boolean,
-                                       _avoidEmptyDecimals?: string): string | number {
+        _symbol?: string,
+        _thousandsSeparator?: string,
+        _fractionCount?: number,
+        _fractionSeparator?: string,
+        _symbolPosition?: string,
+        _symbolSpacing?: boolean,
+        _avoidEmptyDecimals?: string): string | number {
 
         let runtimeConfig = __defaults({
           symbol: _symbol,

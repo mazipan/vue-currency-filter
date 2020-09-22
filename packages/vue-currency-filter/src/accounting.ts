@@ -22,7 +22,7 @@ const lib = {
 /**
  * Check and normalise the value of precision (must be positive integer)
  */
-export function checkPrecision (val, base?) {
+export function checkPrecision(val, base = 0) {
   val = Math.round(Math.abs(val))
   return isNaN(val) ? base : val
 }
@@ -36,7 +36,7 @@ export function checkPrecision (val, base?) {
  *
  * Either string or format.pos must contain "%v" (value) to be valid
  */
-export function checkCurrencyFormat (format) {
+export function checkCurrencyFormat(format) {
   var defaults = lib.settings.currency.format
 
   // Allow function as format parameter (should return string or object):
@@ -164,7 +164,7 @@ export const formatNumber = function (
 
     // 1234.00 and avoidEmptyDecimals == ''    => 1234
     // 1234.00 and avoidEmptyDecimals == '##'  => 1234.##
-    if (avoidEmptyDecimals !== undefined && parseInt(toFixed(Math.abs(number || 0), 1), 10) == number){
+    if (avoidEmptyDecimals !== undefined && parseInt(toFixed(Math.abs(number || 0), 1), 10) == number) {
       precisionString = avoidEmptyDecimals === '' ? '' : opts.decimal + avoidEmptyDecimals
     }
   }
@@ -226,7 +226,7 @@ export const formatMoney = function (
   var formats = checkCurrencyFormat(opts.format)
   // Choose which format to use for this value:
   var useFormat =
-      number > 0 ? formats.pos : number < 0 ? formats.neg : formats.zero
+    number > 0 ? formats.pos : number < 0 ? formats.neg : formats.zero
 
   // Return with currency symbol added:
   return useFormat

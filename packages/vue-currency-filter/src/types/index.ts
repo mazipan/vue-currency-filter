@@ -10,14 +10,14 @@ export interface currencyOptions {
 }
 
 export interface CurrencyFilterMethodInstance {
-  setConfig (options: currencyOptions): void,
-  getConfig (): currencyOptions,
-  format (value: string,
-          _symbol?: string,
-          _thousandsSeparator?: string,
-          _fractionCount?: number,
-          _fractionSeparator?: string,
-          _symbolPosition?: string,
-          _symbolSpacing?: boolean,
-          avoidEmptyDecimals?: string): string
+  setConfig(options: currencyOptions): void,
+  getConfig(): currencyOptions,
+  format(value: string,
+    _symbol?: string,
+    _thousandsSeparator?: string,
+    _fractionCount?: number,
+    _fractionSeparator?: string,
+    _symbolPosition?: string,
+    _symbolSpacing?: boolean,
+    avoidEmptyDecimals?: string): string
 }

@@ -1,7 +1,7 @@
 {
 	"name": "vue-currency-filter",
 	"description": "🍒 Lightweight vue currency filter based on accounting.js",
-	"version": "5.1.1",
+	"version": "5.2.0",
 	"license": "MIT",
 	"author": "Irfan Maulana (https://github.com/mazipan/)",
 	"homepage": "https://mazipan.github.io/vue-currency-filter/",
@@ -12,15 +12,19 @@
 	"typings": "dist/index.d.ts",
 	"scripts": {
 		"build": "microbundle src/index.ts --name VueCurrencyFilter",
-		"dev": "microbundle watch"
+		"dev": "microbundle watch",
+		"lint": "standardx src/**/*.ts --fix"
 	},
 	"files": [
 		"dist",
 		"nuxt"
 	],
 	"devDependencies": {
-		"vue": "^2.6.11",
-		"microbundle": "^0.12.3"
+		"@typescript-eslint/eslint-plugin": "^4.2.0",
+		"@typescript-eslint/parser": "^4.2.0",
+		"microbundle": "^0.12.3",
+		"standardx": "^5.0.0",
+		"vue": "^2.6.12"
 	},
 	"keywords": [
 		"vue 2 currency",
@@ -34,5 +38,17 @@
 	},
 	"bugs": {
 		"url": "https://github.com/mazipan/vue-currency-filter/issues"
+	},
+	"eslintConfig": {
+		"rules": {
+			"no-unused-vars": "off",
+			"@typescript-eslint/no-unused-vars": "error"
+		}
+	},
+	"standardx": {
+		"parser": "@typescript-eslint/parser",
+		"plugins": [
+			"@typescript-eslint/eslint-plugin"
+		]
 	}
 }
