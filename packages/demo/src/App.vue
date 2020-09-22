@@ -6,8 +6,13 @@
 </template>
 
 <script>
+import { CThemeProvider, CReset } from '@chakra-ui/vue'
 
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    CThemeProvider,
+    CReset
+  }
 }
 </script>
