@@ -14,6 +14,7 @@ Vue.use(Ads.Adsense)
 Vue.use(Ads.InArticleAdsense)
 Vue.use(Ads.InFeedAdsense)
 
+// @ts-ignore
 Vue.use(VueCurrencyFilter, { symbol: '$' })
 
 Vue.config.productionTip = false
