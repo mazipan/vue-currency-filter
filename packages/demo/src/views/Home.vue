@@ -24,19 +24,9 @@
 </template>
 
 <script lang="js">
-import Vue from 'vue'
-import 'prismjs'
-import 'prismjs/themes/prism-twilight.css'
-import 'prismjs/components/prism-scss.min'
-import 'prismjs/plugins/autolinker/prism-autolinker.min'
-import 'prismjs/plugins/autolinker/prism-autolinker.css'
-import Prism from 'vue-prism-component'
-
 import { CFlex, CText } from '@chakra-ui/vue'
 import HeaderComponent from '../components/Header'
 import FormComponent from '../components/Form'
-
-Vue.component('prism', Prism)
 
 export default {
   name: 'Home',
