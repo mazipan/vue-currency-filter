@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import Ads from 'vue-google-adsense'
-import Chakra, { CThemeProvider } from '@chakra-ui/vue'
 
 import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import VueCurrencyFilter from 'vue-currency-filter'
+import Chakra, { CThemeProvider, CReset } from '@chakra-ui/vue'
 
 const script2 = require('vue-script2')
 
@@ -25,5 +25,5 @@ new Vue({
   router,
   store,
   el: '#app',
-  render: (h) => h(CThemeProvider, [h(App)])
+  render: (h) => h(CThemeProvider, [h(CReset), h(App)])
 }).$mount()
