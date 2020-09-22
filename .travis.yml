@@ -16,6 +16,7 @@ install:
   - pnpm install
 
 script:
+  - pnpm run lint:lib
   - pnpm run build:lib
   - pnpm run bundlesize
   - pnpm run build:demo
