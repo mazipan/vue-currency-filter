@@ -71,6 +71,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "niccord",
+      "name": "Nicola Cordioli",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/2854279?v=4",
+      "profile": "http://niccord.github.io",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
