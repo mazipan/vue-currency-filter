@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/vue-currency-filter/precache-manifest.eb6c6b188cb148348339ff1ccf5f52f0.js"
+  "/vue-currency-filter/precache-manifest.a1ad5a0c8ca9299db4076c9a16362404.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "@vue-currency-filter/demo"});
