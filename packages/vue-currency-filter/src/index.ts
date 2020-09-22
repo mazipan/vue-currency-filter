@@ -10,7 +10,8 @@ const defaultConfig: currencyOptions = {
   fractionCount: 0,
   fractionSeparator: ',',
   symbolPosition: 'front',
-  symbolSpacing: true
+  symbolSpacing: true,
+  avoidEmptyDecimals: undefined,
 }
 
 const VueCurrencyFilter: PluginObject<currencyOptions[] | currencyOptions> = {
@@ -26,7 +27,8 @@ const VueCurrencyFilter: PluginObject<currencyOptions[] | currencyOptions> = {
                                        _fractionCount?: number,
                                        _fractionSeparator?: string,
                                        _symbolPosition?: string,
-                                       _symbolSpacing?: boolean): string | number {
+                                       _symbolSpacing?: boolean,
+                                       _avoidEmptyDecimals?: string): string | number {
 
         let runtimeConfig = __defaults({
           symbol: _symbol,
@@ -34,7 +36,8 @@ const VueCurrencyFilter: PluginObject<currencyOptions[] | currencyOptions> = {
           fractionCount: _fractionCount,
           fractionSeparator: _fractionSeparator,
           symbolPosition: _symbolPosition,
-          symbolSpacing: _symbolSpacing
+          symbolSpacing: _symbolSpacing,
+          avoidEmptyDecimals: _avoidEmptyDecimals
         }, configs)
 
         if (typeof _symbol === 'object') {
@@ -70,7 +73,8 @@ const VueCurrencyFilter: PluginObject<currencyOptions[] | currencyOptions> = {
           symbol: runtimeConfig.symbol,
           precision: runtimeConfig.fractionCount,
           thousand: runtimeConfig.thousandsSeparator,
-          decimal: runtimeConfig.fractionSeparator
+          decimal: runtimeConfig.fractionSeparator,
+          avoidEmptyDecimals: runtimeConfig.avoidEmptyDecimals,
         })
 
         if (isNegative) {

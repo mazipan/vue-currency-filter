@@ -71,7 +71,8 @@ Vue.use(VueCurrencyFilter,
   fractionCount: 2,
   fractionSeparator: ',',
   symbolPosition: 'front',
-  symbolSpacing: true
+  symbolSpacing: true,
+  avoidEmptyDecimals: undefined,
 })
 ```
 
@@ -85,7 +86,8 @@ Vue.use(VueCurrencyFilter, [
    fractionCount: 2,
    fractionSeparator: '.',
    symbolPosition: 'front',
-   symbolSpacing: true
+   symbolSpacing: true,
+   avoidEmptyDecimals: '',
  },
  { // default name 'currency_2'
    name: 'currency_2',
@@ -94,7 +96,8 @@ Vue.use(VueCurrencyFilter, [
    fractionCount: 2,
    fractionSeparator: '.',
    symbolPosition: 'front',
-   symbolSpacing: false
+   symbolSpacing: false,
+   avoidEmptyDecimals: '--',
  }
 ])
 ```
@@ -121,7 +124,8 @@ Add `vue-currency-filter/nuxt` to modules section of `nuxt.config.js`
       fractionCount: 2,
       fractionSeparator: '.',
       symbolPosition: 'front',
-      symbolSpacing: true
+      symbolSpacing: true,
+      avoidEmptyDecimals: undefined,
     }],
 
     // for multiple instance
@@ -132,7 +136,8 @@ Add `vue-currency-filter/nuxt` to modules section of `nuxt.config.js`
         fractionCount: 2,
         fractionSeparator: '.',
         symbolPosition: 'front',
-        symbolSpacing: true
+        symbolSpacing: true,
+        avoidEmptyDecimals: '##',
       },
       { // default name 'currency_2'
         name: 'currency_2',
@@ -141,7 +146,8 @@ Add `vue-currency-filter/nuxt` to modules section of `nuxt.config.js`
         fractionCount: 2,
         fractionSeparator: '.',
         symbolPosition: 'front',
-        symbolSpacing: false
+        symbolSpacing: false,
+        avoidEmptyDecimals: '',
       }
     ]],
   ]
@@ -160,7 +166,8 @@ or using external options
       fractionCount: 2,
       fractionSeparator: '.',
       symbolPosition: 'front',
-      symbolSpacing: true
+      symbolSpacing: true,
+      avoidEmptyDecimals: '',
     },
     { // default name 'currency_2'
       name: 'currency_2',
@@ -169,7 +176,8 @@ or using external options
       fractionCount: 2,
       fractionSeparator: '.',
       symbolPosition: 'front',
-      symbolSpacing: false
+      symbolSpacing: false,
+      avoidEmptyDecimals: '##',
     }
   ]
   // or for one filter
@@ -179,7 +187,8 @@ or using external options
     fractionCount: 2,
     fractionSeparator: '.',
     symbolPosition: 'front',
-    symbolSpacing: true
+    symbolSpacing: true,
+    avoidEmptyDecimals: undefined,
   }
 }
 ```
@@ -225,7 +234,8 @@ if (VueCurrencyFilter) {
     fractionCount: 0,
     fractionSeparator: ".",
     symbolPosition: "front",
-    symbolSpacing: false
+    symbolSpacing: false,
+    avoidEmptyDecimals: '',
   })
 }
 
@@ -259,7 +269,8 @@ configFractionSeparator, configSymbolPosition, configSymbolSpacing)}}
   fractionCount: '',
   fractionSeparator: '',
   symbolPosition: '',
-  symbolSpacing: ''
+  symbolSpacing: '',
+  avoidEmptyDecimals: undefined,
 })}}
 </span>
 ```
@@ -274,7 +285,8 @@ configFractionSeparator, configSymbolPosition, configSymbolSpacing)}}
   fractionCount: 'number (default : 0)',
   fractionSeparator: 'string (default: ",")',
   symbolPosition: 'string (default: front)',
-  symbolSpacing: 'boolean (default: true)'
+  symbolSpacing: 'boolean (default: true)',
+  avoidEmptyDecimals: 'string (default: undefined)',
 }
 ```
 
@@ -299,15 +311,50 @@ describe("test myComponent", () => {
       fractionCount: 2,
       fractionSeparator: ".",
       symbolPosition: "front",
-      symbolSpacing: true
+      symbolSpacing: true,
+      avoidEmptyDecimals: undefined,
     });
 
-    const wrapper = shallowMount(Component, {
+    let wrapper = shallowMount(Component, {
       localVue
     });
 
     const result = wrapper.find(".curr");
     expect(result.text()).toEqual("$ 1,000.00");
+    
+    localVue.use(VueCurrencyFilter, {
+      symbol: "$",
+      thousandsSeparator: ",",
+      fractionCount: 2,
+      fractionSeparator: ".",
+      symbolPosition: "front",
+      symbolSpacing: true,
+      avoidEmptyDecimals: '',
+    });
+
+    wrapper = shallowMount(Component, {
+      localVue
+    });
+
+    const result = wrapper.find(".curr");
+    expect(result.text()).toEqual("$ 1,000");
+    
+    localVue.use(VueCurrencyFilter, {
+      symbol: "$",
+      thousandsSeparator: ",",
+      fractionCount: 2,
+      fractionSeparator: ".",
+      symbolPosition: "front",
+      symbolSpacing: true,
+      avoidEmptyDecimals: '##',
+    });
+
+    wrapper = shallowMount(Component, {
+      localVue
+    });
+
+    const result = wrapper.find(".curr");
+    expect(result.text()).toEqual("$ 1,000.##");
   });
 });
 ```

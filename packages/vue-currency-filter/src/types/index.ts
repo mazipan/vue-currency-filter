@@ -5,7 +5,8 @@ export interface currencyOptions {
   fractionCount?: number,
   fractionSeparator?: string,
   symbolPosition?: string,
-  symbolSpacing?: boolean
+  symbolSpacing?: boolean,
+  avoidEmptyDecimals?: string,
 }
 
 export interface CurrencyFilterMethodInstance {
@@ -17,5 +18,6 @@ export interface CurrencyFilterMethodInstance {
           _fractionCount?: number,
           _fractionSeparator?: string,
           _symbolPosition?: string,
-          _symbolSpacing?: boolean): string
+          _symbolSpacing?: boolean,
+          avoidEmptyDecimals?: string): string
 }

@@ -195,6 +195,59 @@
       <div class="field is-horizontal">
         <div class="field-label is-normal">
           <label class="label">
+            Avoid empty decimals:
+          </label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <label class="radio">
+                <input
+                  id="chk-form-5"
+                  v-model="configUseAvoidEmptyDecimals"
+                  type="radio"
+                  name="chk-avoidemptydecimals"
+                  :value="true">
+                  Custom string instead of decimal zeros
+              </label>
+              <label class="radio">
+                <input
+                  id="chk-form-5"
+                  v-model="configUseAvoidEmptyDecimals"
+                  type="radio"
+                  name="chk-avoidemptydecimals"
+                  :value="false">
+                  Display decimal zeros
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal" v-if="configUseAvoidEmptyDecimals">
+        <div class="field-label is-normal">
+          <label class="label">
+            Avoid empty decimals string:
+          </label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <label class="radio">
+                <input
+                  v-model="configAvoidEmptyDecimals"
+                  type="text"
+                  class="input"
+                  placeholder="empty decimals string">
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">
             Currency:
           </label>
         </div>
@@ -240,7 +293,7 @@
           style="align-items: flex-end;">
           <div class="field" style="text-align: left">
             <b class="subtitle result__filter">
-              {{ textInput | currency(configSymbol, configSeparator, configFractionCount, configFractionSeparator, configSymbolPosition, configSymbolSpacing) }}
+              {{ textInput | currency(configSymbol, configSeparator, configFractionCount, configFractionSeparator, configSymbolPosition, configSymbolSpacing, configUseAvoidEmptyDecimals ? configAvoidEmptyDecimals : undefined) }}
             </b>
           </div>
         </div>
@@ -356,6 +409,8 @@ export default {
       configFractionSeparator: ',',
       configSymbolPosition: 'front',
       configSymbolSpacing: true,
+      configUseAvoidEmptyDecimals: false,
+      configAvoidEmptyDecimals: '',
       templateDownload: `
 # NPM
 npm install vue-currency-filter
