@@ -90,7 +90,7 @@ Adhering to the following process is the best way to get your work included in t
 
 4. Make sure to update, or add to the tests when appropriate. **Patches and
    features will not be accepted without tests.** Run `npm test` to check that
-   all tests pass after you've made changes. 
+   all tests pass after you've made changes.
 
 5. Locally merge (or rebase) the upstream development branch into your topic branch:
 
@@ -125,8 +125,7 @@ license your work under the terms of the [MIT License](LICENSE).
 
 ### Checking code
 
-Run `npm run dev` before committing to ensure your changes follow our coding standards.
-
+Run `pnpm run dev:demo` before committing to ensure your changes follow our coding standards.
 
 ## License
 
