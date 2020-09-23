@@ -7,14 +7,26 @@
 	"homepage": "https://mazipan.github.io/vue-currency-filter/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
+    "dev:demo": "pnpm run dev --filter @vue-currency-filter/demo",
     "build:lib": "pnpm run build --filter vue-currency-filter",
     "build:demo": "pnpm run build --filter @vue-currency-filter/demo",
-    "lint:lib": "pnpm run lint --filter vue-currency-filter",
+    "lint": "eslint packages/** --fix",
     "bundlesize": "node ./bundlesize.js"
 	},
 	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "4.2.0",
+		"@typescript-eslint/parser": "4.2.0",
+		"@vue/cli-plugin-eslint": "4.5.6",
+		"@vue/eslint-config-standard": "5.1.2",
+		"@vue/eslint-config-typescript": "5.1.0",
     "bytes": "3.1.0",
-    "chalk": "3.0.0",
+		"chalk": "3.0.0",
+		"eslint": "7.9.0",
+		"eslint-plugin-import": "2.22.0",
+		"eslint-plugin-node": "11.1.0",
+		"eslint-plugin-promise": "4.2.1",
+		"eslint-plugin-standard": "4.0.1",
+		"eslint-plugin-vue": "6.2.2",
     "gzip-size": "5.1.1",
     "husky": "3.1.0",
     "lint-staged": "9.5.0"
@@ -31,5 +43,13 @@
   },
   "bugs": {
     "url": "https://github.com/mazipan/vue-currency-filter/issues"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": "pnpm run lint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }

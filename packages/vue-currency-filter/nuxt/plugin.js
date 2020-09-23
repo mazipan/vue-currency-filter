@@ -1,3 +1,5 @@
+// eslint-disable
+
 import Vue from 'vue'
 import VueCurrencyFilter from 'vue-currency-filter'
 

@@ -22,7 +22,7 @@ const lib = {
 /**
  * Check and normalise the value of precision (must be positive integer)
  */
-export function checkPrecision(val, base = 0) {
+export function checkPrecision (val, base = 0) {
   val = Math.round(Math.abs(val))
   return isNaN(val) ? base : val
 }
@@ -36,8 +36,8 @@ export function checkPrecision(val, base = 0) {
  *
  * Either string or format.pos must contain "%v" (value) to be valid
  */
-export function checkCurrencyFormat(format) {
-  var defaults = lib.settings.currency.format
+export function checkCurrencyFormat (format) {
+  const defaults = lib.settings.currency.format
 
   // Allow function as format parameter (should return string or object):
   if (typeof format === 'function') format = format()
@@ -86,8 +86,8 @@ export const unformat = function (value, decimal?) {
 
   // Build regex to strip out everything except digits, decimal point and minus sign:
   // @ts-ignore
-  var regex = new RegExp('[^0-9-' + decimal + ']', ['g'])
-  var unformatted = parseFloat(
+  const regex = new RegExp('[^0-9-' + decimal + ']', ['g'])
+  const unformatted = parseFloat(
     ('' + value)
       .replace(/\((?=\d+)(.*)\)/, '-$1') // replace bracketed values with negatives
       .replace(regex, '') // strip out any cruft
@@ -107,9 +107,9 @@ export const unformat = function (value, decimal?) {
 export const toFixed = function (value, precision) {
   precision = checkPrecision(precision, lib.settings.number.precision)
 
-  var exponentialForm = Number(unformat(value) + 'e' + precision)
-  var rounded = Math.round(exponentialForm)
-  var finalResult = Number(rounded + 'e-' + precision).toFixed(precision)
+  const exponentialForm = Number(unformat(value) + 'e' + precision)
+  const rounded = Math.round(exponentialForm)
+  const finalResult = Number(rounded + 'e-' + precision).toFixed(precision)
   return finalResult
 }
 
@@ -138,7 +138,7 @@ export const formatNumber = function (
   number = unformat(number)
 
   // Build options object from second param (if object) or all params, extending defaults:
-  var opts = __defaults(
+  const opts = __defaults(
     __isObject(precision)
       ? precision
       : {
@@ -149,13 +149,13 @@ export const formatNumber = function (
     lib.settings.number
   )
   // Clean up precision
-  var usePrecision = checkPrecision(opts.precision)
+  const usePrecision = checkPrecision(opts.precision)
   // Do some calc:
-  var negative = number < 0 ? '-' : ''
-  var base = parseInt(toFixed(Math.abs(number || 0), usePrecision), 10) + ''
-  var mod = base.length > 3 ? base.length % 3 : 0
+  const negative = number < 0 ? '-' : ''
+  const base = parseInt(toFixed(Math.abs(number || 0), usePrecision), 10) + ''
+  const mod = base.length > 3 ? base.length % 3 : 0
 
-  var precisionString = ''
+  let precisionString = ''
   if (usePrecision) {
     // default behaviour
     // 1234.56 and avoidEmptyDecimals whatever   => 1234.56
@@ -164,7 +164,7 @@ export const formatNumber = function (
 
     // 1234.00 and avoidEmptyDecimals == ''    => 1234
     // 1234.00 and avoidEmptyDecimals == '##'  => 1234.##
-    if (avoidEmptyDecimals !== undefined && parseInt(toFixed(Math.abs(number || 0), 1), 10) == number) {
+    if (avoidEmptyDecimals !== undefined && parseInt(toFixed(Math.abs(number || 0), 1), 10) === number) {
       precisionString = avoidEmptyDecimals === '' ? '' : opts.decimal + avoidEmptyDecimals
     }
   }
@@ -209,7 +209,7 @@ export const formatMoney = function (
   number = unformat(number)
 
   // Build options object from second param (if object) or all params, extending defaults:
-  var opts = __defaults(
+  const opts = __defaults(
     __isObject(symbol)
       ? symbol
       : {
@@ -218,14 +218,14 @@ export const formatMoney = function (
         thousand: thousand,
         decimal: decimal,
         format: format,
-        avoidEmptyDecimals: avoidEmptyDecimals,
+        avoidEmptyDecimals: avoidEmptyDecimals
       },
     lib.settings.currency
   )
   // Check format (returns object with pos, neg and zero):
-  var formats = checkCurrencyFormat(opts.format)
+  const formats = checkCurrencyFormat(opts.format)
   // Choose which format to use for this value:
-  var useFormat =
+  const useFormat =
     number > 0 ? formats.pos : number < 0 ? formats.neg : formats.zero
 
   // Return with currency symbol added:

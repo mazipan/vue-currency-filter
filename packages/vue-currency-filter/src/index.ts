@@ -1,7 +1,7 @@
 import { toFixed, formatMoney } from './accounting'
 import { __isNull, __defaults } from './utils'
 import { PluginObject } from 'vue'
-import { CurrencyFilterMethodInstance, currencyOptions } from './types';
+import { CurrencyFilterMethodInstance, currencyOptions } from './types'
 
 const defaultConfig: currencyOptions = {
   name: 'currency',
@@ -11,11 +11,11 @@ const defaultConfig: currencyOptions = {
   fractionSeparator: ',',
   symbolPosition: 'front',
   symbolSpacing: true,
-  avoidEmptyDecimals: undefined,
+  avoidEmptyDecimals: undefined
 }
 
 const VueCurrencyFilter: PluginObject<currencyOptions[] | currencyOptions> = {
-  install(Vue, pluginOptions) {
+  install (Vue, pluginOptions) {
     const createFilter = (options: currencyOptions) => {
       if (__isNull(options)) options = {}
       const globalConfigs = __defaults(options, defaultConfig)
@@ -29,7 +29,6 @@ const VueCurrencyFilter: PluginObject<currencyOptions[] | currencyOptions> = {
         _symbolPosition?: string,
         _symbolSpacing?: boolean,
         _avoidEmptyDecimals?: string): string | number {
-
         let runtimeConfig = __defaults({
           symbol: _symbol,
           thousandsSeparator: _thousandsSeparator,
@@ -74,7 +73,7 @@ const VueCurrencyFilter: PluginObject<currencyOptions[] | currencyOptions> = {
           precision: runtimeConfig.fractionCount,
           thousand: runtimeConfig.thousandsSeparator,
           decimal: runtimeConfig.fractionSeparator,
-          avoidEmptyDecimals: runtimeConfig.avoidEmptyDecimals,
+          avoidEmptyDecimals: runtimeConfig.avoidEmptyDecimals
         })
 
         if (isNegative) {

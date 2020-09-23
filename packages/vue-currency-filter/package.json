@@ -12,18 +12,14 @@
 	"typings": "dist/index.d.ts",
 	"scripts": {
 		"build": "microbundle src/index.ts --name VueCurrencyFilter",
-		"dev": "microbundle watch",
-		"lint": "standardx src/**/*.ts --fix"
+		"dev": "microbundle watch"
 	},
 	"files": [
 		"dist",
 		"nuxt"
 	],
 	"devDependencies": {
-		"@typescript-eslint/eslint-plugin": "^4.2.0",
-		"@typescript-eslint/parser": "^4.2.0",
 		"microbundle": "^0.12.3",
-		"standardx": "^5.0.0",
 		"vue": "^2.6.12"
 	},
 	"keywords": [
@@ -38,17 +34,5 @@
 	},
 	"bugs": {
 		"url": "https://github.com/mazipan/vue-currency-filter/issues"
-	},
-	"eslintConfig": {
-		"rules": {
-			"no-unused-vars": "off",
-			"@typescript-eslint/no-unused-vars": "error"
-		}
-	},
-	"standardx": {
-		"parser": "@typescript-eslint/parser",
-		"plugins": [
-			"@typescript-eslint/eslint-plugin"
-		]
 	}
 }
