@@ -9,6 +9,7 @@ importers:
       bytes: 3.1.0
       chalk: 3.0.0
       eslint: 7.9.0
+      eslint-config-prettier: 6.11.0_eslint@7.9.0
       eslint-plugin-import: 2.22.0_eslint@7.9.0
       eslint-plugin-node: 11.1.0_eslint@7.9.0
       eslint-plugin-promise: 4.2.1
@@ -17,6 +18,7 @@ importers:
       gzip-size: 5.1.1
       husky: 3.1.0
       lint-staged: 9.5.0
+      prettier: 2.1.2
     specifiers:
       '@typescript-eslint/eslint-plugin': 4.2.0
       '@typescript-eslint/parser': 4.2.0
@@ -26,6 +28,7 @@ importers:
       bytes: 3.1.0
       chalk: 3.0.0
       eslint: 7.9.0
+      eslint-config-prettier: ^6.11.0
       eslint-plugin-import: 2.22.0
       eslint-plugin-node: 11.1.0
       eslint-plugin-promise: 4.2.1
@@ -34,6 +37,7 @@ importers:
       gzip-size: 5.1.1
       husky: 3.1.0
       lint-staged: 9.5.0
+      prettier: ^2.1.2
   packages/demo:
     dependencies:
       '@chakra-ui/vue': 0.6.5_emotion@10.0.27+vue@2.6.12
@@ -4917,6 +4921,16 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
+  /eslint-config-prettier/6.11.0_eslint@7.9.0:
+    dependencies:
+      eslint: 7.9.0
+      get-stdin: 6.0.0
+    dev: true
+    hasBin: true
+    peerDependencies:
+      eslint: '>=3.14.1'
+    resolution:
+      integrity: sha512-oB8cpLWSAjOVFEJhhyMZh6NOEOtBVziaqdDQ86+qhDHFbZXoRTM7pNSvFRfW/W/L/LrQ38C99J5CGuRBBzBsdA==
   /eslint-config-standard/14.1.1_af58836ed045843254deaf2e40fb598c:
     dependencies:
       eslint: 7.9.0
@@ -5996,6 +6010,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-uWjGsKBDhDJJAui/Gl3zJXmkUP4=
+  /get-stdin/6.0.0:
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha512-jp4tHawyV7+fkkSKyvjuLZswblUtz+SQKzSWnBbii16BuZksJlU1wuBYXY75r+duh/llF1ur6oNwi+2ZzjKZ7g==
   /get-stdin/7.0.0:
     dev: true
     engines:
@@ -9732,6 +9752,13 @@ packages:
     optional: true
     resolution:
       integrity: sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==
+  /prettier/2.1.2:
+    dev: true
+    engines:
+      node: '>=10.13.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-16c7K+x4qVlJg9rEbXl7HEGmQyZlG4R9AgP+oHKRMsMsuk8s+ATStlf1NpDqyBI1HpVyfjLOeMhH2LvuNvV5Vg==
   /pretty-bytes/3.0.1:
     dependencies:
       number-is-nan: 1.0.1
