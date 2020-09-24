@@ -1,5 +1,5 @@
 {
-	"name": "@vue-currency-filter/demo",
+	"name": "demo",
 	"version": "5.2.0",
 	"description": "🍒 Lightweight vue currency filter based on accounting.js",
 	"author": "Irfan Maulana (https://github.com/mazipan/)",
@@ -36,7 +36,7 @@
 		"vue-class-component": "7.2.6",
 		"vue-cli-plugin-chakra-ui": "^1.0.3",
 		"vue-currency-filter": "file:../vue-currency-filter",
-		"vue-google-adsense": "1.8.3",
+		"vue-google-adsense": "1.9.0",
 		"vue-prism-component": "1.2.0",
 		"vue-property-decorator": "9.0.0",
 		"vue-router": "3.4.3",
