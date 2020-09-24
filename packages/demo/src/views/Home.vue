@@ -9,12 +9,6 @@
       <FormComponent />
     </section>
 
-    <section class="container ads">
-      <InArticleAdsense
-        data-ad-client="ca-pub-5442972248172818"
-        data-ad-slot="7974047383" />
-    </section>
-
     <footer class="footer">
       <c-flex m="2" align="center" justify="center">
         <c-text textAlign="center">Built with ❤️ by <a href="https://mazipan.space">Irfan Maulana</a></c-text>
