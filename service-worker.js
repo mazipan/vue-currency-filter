@@ -14,10 +14,10 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/vue-currency-filter/precache-manifest.8a4d43ff41d3191d875fe3cc5c6b4cf4.js"
+  "/vue-currency-filter/precache-manifest.674efb89bdde75bea1416bffda0cf865.js"
 );
 
-workbox.core.setCacheNameDetails({prefix: "@vue-currency-filter/demo"});
+workbox.core.setCacheNameDetails({prefix: "demo"});
 
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
