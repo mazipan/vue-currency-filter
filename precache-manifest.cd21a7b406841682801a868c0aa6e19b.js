@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "58bc3bbbd404957bd394",
+    "revision": "0a76b3bdcf56d5ad370f",
     "url": "/vue-currency-filter/css/app.d738855a.css"
   },
   {
-    "revision": "b57ccab1718eb725ebffb219f851f517",
+    "revision": "a34e6d0498f2918fbc570e9b7644101e",
     "url": "/vue-currency-filter/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/vue-currency-filter/js/about.12e7257c.js"
   },
   {
-    "revision": "58bc3bbbd404957bd394",
-    "url": "/vue-currency-filter/js/app.767458da.js"
+    "revision": "0a76b3bdcf56d5ad370f",
+    "url": "/vue-currency-filter/js/app.e014f9d5.js"
   },
   {
     "revision": "0235a6187f56eae30d8d",
