@@ -16,6 +16,9 @@
   <a href="https://bundlephobia.com/result?p=vue-currency-filter">
     <img height="20" src="https://badgen.net/bundlephobia/minzip/vue-currency-filter" alt="Bundlephobia Size">
   </a>
+  <a href="https://packagephobia.com/result?p=vue-currency-filter">
+    <img height="20" src="https://packagephobia.com/badge?p=vue-currency-filter" alt="Bundlephobia Size">
+  </a>
   <a href="https://www.npmjs.com/package/vue-currency-filter">
     <img height="20" src="https://img.shields.io/npm/dt/vue-currency-filter.svg" alt="Download All Time">
   </a>
